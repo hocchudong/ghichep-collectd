@@ -24,6 +24,8 @@ Memory plugin thu thập thông tin về bộ nhớ  vật lý của máy. Biể
 
 Note: used trong biểu đồ là used của memory sau khi trừ đi buffered và cached.
 
+
+
 #### 2. df Plugin
 
 Để collectd có thể thể dữ liệu về disk free, người dùng phải cấu hình trong file collectd.conf , uncomment LoadPlugin df
@@ -47,6 +49,33 @@ Trên mỗi phân vùng người dùng có thể thấy các thông số:
 
 Trong đó total = free + reserved + used 
 
+Để collectd có thể thu thập dữ liệu từ tất cả các file hệ thống, người dùng cấu hình trên file collectd.conf như sau:
+```sh
+<Plugin "df">
+  IgnoreSelected true
+</Plugin>
+```
+
+Để collectd chỉ có thê lấy dữ liệu từ phân vùng ext3, cấu hình trong file collectd.conf như sau:
+```sh 
+<Plugin "df">
+  FSType "ext3"
+</Plugin>
+```
+
+Để collectd chỉ có thể lấy dữ liệu từ một phân vùng, cấu hình trong file collectd.conf:
+```sh
+<Plugin "df">
+  # ở đây người dùng có thể thay đổi phân vùng để lấy dữ liệu
+  Device "/dev/hda1"
+  MountPoint "/home"
+  FSType "ext3"
+  IgnoreSelected false
+  ReportInodes false
+  # Only in Version 4 since 4.9
+  #ReportReserved false
+</Plugin>
+```
 
 #### 3. Disk Plugin
 
@@ -68,3 +97,14 @@ Disk plugin thu thập thông tin về thống kê hiệu suất của ổ đĩa
 Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong octets, còn thông số trong merged, operation và time hầu như không có sự thay đổi.
 
 <img src ="http://i.imgur.com/dThlyYR.png">
+
+Để collectd có thể lấy dữ liệu từ sda, cấu hình trong file collectd.conf:
+
+```sh
+<Plugin "disk">
+  # có thể that sda= sdb nếu như máy có nhiều ổ đĩa
+  Disk "sda"
+  Disk "/^hd/"
+  IgnoreSelected false
+</Plugin>
+```
