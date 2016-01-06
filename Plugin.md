@@ -4,6 +4,12 @@
 
 #### 1. Memory Plugin
 
+Để collectd có thể thu thập được dữ liệu về bộ nhớ vật lý, người dùng phải uncomment dòng LoadPlugin memory trong file collectd.conf
+```sh
+  vi /etc/collectd/collectd.conf
+```
+<img src="http://i.imgur.com/24GmsHg.png">
+
 Memory plugin thu thập thông tin về bộ nhớ  vật lý của máy. Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
 - buffered
 - cached
@@ -20,6 +26,14 @@ Note: used trong biểu đồ là used của memory sau khi trừ đi buffered v
 
 #### 2. df Plugin
 
+Để collectd có thể thể dữ liệu về disk free, người dùng phải cấu hình trong file collectd.conf , uncomment LoadPlugin df
+
+```sh
+  vi /etc/collectd/collectd.conf
+```
+
+<img src= "http://i.imgur.com/nLCHlao.png">
+
 df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví dụ trong một phân vùng, người dùng đã sử dụng hết bao nhiêu không gian và bao nhiêu không gian có sẵn để sử dụng.
 
 Trên mỗi phân vùng người dùng có thể thấy các thông số:
@@ -35,6 +49,14 @@ Trong đó total = free + reserved + used
 
 
 #### 3. Disk Plugin
+
+Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk trong file collectd.conf để collectd có thể lấy thông tin về ổ đĩa.
+
+```sh
+  vi /etc/collectd/collectd.conf
+```
+
+<img src="http://i.imgur.com/nLCHlao.png">
 
 Disk plugin thu thập thông tin về thống kê hiệu suất của ổ đĩa. Trên mỗi phân vùng, người dùng có thể nhìn thấy tốc độ đọc ghi của:
 
