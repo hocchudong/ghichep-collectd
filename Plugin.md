@@ -154,7 +154,7 @@ Khi để speed là unlimited, tốc đọ viết trong octets tăng mạnh, sau
 
 Tốc độ copy của file:
 
-<img src="http://i.imgur.com/XijYw6q.png">
+<img src="http://i.imgur.com/8N4EIIL.png">
 
 
 <img src="http://i.imgur.com/YU4HcjK.png">
