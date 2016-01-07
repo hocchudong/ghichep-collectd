@@ -4,13 +4,14 @@
 
 
 Ở đây tôi đề cập đến 3 plugin:
+```sh
 
 1. Memory Plugin
 
 2. df Plugin
 
 3. Disk Plugin
-
+```
 
 
 #### 1. Memory Plugin
@@ -106,7 +107,7 @@ Trong đó total = free + reserved + used
 
 ##### 3.1 Mô tả.
 
-Disk plugin thu thập thông tin về thống kê hiệu suất của ổ đĩa.
+Disk plugin thu thập thông tin hiệu suất của ổ đĩa.
 
 ##### 3.2 Cách cấu hình.
 
@@ -149,7 +150,9 @@ Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong oc
 
 <img src ="http://i.imgur.com/dThlyYR.png">
 
+Tốc độ copy của file:
 
+<img src="http://i.imgur.com/M3RXP92.png">
 
 
 
