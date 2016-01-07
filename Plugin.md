@@ -56,12 +56,6 @@ Trong đó total = free + reserved + used
 </Plugin>
 ```
 
-Để collectd chỉ có thê lấy dữ liệu từ phân vùng ext3, cấu hình trong file collectd.conf như sau:
-```sh 
-<Plugin "df">
-  FSType "ext3"
-</Plugin>
-```
 
 Để collectd chỉ có thể lấy dữ liệu từ một phân vùng, cấu hình trong file collectd.conf:
 ```sh
