@@ -148,7 +148,7 @@ Nếu người dùng muốn collectd thu thập dữ liệu từ tất cả các
 
 Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong octets, còn thông số trong merged, operation và time hầu như không có sự thay đổi.
 
-<img src ="http://i.imgur.com/dThlyYR.png">
+<img src ="http://i.imgur.com/eAk7xNm.png">
 
 Tốc độ copy của file:
 
