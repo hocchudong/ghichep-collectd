@@ -96,7 +96,7 @@ Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong oc
 
 ```sh
 <Plugin "disk">
-  # có thể that sda= sdb nếu như máy có nhiều ổ đĩa
+  # có thể thay sda= sdb nếu như máy có nhiều ổ đĩa
   Disk "sda"
   Disk "/^hd/"
   IgnoreSelected false
