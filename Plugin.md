@@ -29,7 +29,7 @@ Memory plugin thu thập thông tin về bộ nhớ  vật lý của máy ví d�
 
 ##### 1.3 Minh họa
 
-<img src ="http://i.imgur.com/eQ52795.png">
+<img src ="http://i.imgur.com/dwDe0q2.png">
 
 Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
 - buffered
@@ -66,16 +66,16 @@ df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví d
 
 ##### 2.3 Minh họa.
 
-<img src="http://i.imgur.com/cjqaNoB.png">
+<img src="http://i.imgur.com/cBQ5C9x.png">
 
 Trên mỗi phân vùng người dùng có thể thấy các thông số:
 - free
 - reserved
 - used
 
-Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh df
+Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh df -m để dữ liệu hiển thị dưới dạng MB, người dùng có thể dễ dàng đối chiếu với graph trên Graphite
 
-<img src="http://i.imgur.com/CLotJjQ.png">
+<img src="http://i.imgur.com/QQBaneS.png">
 
 Trong đó total = free + reserved + used 
 
@@ -121,7 +121,7 @@ Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk
 
 ##### 3.3 Minh họa.
 
-<img src="http://i.imgur.com/0Idx1fd.png">
+<img src="http://i.imgur.com/R3lxmBF.png">
 
 Trên mỗi phân vùng, người dùng có thể nhìn thấy tốc độ đọc ghi của:
 
