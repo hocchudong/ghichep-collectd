@@ -95,9 +95,9 @@ Trên mỗi phân vùng người dùng có thể thấy các thông số:
 - reserved
 - used
 
-Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh **df -m** để dữ liệu hiển thị dưới dạng MB, người dùng có thể dễ dàng đối chiếu với graph trên Graphite
+Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh **df -m** để dữ liệu hiển thị dưới dạng MB.
 
-<img src="http://i.imgur.com/QQBaneS.png">
+<img src="http://i.imgur.com/WSQt0AQ.png">
 
 Trong đó total = free + reserved + used 
 
