@@ -49,13 +49,13 @@ Memory plugin thu thập thông tin về bộ nhớ  vật lý của máy ví d�
 <a name="minhhoamemory"></a>
 ##### 1.3 Minh họa
 
-<img src ="http://i.imgur.com/dwDe0q2.png">
+<img src ="http://i.imgur.com/4EC16cX.png">
 
 Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
-- buffered
-- cached
-- free
-- used
+- buffered (1)
+- cached (2)
+- free (3)
+- used (4)
 
 Để kiểm tra các thông số này trên máy ubuntu có thể dùng lệnh: free, top...
 
@@ -88,18 +88,28 @@ df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví d
 <a name="minhhoadf"></a>
 ##### 2.3 Minh họa.
 
-<img src="http://i.imgur.com/cBQ5C9x.png">
+<img src="http://i.imgur.com/aK998kV.png">
 
-Trên mỗi phân vùng người dùng có thể thấy các thông số:
-- free
-- reserved
-- used
+1 thể hiện thông số của thư mục dev
+2 thể hiện thông số của thư mục root
+3 thể hiện thông số của thư mục run
+4 thể hiện thông số của thư mục /run/lock
+5 thể hiện thông số của thư mục /run/shm
+6 thể hiện thông số của thư mục /run/user 
+7 thể hiện thông số của thư mục /sys/fs/cgroup
+
+Trên mỗi thư mụcngười dùng có thể thấy các thông số:
+- free (1.1)
+- reserved (1.2)
+- used (1.3)
+
+Trong đó total = free + reserved + used 
 
 Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh **df -m** để dữ liệu hiển thị dưới dạng MB.
 
 <img src="http://i.imgur.com/WSQt0AQ.png">
 
-Trong đó total = free + reserved + used 
+
 
 <a name="morongdf"></a>
 ##### 2.4 Mở rộng.
@@ -150,12 +160,19 @@ Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk
 
 <img src="http://i.imgur.com/R3lxmBF.png">
 
+1 thể hiện thông số của ổ đĩa sda
+2 thể hiện thông số của phân vùng sda1 trên sda
+3 thể hiện thông số của phân vùng sda2 trên sda
+4 thể hiện thông số của phân vùng sda5 trên sda
+5 thể hiện thông số của ổ đĩa sdb
+6 thể hiện thông số của phân vùng sdb1 trên sdb
+
 Trên mỗi phân vùng, người dùng có thể nhìn thấy tốc độ đọc ghi của:
 
-- merged (Operations/s)
-- octets (Bytes/s)
-- operation (Operations/s)
-- time (Seconds/s)
+- merged (Operations/s) (1.1)
+- octets (Bytes/s) (1.2)
+- operation (Operations/s) (1.3)
+- time (Seconds/s) (1.4)
 
 <a name="morongdisk"></a>
 ##### 3.4 Mở rộng.
@@ -179,7 +196,7 @@ Khi để speed là unlimited, tốc độ viết trong octets tăng mạnh, sau
 
 <img src ="http://i.imgur.com/xBW15u1.png">
 
-Tốc độ copy của file:
+
 
 <img src="http://i.imgur.com/8N4EIIL.png">
 
