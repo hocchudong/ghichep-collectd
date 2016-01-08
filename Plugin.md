@@ -91,11 +91,17 @@ df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví d
 <img src="http://i.imgur.com/aK998kV.png">
 
 1 thể hiện thông số của thư mục dev
+
 2 thể hiện thông số của thư mục root
+
 3 thể hiện thông số của thư mục run
+
 4 thể hiện thông số của thư mục /run/lock
+
 5 thể hiện thông số của thư mục /run/shm
+
 6 thể hiện thông số của thư mục /run/user 
+
 7 thể hiện thông số của thư mục /sys/fs/cgroup
 
 Trên mỗi thư mụcngười dùng có thể thấy các thông số:
@@ -161,10 +167,15 @@ Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk
 <img src="http://i.imgur.com/R3lxmBF.png">
 
 1 thể hiện thông số của ổ đĩa sda
+
 2 thể hiện thông số của phân vùng sda1 trên sda
+
 3 thể hiện thông số của phân vùng sda2 trên sda
+
 4 thể hiện thông số của phân vùng sda5 trên sda
+
 5 thể hiện thông số của ổ đĩa sdb
+
 6 thể hiện thông số của phân vùng sdb1 trên sdb
 
 Trên mỗi phân vùng, người dùng có thể nhìn thấy tốc độ đọc ghi của:
