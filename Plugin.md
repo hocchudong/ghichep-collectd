@@ -184,7 +184,7 @@ Tốc độ copy của file:
 <img src="http://i.imgur.com/8N4EIIL.png">
 
 
-<img src="http://i.imgur.com/YU4HcjK.png">
+<img src="http://i.imgur.com/vIZuwRX.png">
 
 
 
