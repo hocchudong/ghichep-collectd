@@ -204,7 +204,8 @@ Nếu người dùng muốn collectd thu thập dữ liệu từ tất cả các
 Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong octets, còn thông số trong merged, operation và time hầu như không có sự thay đổi.
 
 Khi để speed là unlimited, tốc độ viết trong octets tăng mạnh, sau đó để giới hạn speed, tốc độ viết vẫn tăng nhưng tăng ít hơn. 
-Note: Tốc độ ghi trung bình của octets xấp xỉ 1000k/s
+
+**Note**: Tốc độ ghi trung bình của octets xấp xỉ 1000k/s
 
 <img src ="http://i.imgur.com/gyeGfmy.png">
 
