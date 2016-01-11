@@ -19,6 +19,11 @@
 - [3.3 Minh họa](#minhhoadisk)
 - [3.4 Mở rộng](#morongdisk)
 
+[4. Interface Plugin](#interface)
+- [4.1 Mô tả](#motainterface)
+- [4.2 Cách cấu hình](#cauhinhinterface)
+- [4.3 Minh họa](#minhhoainterface)
+- [4.4 Mở rộng](#moronginterface)
 
 <a name="modau"></a>
 
@@ -59,11 +64,10 @@ Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
 
 Để kiểm tra các thông số này trên máy ubuntu có thể dùng lệnh: free, top...
 
-<img src="http://i.imgur.com/kbAXm7Z.png">
+<img src="http://i.imgur.com/69ceHgf.png">
 
-<img src="http://i.imgur.com/Axkj33J.png">
 
-Note: used trong biểu đồ là used của memory sau khi trừ đi buffered và cached.
+Note: used (4) trong biểu đồ là used (a) của memory khi người dùng sử dụng lệnh free sau khi trừ đi buffered(b) và cached(a).
 
 
 <a name="df"></a>
@@ -217,4 +221,72 @@ Khi để speed là unlimited, tốc độ viết trong octets tăng mạnh, sau
 <img src="http://i.imgur.com/vIZuwRX.png">
 
 
+<a name="interface"></a>
+[4. Interface Plugin](#interface)
+- [3.1 Mô tả](#motainterface)
+- [3.2 Cách cấu hình](#cauhinhinterface)
+- [3.3 Minh họa](#minhhoainterface)
+- [3.4 Mở rộng](#moronginterface)
 
+
+#### 4. Interface Plugin
+
+<a name="motainterface"></a>
+##### 4.1 Mô tả
+
+Interface plugin thu thập dữ liệu về lưu lượng truy cập, số lượng gói trên mỗi giây và lỗi xảy ra trên các card mạng. 
+
+<a name="cauhinhinterface"></a>
+##### 4.2 Cách cấu hình.
+
+Người dùng cấu hình trên file collectd.conf bằng cách uncomment dòng LoadPlugin Interface
+
+```sh
+  vi /etc/collectd/collectd.conf
+```
+
+<img src="http://i.imgur.com/knqy110.png">
+
+<a name="minhhoainterface"></a>
+
+4.3 Minh họa.
+
+<img src="http://i.imgur.com/Afu9AUE.png"></a>
+
+Trên mỗi card mạng, người dùng có thể thu thập thông tin :
+
+1: errors (errors/s) : số lỗi trên một giây.
+
+2: octets (bit/s) tốc độ gửi và nhận dữ liệu trên một card mạng.
+
+3: packets (packets/s): số package gửi và nhận trên mỗi card mạng.
+
+<a name="moronginterface"></a>
+4.4 Mở rộng.
+
+Người dùng có thể cấu hình để collectd thu thập dữ liệu từ một card mạng hoặc tất cả các card mạng.
+
+Để collectd thu thập dữ liệu từ một card mạng, cấu hình trên file collectd.conf như sau:
+
+```sh
+<Plugin "interface">
+  Interface "eth0"
+  IgnoreSelected false
+</Plugin>
+```
+
+Để collectd thu thập dữ liệu trên tất cả các card mạng, cấu hình:
+
+```sh
+<Plugin "interface">
+  Interface "lo"
+  Interface "sit0"
+  IgnoreSelected true
+</Plugin>
+```
+
+Khi copy một tài liệu sang máy, người dùng có thể nhìn thìn octets trong interface có sự thay đổi rõ rệt, tốc độ nhận ở octets gần xấp xỉ với 1024k/s
+
+<img src="http://i.imgur.com/6IMjwLx.png">
+
+<img src="http://i.imgur.com/n0ZVstv.png"> 
