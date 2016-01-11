@@ -241,7 +241,7 @@ Người dùng cấu hình trên file collectd.conf bằng cách uncomment dòng
 
 <a name="minhhoainterface"></a>
 
-4.3 Minh họa.
+#####4.3 Minh họa.
 
 <img src="http://i.imgur.com/Afu9AUE.png"></a>
 
@@ -254,7 +254,7 @@ Trên mỗi card mạng, người dùng có thể thu thập thông tin :
 3: packets (packets/s): số package gửi và nhận trên mỗi card mạng.
 
 <a name="moronginterface"></a>
-4.4 Mở rộng.
+#####4.4 Mở rộng.
 
 Người dùng có thể cấu hình để collectd thu thập dữ liệu từ một card mạng hoặc tất cả các card mạng.
 
