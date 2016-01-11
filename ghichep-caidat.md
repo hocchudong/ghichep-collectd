@@ -5,7 +5,7 @@ Tham khảo link sau: https://launchpad.net/~rullmann/+archive/ubuntu/collectd n
 Trong hướng dẫn này sẽ nói về cách upgrade collectd từ 5.4 lên 5.5
 
 ####Step1 : Kiểm tra phiên bản hiện tại và backup file collectd.conf
-<src img="http://i.imgur.com/M8WYUKE.png"
+<src img="http://i.imgur.com/M8WYUKE.png">
 
   cp /etc/collectd/collectd.conf /etc/collectd/collectd.conf.bka
 
@@ -23,9 +23,9 @@ Trong hướng dẫn này sẽ nói về cách upgrade collectd từ 5.4 lên 5.
   apt-get install collectd -y
   
   Chọn N để giữ những cài đặt trong file collectd.conf
-  <src img="http://i.imgur.com/QEADgKc.png"
+  <src img="http://i.imgur.com/QEADgKc.png">
   
   apt-get upgrade collectd -y
   
 ####Step 5 : Kiểm tra lại phiên bản 
-<scr img="http://i.imgur.com/Nnyjv80.png"
+<scr img="http://i.imgur.com/Nnyjv80.png">
