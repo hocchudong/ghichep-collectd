@@ -221,14 +221,6 @@ Khi để speed là unlimited, tốc độ viết trong octets tăng mạnh, sau
 <img src="http://i.imgur.com/vIZuwRX.png">
 
 
-<a name="interface"></a>
-[4. Interface Plugin](#interface)
-- [3.1 Mô tả](#motainterface)
-- [3.2 Cách cấu hình](#cauhinhinterface)
-- [3.3 Minh họa](#minhhoainterface)
-- [3.4 Mở rộng](#moronginterface)
-
-
 #### 4. Interface Plugin
 
 <a name="motainterface"></a>
