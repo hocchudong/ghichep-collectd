@@ -18,14 +18,17 @@ Trong hướng dẫn này sẽ nói về cách upgrade collectd từ 5.4 lên 5.
   <img src="http://i.imgur.com/gdoHU6f.png">
   
 ####Step3 : Update PPA
-  apt-get update
+
+    apt-get update
+    
 ####Step 4 : Cài đặt và upgrade collectd
-  apt-get install collectd -y
+
+    apt-get install collectd -y
   
   Chọn N để giữ những cài đặt trong file collectd.conf
     <img src="http://i.imgur.com/QEADgKc.png">
-  
-  apt-get upgrade collectd -y
+    
+        apt-get upgrade collectd -y
   
 ####Step 5 : Kiểm tra lại phiên bản 
 <img src="http://i.imgur.com/Nnyjv80.png">
