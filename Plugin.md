@@ -285,7 +285,7 @@ Người dùng có thể cấu hình để collectd thu thập dữ liệu từ 
 </Plugin>
 ```
 
-Khi copy một tài liệu sang máy, người dùng có thể nhìn thìn octets trong interface có sự thay đổi rõ rệt, tốc độ nhận ở octets gần xấp xỉ với 1024k/s
+Khi copy một tài liệu sang máy, người dùng có thể nhìn thìn tốc độ nhận trên octets trong interface có sự thay đổi rõ rệt, tốc độ nhận ở octets gần xấp xỉ với 1024k/s
 
 <img src="http://i.imgur.com/6IMjwLx.png">
 
