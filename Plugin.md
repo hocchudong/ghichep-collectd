@@ -26,8 +26,12 @@
 - [4.3 Minh họa](#minhhoainterface)
 - [4.4 Mở rộng](#moronginterface)
 
-<a name="modau"></a>
+[5. CPU Plugin](#plugincpu)
+- [5.1 Mô tả](#moataplugincpu)
+- [5.2 Cách cấu hình](#cauhinhplugincpu)
+- [4.3 Minh họa](#minhhoaplugincpu)
 
+<a name="modau"></a>
 #### Mở đầu
 
 **Collectd** cung cấp một kho plugin để người dùng có thể sử dụng, người dùng có thể cấu hình trong file collectd.conf để lấy các thông số mà họ muốn. Sau khi **collectd** thu thập được dữ liệu nó sẽ truyền vào **Graphite**, **Graphite** thể hiện những thông số này dưới dạng biểu đồ.
@@ -332,3 +336,47 @@ Hình 11
 Hình 12
 
 <img src="http://i.imgur.com/n0ZVstv.png"> 
+
+
+<a name="plugincpu"></a>
+#### 5. Plugin CPU
+
+
+<a name="motaplugincpu"></a>
+##### 5.1 Mô tả
+Dùng để hiển thị tình trạng CPU đang sử dụng như thế nào.
+
+
+<a name="cauhinhplugincpu"></a>
+##### 5.2 Cách cấu hình 
+
+```sh
+# Khai bao su dung plugin cpu trong file config cua collectd tren client
+LoadPlugin cpu
+
+# Cac khai bao mo rong
+<Plugin cpu>
+  ReportByCpu false # Hiển thị CPU chung khi máy chủ có nhiều CPU
+  ReportByState true # Hien thi tat ca cac tham so ve tinh trang su dung CPU nhu:  "system", "user" and "idle
+  ValuesPercentage true # Hien thi theo phan tram (%) thay vi hien thi Jiffies mac dinh
+</Plugin>
+```
+
+
+<a name="minhhoaplugincpu"></a>
+##### 5.3 Minh họa
+Kết quả của plugin khi quan sát trên biểu đồ
+
+![plugincpu](/images/pluginCPU1.png)
+
+
+- Các tham số về CPU hiển thị theo dạng phần trăm (được thiết lập với tùy chọn `ValuesPercentage true`)
+- Các giá trị trong hình trên 
+```sh
+1 : là phầm trăm CPU ở trạng thái idle
+2 : phần trăm CPU mà user đang sử dụng.
+3 : biểu đồ thể hiện phần trăm CPU ở trạng thái idle
+4 : biểu đồ thể hiện phần trăm CPU mà user đang sử dụng.
+5 : Kết quả của lệnh top về phần trăm CPU ở trạng thái idle
+6 : Kết quả của lệnh top về phần trăm CPU mà user đang sử dụng.
+```
