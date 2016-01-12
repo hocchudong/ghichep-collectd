@@ -70,10 +70,16 @@ Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
 Để kiểm tra các thông số này trên máy ubuntu có thể dùng lệnh: free, top...
 
 Hình 3
+
 <img src="http://i.imgur.com/69ceHgf.png">
 
 
-Note: used (4) trong biểu đồ là used (a) của memory khi người dùng sử dụng lệnh free sau khi trừ đi buffered(b) và cached(a).
+Chú ý: 
+```sh 
+  used(4) = used(d) = used(a) - buffered(b)- cached(c)
+                160 = 358 -35 - 162
+
+```
 
 
 <a name="df"></a>
@@ -231,9 +237,11 @@ Hình 7
 
 
 Hình 8
+
 <img src="http://i.imgur.com/8N4EIIL.png">
 
 Hình 9
+
 <img src="http://i.imgur.com/vIZuwRX.png">
 
 
@@ -306,4 +314,5 @@ Hình 11
 <img src="http://i.imgur.com/6IMjwLx.png">
 
 Hình 12
+
 <img src="http://i.imgur.com/n0ZVstv.png"> 
