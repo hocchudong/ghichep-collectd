@@ -31,8 +31,9 @@
 
 **Collectd** cung cấp một kho plugin để người dùng có thể sử dụng, người dùng có thể cấu hình trong file collectd.conf để lấy các thông số mà họ muốn. Sau khi **collectd** thu thập được dữ liệu nó sẽ truyền vào **Graphite**, **Graphite** thể hiện những thông số này dưới dạng biểu đồ.
 
+Hình 1
 <img src="http://i.imgur.com/VNIrykz.png">
-                Hình 1
+
 
 
 
@@ -50,11 +51,14 @@ Memory plugin thu thập thông tin về bộ nhớ  vật lý của máy ví d�
 ```sh
   vi /etc/collectd/collectd.conf
 ```
-<img src="http://i.imgur.com/24GmsHg.png">
+```sh 
+  LoadPlugin memory
+```
 
 <a name="minhhoamemory"></a>
 ##### 1.3 Minh họa
 
+Hình 2
 <img src ="http://i.imgur.com/4EC16cX.png">
 
 Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
@@ -65,6 +69,7 @@ Biểu đồ trên giao diện web của Graphite thể hiện thông tin về:
 
 Để kiểm tra các thông số này trên máy ubuntu có thể dùng lệnh: free, top...
 
+Hình 3
 <img src="http://i.imgur.com/69ceHgf.png">
 
 
@@ -88,13 +93,17 @@ df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví d
   vi /etc/collectd/collectd.conf
 ```
 
-<img src= "http://i.imgur.com/nLCHlao.png">
+```sh
+  LoadPlugin df
+```
 
 <a name="minhhoadf"></a>
 ##### 2.3 Minh họa.
 
+Hình 4
 <img src="http://i.imgur.com/aK998kV.png">
 
+```sh
 1: thể hiện thông số của thư mục dev
 
 2: thể hiện thông số của thư mục root
@@ -108,6 +117,7 @@ df plugin thu thập thông tin về việc sử dụng hệ thống file. Ví d
 6: thể hiện thông số của thư mục /run/user 
 
 7: thể hiện thông số của thư mục /sys/fs/cgroup
+```
 
 Trên mỗi thư mụcngười dùng có thể thấy các thông số:
 - free (1.1)
@@ -117,6 +127,8 @@ Trên mỗi thư mụcngười dùng có thể thấy các thông số:
 Trong đó total = free + reserved + used 
 
 Để kiểm tra trên máy ubuntu ổ đĩa đã được sử dụng bao nhiêu và còn trống bao nhiêu sử dụng lệnh **df -m** để dữ liệu hiển thị dưới dạng MB.
+
+Hình 5
 
 <img src="http://i.imgur.com/WSQt0AQ.png">
 
@@ -163,14 +175,17 @@ Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk
 ```sh
   vi /etc/collectd/collectd.conf
 ```
-
-<img src="http://i.imgur.com/nLCHlao.png">
+```sh
+LoadPlugin disk
+```
 
 <a name="minhhoadisk"></a>
 ##### 3.3 Minh họa.
 
+Hình 6
 <img src="http://i.imgur.com/6AotRFJ.png">
 
+```sh
 1: thể hiện thông số của ổ đĩa sda
 
 2: thể hiện thông số của phân vùng sda1 trên sda
@@ -182,7 +197,7 @@ Tương tự như memory and df plugin, người dùng uncomment LoadPlugin disk
 5: thể hiện thông số của ổ đĩa sdb
 
 6: thể hiện thông số của phân vùng sdb1 trên sdb
-
+```
 Trên mỗi phân vùng, người dùng có thể nhìn thấy tốc độ đọc ghi của:
 
 - merged (Operations/s) (1.1)
@@ -210,15 +225,15 @@ Khi copy một file sang máy ubuntu, có thể thấy sự thay đổi trong oc
 
 Khi để speed là unlimited, tốc độ viết trong octets tăng mạnh, sau đó để giới hạn speed, tốc độ viết vẫn tăng nhưng tăng ít hơn. 
 
-
+Hình 7
 
 <img src ="http://i.imgur.com/gyeGfmy.png">
 
 
-
+Hình 8
 <img src="http://i.imgur.com/8N4EIIL.png">
 
-
+Hình 9
 <img src="http://i.imgur.com/vIZuwRX.png">
 
 
@@ -238,15 +253,21 @@ Người dùng cấu hình trên file collectd.conf bằng cách uncomment dòng
   vi /etc/collectd/collectd.conf
 ```
 
-<img src="http://i.imgur.com/knqy110.png">
+```sh 
+LoadPlugin network
+
+```
 
 <a name="minhhoainterface"></a>
 
 #####4.3 Minh họa.
 
+Hình 10
 <img src="http://i.imgur.com/Afu9AUE.png"></a>
 
 Trên mỗi card mạng, người dùng có thể thu thập thông tin :
+
+```sh
 
 1: errors (errors/s) : số lỗi trên một giây.
 
@@ -254,6 +275,7 @@ Trên mỗi card mạng, người dùng có thể thu thập thông tin :
 
 3: packets (packets/s): số package gửi và nhận trên mỗi card mạng.
 
+```
 <a name="moronginterface"></a>
 #####4.4 Mở rộng.
 
@@ -280,6 +302,8 @@ Người dùng có thể cấu hình để collectd thu thập dữ liệu từ 
 
 Khi copy một tài liệu sang máy, người dùng có thể nhìn thìn tốc độ nhận trên octets trong interface có sự thay đổi rõ rệt, tốc độ nhận ở octets gần xấp xỉ với 1024k/s
 
+Hình 11
 <img src="http://i.imgur.com/6IMjwLx.png">
 
+Hình 12
 <img src="http://i.imgur.com/n0ZVstv.png"> 
