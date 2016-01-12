@@ -6,6 +6,7 @@
 - [1.1 Mô tả](#motamemory)
 - [1.2 Cách cấu hình](#cauhinhmemory)
 - [1.3 Minh họa](#minhhoamemory)
+- [1.4 Mở rộng](#morongmemory)
 
 [2. df Plugin](#df)
 - [2.1 Mô tả](#motadf)
@@ -81,6 +82,21 @@ Chú ý:
 
 ```
 
+<a name="morongmemory"></a>
+##### 1.4 Mở rộng
+
+Ở bản 5.5 người dùng có thể cấu hình để collectd có thể hiện thị thông số thu thập được dưới dạng phần trăm (%)
+
+```sh 
+	vi /etc/collectd/collectd.conf
+```
+
+```sh 
+	<Plugin memory>
+		ValuesAbsolute false
+        ValuesPercentage true
+	</Plugin>
+```
 
 <a name="df"></a>
 #### 2. df Plugin.
