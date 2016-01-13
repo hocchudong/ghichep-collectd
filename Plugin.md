@@ -35,7 +35,7 @@
 - [6.1 Mô tả](#motaload)
 - [6.2 Cách cấu hình](#cauhinhload)
 - [6.3 Minh họa](#minhhoaload)
-
+- [6.4 Mở rộng](#morongload)
 <a name="modau"></a>
 #### Mở đầu
 
@@ -425,7 +425,22 @@ Hình 14
 
 Người dùng có thể dùng lệnh uptime, top để kiểm tra tải hệ thống trên máy.
 
+Hình 15
+
 ![load](/images/pluginload2.png)
 
+<a name="morongload"></a>
+#####6.4 Mở rộng
+ 
+Khi người dùng cấu hình 'ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
+```sh
+<Plugin load>
+  ReportRelative true # thông sổ hiện thị là tải hệ thống chia cho số lõi của CPU có sẵn
+</Plugin>
+```
+Để kiểm tra số CPU core, người dùng có thể sử dụng câu lệnh nproc
 
-
+Hình 16
+ ![load](/images/pluginload4.png)
+ 
+ Trong trường hợp này số CPU core bằng 1.
