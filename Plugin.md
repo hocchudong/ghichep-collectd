@@ -29,7 +29,12 @@
 [5. CPU Plugin](#plugincpu)
 - [5.1 Mô tả](#moataplugincpu)
 - [5.2 Cách cấu hình](#cauhinhplugincpu)
-- [4.3 Minh họa](#minhhoaplugincpu)
+- [5.3 Minh họa](#minhhoaplugincpu)
+
+[6. Load Plugin](#load)
+- [6.1 Mô tả](#moatapload)
+- [6.2 Cách cấu hình](#cauhinhload)
+- [6.3 Minh họa](#minhhoaload)
 
 <a name="modau"></a>
 #### Mở đầu
@@ -367,6 +372,8 @@ LoadPlugin cpu
 ##### 5.3 Minh họa
 Kết quả của plugin khi quan sát trên biểu đồ
 
+Hình 13 
+
 ![plugincpu](/images/pluginCPU1.png)
 
 
@@ -380,3 +387,45 @@ Kết quả của plugin khi quan sát trên biểu đồ
 5 : Kết quả của lệnh top về phần trăm CPU ở trạng thái idle
 6 : Kết quả của lệnh top về phần trăm CPU mà user đang sử dụng.
 ```
+
+< a name="load"></a>
+#### 6. Load Plugin.
+
+<a name="motaload"></a>
+#####6.1 Mô tả.
+
+Load plugin thu thập dữ liệu về tải hệ thống. Những con số này đưa ra một cái nhìn tổng quán về việc sử dụng máy. 
+
+<a name="cauhinhload"></a>
+#####6.2 Cách cấu hình.
+
+```sh
+# Khai bao su dung plugin load trong file config cua collectd tren client
+LoadPlugin load
+
+# Cac khai bao mo rong
+<Plugin load>
+  ReportRelative true # thông sổ hiện thị là tải hệ thống chia cho số lõi của CPU có sẵn
+</Plugin>
+```
+
+<a name="minhhoaload"></a>
+#####6.3 Minh họa.
+
+Hình 14 
+
+![load](/images/pluginload1.png)
+
+```sh 
+1: tải hệ thống trong 15 phút
+2: tải hệ thống trong 5 phút
+3: tải hệ thống trong 1 phút
+4: load-relative xuất hiện khi cấu hình trong file collectd.conf 'ReportRelative true'
+```
+
+Người dùng có thể dùng lệnh uptime, top để kiểm tra tải hệ thống trên máy.
+
+![load](/images/pluginload2.png)
+
+
+
