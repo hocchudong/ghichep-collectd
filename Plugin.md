@@ -36,6 +36,7 @@
 - [6.2 Cách cấu hình](#cauhinhload)
 - [6.3 Minh họa](#minhhoaload)
 - [6.4 Mở rộng](#morongload)
+
 <a name="modau"></a>
 #### Mở đầu
 
@@ -49,6 +50,7 @@ Hình 1
 
 <a name="memory"></a>
 #### 1. Memory Plugin.
+
 <a name="motamemory"></a>
 ##### 1.1 Mô tả.
 
@@ -398,6 +400,10 @@ Load plugin thu thập dữ liệu về tải hệ thống. Những con số nà
 
 <a name="cauhinhload"></a>
 #####6.2 Cách cấu hình.
+
+```sh 
+	vi /etc/collectd/collectd.conf
+```
 
 ```sh
 # Khai bao su dung plugin load trong file config cua collectd tren client
