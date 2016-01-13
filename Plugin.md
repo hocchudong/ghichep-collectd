@@ -443,4 +443,4 @@ Khi người dùng cấu hình 'ReportRelative true" dữ liệu trên biểu đ
 Hình 16
  ![load](/images/pluginload4.png)
  
- Trong trường hợp này số CPU core bằng 1.
+ Trong trường hợp này số CPU core bằng 1, nên số liệu trên biểu đồ bằng tải hệ thống chia cho 1.
