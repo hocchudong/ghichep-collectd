@@ -32,7 +32,7 @@
 - [5.3 Minh họa](#minhhoaplugincpu)
 
 [6. Load Plugin](#load)
-- [6.1 Mô tả](#moatapload)
+- [6.1 Mô tả](#motaload)
 - [6.2 Cách cấu hình](#cauhinhload)
 - [6.3 Minh họa](#minhhoaload)
 
@@ -388,7 +388,7 @@ Hình 13
 6 : Kết quả của lệnh top về phần trăm CPU mà user đang sử dụng.
 ```
 
-< a name="load"></a>
+<a name="load"></a>
 #### 6. Load Plugin.
 
 <a name="motaload"></a>
