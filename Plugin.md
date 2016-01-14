@@ -38,7 +38,7 @@
 - [6.4 Mở rộng](#morongload)
 
 
-[7. tcpconns Plugin](#tcpcon)
+[7. TCPconns Plugin](#tcpcon)
 - [7.1 Mô tả](#motatcpcon)
 - [7.2 Cách cấu hình](#cauhinhtcpcon)
 - [7.3 Minh họa](#minhhoatcpcon)
@@ -521,8 +521,11 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 
 ```ssh
 	<Plugin "tcpconns">
+	
 	ListeningPorts false 	# Không lấy dữ liệu từ tất cả các port
+	
 	LocalPort "25" 	#tính số kêt nối trên port nội bộ (25 : port của mail)
+	
 	RemotePort "25" 	#tính số kêt nối trên port bên ngoài
 	</Plugin>
 ```
