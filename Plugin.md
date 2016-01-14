@@ -522,13 +522,9 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 ```sh
 
 <Plugin "tcpconns">
-
 	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
-	
 	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
-	
 	RemotePort "25" #tính số kêt nối trên port bên ngoài
-	
 </Plugin>
 
 
