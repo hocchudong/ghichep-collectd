@@ -519,7 +519,7 @@ Hình 18
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
-```ssh
+```sh 
 <Plugin "tcpconns">
 	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
 	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
