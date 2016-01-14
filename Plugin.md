@@ -37,6 +37,13 @@
 - [6.3 Minh họa](#minhhoaload)
 - [6.4 Mở rộng](#morongload)
 
+
+[7. TCPconns Plugin](#tcpcon)
+- [7.1 Mô tả](#motatcpcon)
+- [7.2 Cách cấu hình](#cauhinhtcpcon)
+- [7.3 Minh họa](#minhhoatcpcon)
+- [7.4 Mở rộng](#morongtcpcon)
+
 <a name="modau"></a>
 #### Mở đầu
 
@@ -447,6 +454,83 @@ Khi người dùng cấu hình 'ReportRelative true" dữ liệu trên biểu đ
 Để kiểm tra số CPU core, người dùng có thể sử dụng câu lệnh nproc
 
 Hình 16
+
  ![load](/images/pluginload4.png)
  
  Trong trường hợp này số CPU core bằng 1, nên số liệu trên biểu đồ bằng tải hệ thống chia cho 1.
+ 
+<a name="tcpcon"></a>
+#### 7. TCPconns Plugin.
+ 
+<a name="motatcp"></a>
+##### 7.1 Mô tả.
+
+TCPconns plugin thu thập dữ liệu về tổng số lượng kết nối TCP trên một port cụ thể hoặc tất cả các port.
+
+<a name="cauhinhtcpcon"></a>
+##### 7.2 Cách cấu hình.
+
+```sh
+# Khai bao su dung plugin cpu trong file config cua collectd tren client
+LoadPlugin tcpconns
+
+# Cac khai bao mo rong
+<Plugin tcpconns>
+	AllPortsSummary true # lấy giữ liệu về tổng số kết nối tcp trên tất cả các port
+</Plugin>
+```
+
+<a name="minhhoatcpcon"></a>
+#####7.3 Minh họa.
+
+Hình 17
+
+![tcpcon](/images/plugintcp1.png)
+
+```sh
+1: các kết nối tcp đã đóng
+2: các kết nối tcp đang chờ để đóng
+3: các kết nối tcp đang đóng
+4: cổng đã sẵn sàng nhận/ gửi dữ liệu với tcp
+5: các kết nối đang ở trạng thái chờ đợi 1 ACK cho một FIN đã gửi hoặc là chờ đợi một yêu cầu kết thúc kết nối
+6: các kết nối đã nhận được một ACK cho yêu cầu của mình để chấm dứt kết nối
+7: các kết nối đã gửi FIN riêng của mình và đang chờ đợi 1 ACK.
+8: đang đợi yêu cầu kết nối từ một TCP và cổng bất kỳ.
+9: đang đợi tcp ở xa gửi lại một tin báo nhận sau khi đã gửi cho TCP ở xa đó một tin báo nhận kết nối.
+10: đang đợi TCP ở xa gửi lại một gói tin TCP với các cờ SYN và ACK được bật
+11: đang đợi qua đủ thời gian để chắc chắn là TCP ở xa nhận được tin nhắn được tín báo nhận về yêu cầu kết thúc của nó.
+
+``` 
+
+
+Để kiểm tra các kết nối tcp, người dùng có thể dùng lệnh:
+
+```sh
+	 netstat -ant | awk '{print $6}' | sort | uniq -c | sort -n
+```
+
+Hình 18 
+
+![tcpcon](/images/plugintcp2.png)
+
+
+<a name="morongtcpcon.png></a>
+#####7.4 Mở rộng.
+
+Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
+
+```sh
+
+<Plugin "tcpconns">
+
+	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
+	
+	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
+	
+	RemotePort "25" #tính số kêt nối trên port bên ngoài
+	
+</Plugin>
+
+
+```
+
