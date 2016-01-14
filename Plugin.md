@@ -459,10 +459,10 @@ Hình 16
  
  Trong trường hợp này số CPU core bằng 1, nên số liệu trên biểu đồ bằng tải hệ thống chia cho 1.
  
- <a name="tcpcon"></a>
- #### 7. TCPconns Plugin.
+<a name="tcpcon"></a>
+#### 7. TCPconns Plugin.
  
- <a name="motatcp"></a>
+<a name="motatcp"></a>
 ##### 7.1 Mô tả.
 
 TCPconns plugin thu thập dữ liệu về tổng số lượng kết nối TCP trên một port cụ thể hoặc tất cả các port.
@@ -509,6 +509,8 @@ Hình 17
 	 netstat -ant | awk '{print $6}' | sort | uniq -c | sort -n
 ```
 
+Hình 18 
+
 ![tcpcon](/images/plugintcp2.png)
 
 
@@ -518,9 +520,9 @@ Hình 17
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
 ```ssh
-<Plugin "tcpconns">
-  ListeningPorts false 	# Không lấy dữ liệu từ tất cả các port
-  LocalPort "25" 	#tính số kêt nối trên port nội bộ (25 : port của mail)
-  RemotePort "25" 	#tính số kêt nối trên port bên ngoài
-</Plugin>
+	<Plugin "tcpconns">
+	ListeningPorts false 	# Không lấy dữ liệu từ tất cả các port
+	LocalPort "25" 	#tính số kêt nối trên port nội bộ (25 : port của mail)
+	RemotePort "25" 	#tính số kêt nối trên port bên ngoài
+	</Plugin>
 ```
