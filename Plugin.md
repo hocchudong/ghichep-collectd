@@ -514,19 +514,16 @@ Hình 18
 ![tcpcon](/images/plugintcp2.png)
 
 
-<a name="morongtcpcon.png></a>
+<a name="morongtcpcon.png"></a>
 #####7.4 Mở rộng.
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
 ```sh
-
 <Plugin "tcpconns">
 	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
 	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
 	RemotePort "25" #tính số kêt nối trên port bên ngoài
 </Plugin>
-
-
 ```
 
