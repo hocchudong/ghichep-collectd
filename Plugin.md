@@ -44,6 +44,12 @@
 - [7.3 Minh họa](#minhhoatcpcon)
 - [7.4 Mở rộng](#morongtcpcon)
 
+[8. Users Plugin](#users)
+- [8.1 Mô tả](#motausers)
+- [8.2 Cách cấu hình](#cauhinhusers)
+- [8.3 Minh họa](#minhhoausers)
+
+
 <a name="modau"></a>
 #### Mở đầu
 
@@ -514,7 +520,7 @@ Hình 18
 ![tcpcon](/images/plugintcp2.png)
 
 
-<a name="morongtcpcon.png></a>
+<a name="morongtcpcon.png"></a>
 #####7.4 Mở rộng.
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
@@ -534,3 +540,33 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 
 ```
 
+<a name="users"></a>
+####8. Users plugin.
+
+<a name="motausers"></a>
+#####8.1 Mô tả.
+
+Users plugin thống kê tổng số người dùng đăng nhập vào hệ thống.
+
+<a name="cauhinhusers"></a>
+#####8.2. Cách cấu hình.
+
+```sh
+# Khai bao su dung plugin users trong file config cua collectd tren client
+LoadPlugin users
+```
+
+<a name="minhhoausers"></a>
+#####8.3 Minh họa.
+
+Hình 19
+
+![users](/images/pluginusers1.png)
+
+Biếu đồ trên graphite cho thấy có 4 người dùng đang đăng nhập vào hệ thống. Để kiểm tra số người dùng trên máy, có thể dùng câu lệnh uptime, w.
+
+Hình 20
+
+![users](/images/pluginuser2.png)
+
+Chú ý: **w** không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
