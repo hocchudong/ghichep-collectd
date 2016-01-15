@@ -1,5 +1,12 @@
 Trong trường hợp người dùng không muốn theo dõi hoạt động của một máy hoặc một plugin  nào đó, người dùng có thế xóa nó đi khỏi cơ sở dữ liệu của Graphite.
 
+Đế xóa một máy hoặc một plugin, việc đầu tiên người dùng phải làm là tắt dịch vụ collectd trên máy muốn xóa:
+
+```sh
+service collectd stop
+```
+
+
 #### 1. Xóa giám sát một máy.
 
  Truy cập vào máy Graphite, vào thư mục /var/lib/graphite/whisper và kiểm tra xem nó đang giám sát những máy nào: 
