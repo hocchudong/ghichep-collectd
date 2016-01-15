@@ -575,7 +575,7 @@ Hình 20
 
 *Chú ý*: *"w"* không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
 
-<a name="uptime"</a>
+<a name="uptime"></a>
 ####9. Uptime plugin.
 
 <a name="motauptime"></a>
@@ -586,7 +586,7 @@ Uptime plugin theo dõi thời gian hoạt động của hệ thống.
 <a name="cauhinhuptime"></a>
 #####9.2 Cách cấu hình.
 
-`sh
+```sh
 # Khai bao su dung plugin uptime trong file config cua collectd tren client
 LoadPlugin uptime
 ```
