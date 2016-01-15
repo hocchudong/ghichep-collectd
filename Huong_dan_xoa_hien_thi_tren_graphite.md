@@ -10,6 +10,7 @@ Trong trường hợp người dùng không muốn theo dõi hoạt động củ
  ```
  
  Kết quả: 
+ 
  ![](/images/huongdan_xoamay1.png)
  
  Sau đó dùng lệnh rm -rf để xóa máy người dùng muốn, ở đây mình xóa máy collectubuntu2
