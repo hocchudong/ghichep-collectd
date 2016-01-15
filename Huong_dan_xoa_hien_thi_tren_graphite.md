@@ -5,7 +5,7 @@ Trong trường hợp người dùng không muốn theo dõi hoạt động củ
  Truy cập vào máy Graphite, vào thư mục /var/lib/graphite/whisper và kiểm tra xem nó đang giám sát những máy nào: 
  
  ```sh 
- /var/lib/graphite/whisper
+ cd /var/lib/graphite/whisper
  ll
  ```
  
