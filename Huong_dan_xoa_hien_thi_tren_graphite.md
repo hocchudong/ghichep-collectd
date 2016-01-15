@@ -1,4 +1,4 @@
-Trong trường hợp người dùng không muốn theo dõi hoạt động của một máy hoặc không muốn dùng một plugin  nào đó, người dùng có thế xóa nó đi khỏi cơ sở dữ liệu của Graphite.
+Trong trường hợp người dùng không muốn theo dõi hoạt động của một máy hoặc một plugin  nào đó, người dùng có thế xóa nó đi khỏi cơ sở dữ liệu của Graphite.
 
 #### 1. Xóa giám sát một máy.
 
