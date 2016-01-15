@@ -8,4 +8,38 @@ Trong trường hợp người dùng không muốn theo dõi hoạt động củ
  /var/lib/graphite/whisper
  ll
  ```
- !(/images/huongdan_xoamay1.png)
+ 
+ Kết quả: 
+ ![](/images/huongdan_xoamay1.png)
+ 
+ Sau đó dùng lệnh rm -rf để xóa máy người dùng muốn, ở đây mình xóa máy collectubuntu2
+ 
+ ```sh
+  rm -rf collectdubuntu2
+ ```
+ 
+ Kiểm tra lại số máy:
+ 
+ ![](/images/huongdan_xoamay2.png)
+ 
+#### 2. Xóa một plugin.
+
+Tương tự như xóa một máy, người dùng vào thư mục /var/lib/graphite/whisper và vào một máy mà người dùng muốn xóa plugin:
+
+```sh
+cd /var/lib/graphite/whisper/collectdubuntu/
+ll
+```
+Kết quả:
+
+![](/images/huongdan_xoaplugin1.png)
+
+Dùng lệnh rm -rf để xóa plugin muốn xóa, ở đây mình xóa *users plugin*
+
+```sh 
+	rm -rf users
+```
+
+Kiểm tra lại plugin
+
+![](/images/huongdan_xoaplugin2.png)
