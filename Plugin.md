@@ -49,6 +49,10 @@
 - [8.2 Cách cấu hình](#cauhinhusers)
 - [8.3 Minh họa](#minhhoausers)
 
+[9. Uptime Plugin](#uptime)
+- [9.1 Mô tả](#motauptime)
+- [9.2 Cách cấu hình](#cauhinhuptime)
+- [9.3 Minh họa](#minhhoauptime)
 
 <a name="modau"></a>
 #### Mở đầu
@@ -526,11 +530,18 @@ Hình 18
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
 ```sh
+
 <Plugin "tcpconns">
+
 	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
+	
 	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
+	
 	RemotePort "25" #tính số kêt nối trên port bên ngoài
+	
 </Plugin>
+
+
 ```
 
 <a name="users"></a>
@@ -560,6 +571,6 @@ Biếu đồ trên graphite cho thấy có 4 người dùng đang đăng nhập 
 
 Hình 20
 
-![users](/images/pluginuser2.png)
+![users](/images/pluginusers2.png)
 
 Chú ý: **w** không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
