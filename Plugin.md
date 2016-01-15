@@ -44,6 +44,16 @@
 - [7.3 Minh họa](#minhhoatcpcon)
 - [7.4 Mở rộng](#morongtcpcon)
 
+[8. Users Plugin](#users)
+- [8.1 Mô tả](#motausers)
+- [8.2 Cách cấu hình](#cauhinhusers)
+- [8.3 Minh họa](#minhhoausers)
+
+[9. Uptime Plugin](#uptime)
+- [9.1 Mô tả](#motauptime)
+- [9.2 Cách cấu hình](#cauhinhuptime)
+- [9.3 Minh họa](#minhhoauptime)
+
 <a name="modau"></a>
 #### Mở đầu
 
@@ -93,7 +103,7 @@ Hình 3
 <img src="http://i.imgur.com/69ceHgf.png">
 
 
-Chú ý: 
+*Chú ý*: 
 ```sh 
   used(4) = used(d) = used(a) - buffered(b)- cached(c)
                 160 = 358 -35 - 162
@@ -436,7 +446,7 @@ Hình 14
 4: load-relative xuất hiện khi cấu hình trong file collectd.conf 'ReportRelative true'
 ```
 
-Người dùng có thể dùng lệnh uptime, top để kiểm tra tải hệ thống trên máy.
+Người dùng có thể dùng lệnh *uptime*, *top* để kiểm tra tải hệ thống trên máy.
 
 Hình 15
 
@@ -445,7 +455,7 @@ Hình 15
 <a name="morongload"></a>
 #####6.4 Mở rộng
  
-Khi người dùng cấu hình 'ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
+Khi người dùng cấu hình "ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
 ```sh
 <Plugin load>
   ReportRelative true # thông sổ hiện thị là tải hệ thống chia cho số lõi của CPU có sẵn
@@ -503,7 +513,7 @@ Hình 17
 ``` 
 
 
-Để kiểm tra các kết nối tcp, người dùng có thể dùng lệnh:
+Để kiểm tra các kết nối tcp người dùng có thể dùng lệnh *ss* hoặc:
 
 ```sh
 	 netstat -ant | awk '{print $6}' | sort | uniq -c | sort -n
@@ -514,7 +524,7 @@ Hình 18
 ![tcpcon](/images/plugintcp2.png)
 
 
-<a name="morongtcpcon.png></a>
+<a name="morongtcpcon.png"></a>
 #####7.4 Mở rộng.
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
@@ -522,15 +532,68 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 ```sh
 
 <Plugin "tcpconns">
-
-	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
-	
-	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
-	
-	RemotePort "25" #tính số kêt nối trên port bên ngoài
-	
+	ListeningPorts false # Không lấy dữ liệu từ tất cả các port	
+	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)	
+	RemotePort "25" #tính số kêt nối trên port bên ngoài	
 </Plugin>
 
 
 ```
 
+<a name="users"></a>
+####8. Users plugin.
+
+<a name="motausers"></a>
+#####8.1 Mô tả.
+
+Users plugin thống kê tổng số người dùng đăng nhập vào hệ thống.
+
+<a name="cauhinhusers"></a>
+#####8.2. Cách cấu hình.
+
+```sh
+# Khai bao su dung plugin users trong file config cua collectd tren client
+LoadPlugin users
+```
+
+<a name="minhhoausers"></a>
+#####8.3 Minh họa.
+
+Hình 19
+
+![users](/images/pluginusers1.png)
+
+Biếu đồ trên graphite cho thấy có 4 người dùng đang đăng nhập vào hệ thống. Để kiểm tra số người dùng trên máy, có thể dùng câu lệnh *uptime*, *w*.
+
+Hình 20
+
+![users](/images/pluginusers2.png)
+
+*Chú ý*: *"w"* không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
+
+<a name="uptime"></a>
+####9. Uptime plugin.
+
+<a name="motauptime"></a>
+#####9.1 Mô tả.
+ 
+Uptime plugin theo dõi thời gian hoạt động của hệ thống.
+
+<a name="cauhinhuptime"></a>
+#####9.2 Cách cấu hình.
+
+```sh
+# Khai bao su dung plugin uptime trong file config cua collectd tren client
+LoadPlugin uptime
+```
+
+<a name="minhhoauptime"></a>
+#####9.3 Minh họa.
+
+Người dùng có thể dùng *uptime* để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
+
+Hình 21
+
+![uptime](/images/pluginuptime1.png)
+
+*Chú ý*: máy đã bật được 1h 10 phút = 70 phút = 70 x 60 = 4200 giây (s)
