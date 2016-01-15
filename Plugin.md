@@ -103,7 +103,7 @@ Hình 3
 <img src="http://i.imgur.com/69ceHgf.png">
 
 
-Chú ý: 
+*Chú ý*: 
 ```sh 
   used(4) = used(d) = used(a) - buffered(b)- cached(c)
                 160 = 358 -35 - 162
@@ -573,4 +573,31 @@ Hình 20
 
 ![users](/images/pluginusers2.png)
 
-Chú ý: **w** không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
+*Chú ý*: *"w"* không chỉ in ra số lượng người dùng đăng nhập, nó còn in ra danh tính của người dùng. 
+
+<a name="uptime"</a>
+####9. Uptime plugin.
+
+<a name="motauptime"></a>
+#####9.1 Mô tả.
+ 
+Uptime plugin theo dõi thời gian hoạt động của hệ thống.
+
+<a name="cauhinhuptime"></a>
+#####9.2 Cách cấu hình.
+
+`sh
+# Khai bao su dung plugin uptime trong file config cua collectd tren client
+LoadPlugin uptime
+```
+
+<a name="minhhoauptime"></a>
+#####9.3 Minh họa.
+
+Người dùng có thể dùng uptime để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
+
+Hình 21
+
+![uptime](/images/pluginuptime1.png)
+
+*Chú ý*: máy đã bật được 1h 10 phút = (60*60) + (10*60) = 4200 giây (s)
