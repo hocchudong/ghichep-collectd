@@ -13,7 +13,7 @@ Trong trường hợp người dùng không muốn theo dõi hoạt động củ
  
  ![](/images/huongdan_xoamay1.png)
  
- Sau đó dùng lệnh rm -rf để xóa máy người dùng muốn, ở đây mình xóa máy collectubuntu2
+ Sau đó dùng lệnh rm -rf để xóa máy người dùng muốn, ở đây mình xóa máy ***collectubuntu2***
  
  ```sh
   rm -rf collectdubuntu2
@@ -35,7 +35,7 @@ Kết quả:
 
 ![](/images/huongdan_xoaplugin1.png)
 
-Dùng lệnh rm -rf để xóa plugin muốn xóa, ở đây mình xóa *users plugin*
+Dùng lệnh rm -rf để xóa plugin muốn xóa, ở đây mình xóa ***users plugin***
 
 ```sh 
 	rm -rf users
