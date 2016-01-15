@@ -446,7 +446,7 @@ Hình 14
 4: load-relative xuất hiện khi cấu hình trong file collectd.conf 'ReportRelative true'
 ```
 
-Người dùng có thể dùng lệnh uptime, top để kiểm tra tải hệ thống trên máy.
+Người dùng có thể dùng lệnh *uptime*, *top* để kiểm tra tải hệ thống trên máy.
 
 Hình 15
 
@@ -455,7 +455,7 @@ Hình 15
 <a name="morongload"></a>
 #####6.4 Mở rộng
  
-Khi người dùng cấu hình 'ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
+Khi người dùng cấu hình "ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
 ```sh
 <Plugin load>
   ReportRelative true # thông sổ hiện thị là tải hệ thống chia cho số lõi của CPU có sẵn
@@ -513,7 +513,7 @@ Hình 17
 ``` 
 
 
-Để kiểm tra các kết nối tcp, người dùng có thể dùng lệnh:
+Để kiểm tra các kết nối tcp người dùng có thể dùng lệnh *ss* hoặc:
 
 ```sh
 	 netstat -ant | awk '{print $6}' | sort | uniq -c | sort -n
@@ -532,13 +532,9 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 ```sh
 
 <Plugin "tcpconns">
-
-	ListeningPorts false # Không lấy dữ liệu từ tất cả các port
-	
-	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)
-	
-	RemotePort "25" #tính số kêt nối trên port bên ngoài
-	
+	ListeningPorts false # Không lấy dữ liệu từ tất cả các port	
+	LocalPort "25" #tính số kêt nối trên port nội bộ (25 : port của mail)	
+	RemotePort "25" #tính số kêt nối trên port bên ngoài	
 </Plugin>
 
 
@@ -567,7 +563,7 @@ Hình 19
 
 ![users](/images/pluginusers1.png)
 
-Biếu đồ trên graphite cho thấy có 4 người dùng đang đăng nhập vào hệ thống. Để kiểm tra số người dùng trên máy, có thể dùng câu lệnh uptime, w.
+Biếu đồ trên graphite cho thấy có 4 người dùng đang đăng nhập vào hệ thống. Để kiểm tra số người dùng trên máy, có thể dùng câu lệnh *uptime*, *w*.
 
 Hình 20
 
@@ -594,10 +590,10 @@ LoadPlugin uptime
 <a name="minhhoauptime"></a>
 #####9.3 Minh họa.
 
-Người dùng có thể dùng uptime để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
+Người dùng có thể dùng *uptime* để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
 
 Hình 21
 
 ![uptime](/images/pluginuptime1.png)
 
-*Chú ý*: máy đã bật được 1h 10 phút = (60 x 60) + (10 x 60) = 4200 giây (s)
+*Chú ý*: máy đã bật được 1h 10 phút = 70 phút = 70 x 60 = 4200 giây (s)
