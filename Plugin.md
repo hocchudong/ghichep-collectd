@@ -600,4 +600,4 @@ Hình 21
 
 ![uptime](/images/pluginuptime1.png)
 
-*Chú ý*: máy đã bật được 1h 10 phút = (60*60) + (10*60) = 4200 giây (s)
+*Chú ý*: máy đã bật được 1h 10 phút = (60 x 60) + (10 x 60) = 4200 giây (s)
