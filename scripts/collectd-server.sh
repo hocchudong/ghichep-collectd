@@ -18,19 +18,19 @@ LoadPlugin syslog
 <Plugin syslog>
         LogLevel info
 </Plugin>
-LoadPlugin battery
+# LoadPlugin battery
 LoadPlugin cpu
 LoadPlugin df
-LoadPlugin disk
-LoadPlugin entropy
+# LoadPlugin disk
+# LoadPlugin entropy
 LoadPlugin interface
-LoadPlugin irq
-LoadPlugin load
+# LoadPlugin irq
+# LoadPlugin load
 LoadPlugin memory
 LoadPlugin network
 LoadPlugin processes
 LoadPlugin rrdtool
-LoadPlugin swap
+# LoadPlugin swap
 LoadPlugin users
 LoadPlugin write_graphite
 <Plugin apache>
@@ -60,9 +60,17 @@ IgnoreSelected true
 <Plugin network>
 Listen "*" "2003"
 </Plugin>
+
 <Plugin rrdtool>
 DataDir "/var/lib/collectd/rrd"
 </Plugin>
+
+# Khai bao de hien thi RAM theo dang % thay vi dung luong
+<Plugin memory>
+        ValuesAbsolute false
+        ValuesPercentage true
+</Plugin>
+
 <Plugin write_graphite>
 <Node "graphing">
         Host "localhost"
