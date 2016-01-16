@@ -4,6 +4,9 @@ echo $ipserver
 read -p "hostname->" hostname
 echo $hostname
 #-----------------------------------------------------------------------
+# Khai bao repos cho Collectd 5.5
+add-apt-repository -y ppa:rullmann/collectd
+
 apt-get update && apt-get -y dist-upgrade && apt-get upgrade -y
 echo "---------install git-----------------------"
 apt-get install git -y
@@ -32,17 +35,17 @@ LoadPlugin syslog
 #LoadPlugin battery
 LoadPlugin cpu
 LoadPlugin df
-LoadPlugin disk
-LoadPlugin entropy
+# LoadPlugin disk
+# LoadPlugin entropy
 LoadPlugin interface
-LoadPlugin irq
-LoadPlugin load
+# LoadPlugin irq
+# LoadPlugin load
 LoadPlugin memory
 LoadPlugin network
 LoadPlugin processes
 LoadPlugin rrdtool
-LoadPlugin swap
-LoadPlugin users
+# LoadPlugin swap
+# LoadPlugin users
 <Plugin interface>
   Interface "eth0"
   IgnoreSelected false
