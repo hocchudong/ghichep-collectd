@@ -39,6 +39,8 @@ LoadPlugin write_graphite
       Server "apache"
 </Instance>
 </Plugin>
+
+
 <Plugin df>
         Device "/dev/sda1"
         MountPoint "/"
@@ -53,6 +55,7 @@ FSType fusectl
 FSType cgroup
 IgnoreSelected true
 </Plugin>
+
 <Plugin interface>
         Interface "eth0"
         IgnoreSelected false

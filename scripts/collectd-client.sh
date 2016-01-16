@@ -56,6 +56,22 @@ LoadPlugin rrdtool
    Server "$ipserver" "2003"
 </Plugin>
 
+#Khai bao cac tuy chon plugin cho df
+<Plugin df>
+        # ignore rootfs; else, the root file-system would appear twice, causing
+        # one of the updates to fail and spam the log
+        FSType rootfs
+        # ignore the usual virtual / temporary file-systems
+        FSType sysfs
+        FSType proc
+        FSType devtmpfs
+        FSType devpts
+        FSType tmpfs
+        FSType fusectl
+        FSType cgroup
+        IgnoreSelected true
+</Plugin>
+
 # Khai bao de hien thi RAM theo dang % thay vi dung luong
 <Plugin memory>
         ValuesAbsolute false
