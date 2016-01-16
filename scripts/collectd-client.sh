@@ -50,10 +50,25 @@ LoadPlugin rrdtool
   Interface "eth0"
   IgnoreSelected false
 </Plugin>
+
 <Plugin network>
     # client setup:
    Server "$ipserver" "2003"
 </Plugin>
+
+# Khai bao de hien thi RAM theo dang % thay vi dung luong
+<Plugin memory>
+        ValuesAbsolute false
+        ValuesPercentage true
+</Plugin>
+
+# Khao bao hien thi CPU theo dang % va gop cac CPU neu nhu co nhieu CPU (CPU1, CPU2)
+<Plugin cpu>
+  ReportByCpu false
+  ReportByState true
+  ValuesPercentage true
+</Plugin>
+
 <Plugin rrdtool>
     DataDir "/var/lib/collectd/rrd"
 </Plugin>

@@ -71,6 +71,13 @@ DataDir "/var/lib/collectd/rrd"
         ValuesPercentage true
 </Plugin>
 
+# Khao bao hien thi CPU theo dang % va gop cac CPU neu nhu co nhieu CPU (CPU1, CPU2)
+<Plugin cpu>
+  ReportByCpu false
+  ReportByState true
+  ValuesPercentage true
+</Plugin>
+
 <Plugin write_graphite>
 <Node "graphing">
         Host "localhost"
