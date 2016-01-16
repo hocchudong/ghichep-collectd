@@ -35,7 +35,7 @@ LoadPlugin syslog
 #LoadPlugin battery
 LoadPlugin cpu
 LoadPlugin df
-# LoadPlugin disk
+LoadPlugin disk
 # LoadPlugin entropy
 LoadPlugin interface
 # LoadPlugin irq
@@ -88,8 +88,10 @@ LoadPlugin rrdtool
 <Plugin rrdtool>
     DataDir "/var/lib/collectd/rrd"
 </Plugin>
-#Include "/etc/collectd/filters.conf"
-#Include "/etc/collectd/thresholds.conf"
+
+<Include "/etc/collectd/collectd.conf.d">
+        Filter "*.conf"
+</Include>
 EOF
 #------------------------------------------------------------------------
 echo "Khoi dong lai collected"

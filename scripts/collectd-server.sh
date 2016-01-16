@@ -21,7 +21,7 @@ LoadPlugin syslog
 # LoadPlugin battery
 LoadPlugin cpu
 LoadPlugin df
-# LoadPlugin disk
+LoadPlugin disk
 # LoadPlugin entropy
 LoadPlugin interface
 # LoadPlugin irq
@@ -41,19 +41,20 @@ LoadPlugin write_graphite
 </Plugin>
 
 
+#Khai bao cac tuy chon plugin cho df
 <Plugin df>
-        Device "/dev/sda1"
-        MountPoint "/"
-        FSType "ext4"
-FSType rootfs
-FSType sysfs
-FSType proc
-FSType devtmpfs
-FSType devpts
-FSType tmpfs
-FSType fusectl
-FSType cgroup
-IgnoreSelected true
+        # ignore rootfs; else, the root file-system would appear twice, causing
+        # one of the updates to fail and spam the log
+        FSType rootfs
+        # ignore the usual virtual / temporary file-systems
+        FSType sysfs
+        FSType proc
+        FSType devtmpfs
+        FSType devpts
+        FSType tmpfs
+        FSType fusectl
+        FSType cgroup
+        IgnoreSelected true
 </Plugin>
 
 <Plugin interface>
@@ -93,6 +94,7 @@ DataDir "/var/lib/collectd/rrd"
                 EscapeCharacter "_"
         </Node>
 </Plugin>
+
 <Include "/etc/collectd/collectd.conf.d">
         Filter "*.conf"
 </Include>
