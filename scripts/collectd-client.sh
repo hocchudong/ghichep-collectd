@@ -43,9 +43,9 @@ LoadPlugin interface
 LoadPlugin memory
 LoadPlugin network
 LoadPlugin processes
-LoadPlugin rrdtool
 # LoadPlugin swap
 # LoadPlugin users
+
 <Plugin interface>
   Interface "eth0"
   IgnoreSelected false
@@ -85,9 +85,6 @@ LoadPlugin rrdtool
   ValuesPercentage true
 </Plugin>
 
-<Plugin rrdtool>
-    DataDir "/var/lib/collectd/rrd"
-</Plugin>
 
 <Include "/etc/collectd/collectd.conf.d">
         Filter "*.conf"
