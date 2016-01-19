@@ -19,19 +19,19 @@ SEYREN_LOG_PATH=/var/log/seyren/
 export GRAPHITE_URL='http://172.16.69.234:80'
 export SEYREN_URL='http://172.16.69.216:8080'
 
-export SMTP_HOST=smtp.vdc.com.vn
+export SMTP_HOST=smtp.dia_chi_mail_server
 export SMTP_PORT=25
-export SMTP_FROM="mycloudvnn@vdc.com.vn"
-export SMTP_USERNAME=mycloudvnn@vdc.com.vn
-export SMTP_PASSWORD='Vdc1T@!ma1l'
+export SMTP_FROM="Dia_chi_email_nguoi_gui"
+export SMTP_USERNAME=Dia_chi_email_nguoi_gui
+export SMTP_PASSWORD='xxxxxxx'
 export SMTP_PROTOCOL=smtp
 
-export SLACK_TOKEN=xoxp-2849110835-2849110837-6246142643-fe17c6
+export SLACK_TOKEN=Chuoi_token_trong_slack
 export SLACK_USERNAME=congto
 
 TWILIO_ACCOUNT_SID=ACe5820aafa4d6d5d4e0811d363bcdd72f
-TWILIO_AUTH_TOKEN=8814f4d777eb843e5986b4fe7f705582
-TWILIO_PHONE_NUMBER=+12568139212
+TWILIO_AUTH_TOKEN=Chuoi_token_trong_twilio
+TWILIO_PHONE_NUMBER=+xxxx
 TWILIO_URL=https://api.twilio.com/2010-04-01/Accounts
 
 
