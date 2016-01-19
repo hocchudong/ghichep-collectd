@@ -7,7 +7,8 @@ echo $hostname
 # Khai bao repos cho Collectd 5.5
 add-apt-repository -y ppa:rullmann/collectd
 
-apt-get update && apt-get -y dist-upgrade && apt-get upgrade -y
+apt-get update 
+## apt-get -y dist-upgrade && apt-get upgrade -y
 echo "---------install git-----------------------"
 apt-get install git -y
 sleep 3
