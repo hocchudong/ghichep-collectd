@@ -35,7 +35,7 @@ LoadPlugin syslog
 #LoadPlugin battery
 LoadPlugin cpu
 LoadPlugin df
-LoadPlugin disk
+# LoadPlugin disk
 # LoadPlugin entropy
 LoadPlugin interface
 # LoadPlugin irq
