@@ -1,0 +1,98 @@
+#!/bin/bash -l
+# Seyren daemon
+# chkconfig: 345 20 80
+# description: Seyren Daemon
+# processname: seyren
+
+DAEMON_PATH="/usr/share/seyren"
+
+DAEMON="/usr/bin/java -jar $DAEMON_PATH/seyren-1.3.0.jar"
+DAEMONOPTS=""
+DAEMONUSER="seyren"
+
+NAME=seyren
+DESC="Seyren Daemon"
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+
+SEYREN_LOG_PATH=/var/log/seyren/
+export GRAPHITE_URL='http://172.16.69.234:80'
+export SEYREN_URL='http://172.16.69.216:8080'
+
+export SMTP_HOST=smtp.vdc.com.vn
+export SMTP_PORT=25
+export SMTP_FROM="mycloudvnn@vdc.com.vn"
+export SMTP_USERNAME=mycloudvnn@vdc.com.vn
+export SMTP_PASSWORD='Vdc1T@!ma1l'
+export SMTP_PROTOCOL=smtp
+
+export SLACK_TOKEN=xoxp-2849110835-2849110837-6246142643-fe17c6
+export SLACK_USERNAME=congto
+
+TWILIO_ACCOUNT_SID=ACe5820aafa4d6d5d4e0811d363bcdd72f
+TWILIO_AUTH_TOKEN=8814f4d777eb843e5986b4fe7f705582
+TWILIO_PHONE_NUMBER=+12568139212
+TWILIO_URL=https://api.twilio.com/2010-04-01/Accounts
+
+
+#HOSTNAME=`hostname`
+
+export SEYREN_LOG_PATH=/var/log/seyren/
+
+# [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+case "$1" in
+start)
+        printf "%-50s" "Starting $NAME..."
+#        printf $SEYREN_URL
+#        printf $GRAPHITE_URL
+    if [ ! -f $PIDFILE ]; then
+        start-stop-daemon  --start \
+                --chuid $DAEMONUSER    \
+                --chdir  $DAEMON_PATH \
+                --background \
+                --make-pidfile \
+                --pidfile $PIDFILE \
+                --exec /bin/bash -- -c "$DAEMON $DAEMONOPTS"
+        printf "\n"
+    else
+        printf "%s\n" "pidfile $PIDFILE already exists\n"
+    fi
+;;
+status)
+        printf "%-50s" "Checking $NAME..."
+        if [ -f $PIDFILE ]; then
+            PID=`cat $PIDFILE`
+            if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+                printf "%s\n" "Process dead but pidfile exists"
+            else
+                echo "Running"
+            fi
+        else
+            printf "%s\n" "Service not running"
+        fi
+;;
+stop)
+    printf "%-50s" "Stopping $NAME..."
+    if [ -f $PIDFILE ]; then
+        start-stop-daemon  --stop \
+                --chuid $DAEMONUSER    \
+                --chdir  $DAEMON_PATH \
+                --pidfile $PIDFILE
+        rm -f $PIDFILE
+        printf "\n"
+    else
+        printf "%s\n" "pidfile not found"
+    fi
+
+;;
+
+restart)
+        $0 stop
+        $0 start
+;;
+
+*)
+        echo "Usage: $0 {status|start|stop|restart}"
+        exit 1
+esac
