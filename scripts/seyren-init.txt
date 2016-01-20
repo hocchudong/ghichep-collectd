@@ -1,0 +1,25 @@
+
+
+## Tao user seyren
+useradd -r -s /bin/false seyren
+sudo mkdir /usr/share/seyren
+
+## Tai seyren 
+wget https://github.com/scobal/seyren/releases/download/1.3.0/seyren-1.3.0.jar
+mv seyren-1.3.0.jar /usr/share/seyren/
+sudo chown -R seyren:seyren /usr/share/seyren/
+
+mkdir /var/log/seyren
+chown seyren:seyren /var/log/seyren
+
+## Tai file de khai bao trong init.d cua ubuntu 14.04
+
+wget https://raw.githubusercontent.com/hocchudong/ghichep-graphite-collectd/master/scripts/seyren
+cp seyren /etc/init.d/seyren
+chmod +x /etc/init.d/seyren
+
+## cho phep seyren khoi dong cung OS va khoi dong seyren
+update-rc.d seyren defaults
+service seyren start
+service seyren status
+
