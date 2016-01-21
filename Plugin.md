@@ -621,17 +621,17 @@ Plugin OpenVPN đọc trạng thái file được duy trì bởi OpenVPN và thu
 StatusFile "/etc/openvpn/openvpn-status.log"
 StatusFile "/etc/openvpn/openvpn.log"
 
- # Collect one RRD for each logged in user
- CollectIndividualUsers false
- #
- # Aggregate number of connected users
- CollectUserCount true
- #
- # Store compression statistics
- CollectCompression false
- #
- # Use new NamingSchema
- ImprovedNamingSchema false
+# Collect one RRD for each logged in user
+CollectIndividualUsers false
+ 
+# Aggregate number of connected users
+CollectUserCount true
+ 
+# Store compression statistics
+CollectCompression false
+ 
+# Use new NamingSchema
+ImprovedNamingSchema false
 </Plugin>
 ```
 
