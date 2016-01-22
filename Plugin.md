@@ -54,6 +54,11 @@
 - [9.2 Cách cấu hình](#cauhinhuptime)
 - [9.3 Minh họa](#minhhoauptime)
 
+[10. OpenVPN Plugin](#openvpn)
+- [10.1 Mô tả](#motaopenvpn)
+- [10.2 Cách cấu hình](#cauhinhopenvpn)
+- [10.3 Minh họa](#minhhoaopenvpn)
+
 <a name="modau"></a>
 #### Mở đầu
 
@@ -597,3 +602,52 @@ Hình 21
 ![uptime](/images/pluginuptime1.png)
 
 *Chú ý*: máy đã bật được 1h 10 phút = 70 phút = 70 x 60 = 4200 giây (s)
+
+
+<a name="openvpn"></a>
+#### 10. OpenVPN
+
+<a name="motaopenvpn"></a>
+#####10.1 Mô tả.
+
+Plugin OpenVPN đọc trạng thái file được duy trì bởi OpenVPN và thu thập thống kê kết nối với client.
+
+<a name="cauhinhopenvpn"></a>
+##### 10.2 Cách cấu hình.
+
+```sh
+<Plugin "openvpn">
+# đường dẫn file ghi log
+StatusFile "/etc/openvpn/openvpn-status.log"
+StatusFile "/etc/openvpn/openvpn.log"
+
+# Collect one RRD for each logged in user
+CollectIndividualUsers false
+ 
+# Aggregate number of connected users
+CollectUserCount true
+ 
+# Store compression statistics
+CollectCompression false
+ 
+# Use new NamingSchema
+ImprovedNamingSchema false
+</Plugin>
+```
+
+Chú ý: Trong OpenVPN, nếu người dùng không cấu hình thì log sẽ được tự động ghi vào /var/log/syslog. Vì vậy, người dùng nên cấu hình trong file server.conf trong OpenVPN để log được ghi vào file như người dùng mong muốn.
+
+```sh
+status openvpn-status.log
+log         openvpn.log
+```
+
+<a name="minhhoaopenvpn"></a>
+#####10.3 Minh họa.
+
+<img src="http://i.imgur.com/7hnmaw5.png">
+
+
+```sh
+1. Số người dùng kết nối OpenVPN.
+```
