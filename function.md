@@ -46,7 +46,7 @@ Hình 1
 Hình 2
 ![sum](/images/functionSum2.png)
 
-Chú ý: Trong đó sumSeries(collectdServer.memory.memory-buffered,collectdServer.memory.memory-cached,collectdServer.memory.memory-free,collectdServer.memory.memory-used)= total RAM = 1024 M
+Chú ý: Trong đó sumSeries(collectdServer.memory.memory-buffered,collectdServer.memory.memory-cached,collectdServer.memory.memory-free,collectdServer.memory.memory-used)= total RAM = cached + used + buffered+ free= 1024 M
 <a name="average"></a>
 ####2. Average function.
 
