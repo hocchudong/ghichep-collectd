@@ -32,6 +32,10 @@
 - [8.1 Mô tả](#motamaxabove )
 - [8.2 Minh họa](#minhhoamaxabove)
 
+[9. Maximum value below function](#maxbelow)
+- [9.1 Mô tả](#motamaxbelow)
+- [9.2 Minh họa](#minhhoamaxbelow)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -192,6 +196,7 @@ Sau đó, người dùng được yêu cầu điền vào một giá trị, giá
 Ở đây, tôi điền vào giá trị là 0.17
 
 Hình 16
+
 ![maxabove](/images/functionmaxabove2.png)
 
 Biểu đồ ban đầu:
@@ -203,3 +208,35 @@ Biểu đồ sau khi thực hiện function maximum value above. Chỉ còn load
 
 Hình 18
 ![maxabove](/images/functionmaxabove4.png)
+
+<a name="maxbelow"></a>
+####9. Maximum value below.
+
+<a name="motamaxbelow"></a>
+#####9.1 Mô tả.
+
+- Maximum value below giúp người dùng lọc ra những thông số có giá trị lớn nhất nhỏ hơn một mức nào đó.
+
+<a name="minhhoamaxabove"></a>
+#####9.2 Minh họa.
+
+- Tương tự như maximum value above function. Chon load.longterm và load.shortterm -> Apply Function -> Filter -> Maximum value below.
+
+Hình 19
+![maxbelow](/images/functionmaxbelow1.png)
+
+- Sau đó, người dùng được yêu cầu điền vào một giá trị, giá trị này để so sánh với giá trị lớn nhất của longterm và shortterm. Nếu giá trị lớn nhất của longterm và shortterm lớn hơn giá trị này thì longterm và shortterm sẽ không được biểu diễn trên biểu đồ. Còn nếu nhỏ hơn thì chúng vẫn giữ nguyên. 
+Ở đây, tôi điền vào giá trị là 0.2
+
+Hình 20
+![maxbelow](/images/functionmaxbelow2.png)
+
+Biểu đồ ban đầu:
+
+Hình 21
+![maxbelow](/images/functionmaxbelow4.png)
+
+Biểu đồ sau khi thực hiện function maximum value below. Chỉ còn load.longterm trên biểu đồ, vì maximum của load.longterm=0.15 <0.2
+
+Hình 22
+![maxbelow](/images/functionmaxbelow3.png)
