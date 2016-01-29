@@ -36,6 +36,10 @@
 - [9.1 Mô tả](#motamaxbelow)
 - [9.2 Minh họa](#minhhoamaxbelow)
 
+[10. Minimum value above function](#minabove)
+- [10.1 Mô tả](#motaminabove)
+- [10.2 Minh họa](#minhhoaminabove)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -217,7 +221,7 @@ Hình 18
 
 - Maximum value below giúp người dùng lọc ra những thông số có giá trị lớn nhất nhỏ hơn một mức nào đó.
 
-<a name="minhhoamaxabove"></a>
+<a name="minhhoamaxbelow"></a>
 #####9.2 Minh họa.
 
 - Tương tự như maximum value above function. Chon load.longterm và load.shortterm -> Apply Function -> Filter -> Maximum value below.
@@ -240,3 +244,35 @@ Biểu đồ sau khi thực hiện function maximum value below. Chỉ còn load
 
 Hình 22
 ![maxbelow](/images/functionmaxbelow3.png)
+
+<a name="minabove"></a>
+####10. Minimum value above function.
+
+<a name="motaminabove"></a>
+#####10.1 Mô tả.
+
+- Minimum value above giúp người dùng lọc ra những thông số có giá trị nhỏ nhất lớn hơn một mức nào đó.
+
+<a name="minhhoaminabove"><a/>
+#####10.2 Minh họa.
+
+- Chon load.longterm và load.shortterm -> Apply Function -> Filter -> Minimum value above.
+
+Hình 23
+![minabove](/images/functionminabove1.png)
+
+Sau đó, người dùng được yêu cầu điền vào một giá trị, giá trị này để so sánh với giá trị nhỏ nhất của longterm và shortterm. Nếu giá trị nhỏ nhất của longterm và shortterm nhỏ hơn giá trị này thì longterm và shortterm sẽ không được biểu diễn trên biểu đồ. Còn nếu lớn hơn thì chúng vẫn giữ nguyên. 
+Ở đây, tôi điền vào giá trị là 0.1
+
+Hình 24
+![minabove](/images/functionminabove2.png)
+
+Biểu đồ ban đầu:
+
+Hình 25
+![minabove](/images/functionminabove3.png)
+
+Biểu đồ sau khi thực hiện function minium value above. Chỉ còn load.longterm trên biểu đồ, vì miniimum của load.longterm >0.1
+
+Hình 26
+![minabove](/images/functionminabove4.png)
