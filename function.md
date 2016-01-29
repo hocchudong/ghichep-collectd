@@ -12,13 +12,17 @@
 - [3.1 Mô tả](#motaproduct)
 - [3.2 Minh họa](#minhhoaproduct)
 
-[4. Product function](#minvalue)
+[4. Min value function](#minvalue)
 - [4.1 Mô tả](#motaminvalue)
 - [4.2 Minh họa](#minhhoaminvalue)
 
-[5. Product function](#maxvalue)
+[5. Max value function](#maxvalue)
 - [5.1 Mô tả](#motamaxvalue)
 - [5.2 Minh họa](#minhhoamaxvalue)
+
+[6. Difference function](#difference)
+- [6.1 Mô tả](#motadifference)
+- [6.2 Minh họa](#minhhoadifference)
 
 <a name="sum"></a>
 #### 1. Sum function.
@@ -95,7 +99,7 @@ Chú ý: Trong đó multiplySeries(collectdServer.load.load.shortterm,collectdSe
 Hình 7
 ![minvalue](/images/functionMinvalue1.png)
 
-a name="maxvalue"></a>
+<a name="maxvalue"></a>
 ####4. Max value function.
 
 <a name="motamaxvalue"></a>
@@ -110,3 +114,22 @@ a name="maxvalue"></a>
 
 Hình 8
 ![maxvalue](/images/functionMaxvalue1.png)
+
+<a name="difference"></a>
+####6. Difference function.
+
+<a name="motadifference"></a>
+#####6.1 Mô tả.
+
+- Người dùng có thế so sánh giữa hai thông số được chọn. Lấy thông số chọn đầu tiên trừ cho thông số thứ hai được chọn.
+
+<a name="minhhoadifference"></a>
+#####6.2 Minh họa.
+
+- Chọn hai thông số người dùng muốn so sánh. Tôi chọn load.longterm và load.shortterm. Sau đó chọn Apply Function-> Calculate-> Difference.
+
+Hình 9
+![difference](/images/functionDifference1.png)
+
+Hình 10
+![difference](/images/functionDifference2.png)
