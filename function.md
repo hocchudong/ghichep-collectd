@@ -28,6 +28,10 @@
 - [7.1 Mô tả](#motaratio)
 - [7.2 Minh họa](#minhhoaratio)
 
+[8. Maximum value above function](#maxabove)
+- [8.1 Mô tả](#motamaxabove )
+- [8.2 Minh họa](#minhhoamaxabove)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -104,7 +108,7 @@ Hình 7
 ![minvalue](/images/functionMinvalue1.png)
 
 Hình 8
-![minvalue](/images/functionMinvalue1.png)
+![minvalue](/images/functionMinvalue.png)
 
 <a name="maxvalue"></a>
 ####5. Max value function.
@@ -168,6 +172,34 @@ Hình 14
 
 Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng dung lượng free luôn lớn hơn dung lượng used trong memory. Lấy free chia cho used kết quả luôn là lớn hơn 1.
 
+<a name="maxabove"></a>
+####8. Maximum value above function.
 
+<a name="motamaxabove"></a>
+##### 8.1 Mô tả.
 
+- Dùng người dùng lọc ra những thông số có giá trị lớn nhất trên một mức nào đó. 
 
+<a name="minhhoamaxabove"></a>
+#####8.2 Minh họa
+
+- Chon load.longterm và load.shortterm -> Apply Function -> Filter -> Maximum value above.
+
+Hình 15
+![maxabove](/images/functionmaxabove1.png)
+
+Sau đó, người dùng được yêu cầu điền vào một giá trị, giá trị này để so sánh với giá trị lớn nhất của longterm và shortterm. Nếu giá trị lớn nhất của longterm và shortterm nhỏ hơn giá trị này thì longterm và shortterm sẽ không được biểu diễn trên biểu đồ. Còn nếu lớn hơn thì chúng vẫn giữ nguyên. 
+Ở đây, tôi điền vào giá trị là 0.17
+
+Hình 16
+![maxabove](/images/functionmaxabove2.png)
+
+Biểu đồ ban đầu:
+
+Hình 17
+![maxabove](/images/functionmaxabove3.png)
+
+Biểu đồ sau khi thực hiện function maximum value above. Chỉ còn load.longterm trên biểu đồ.
+
+Hình 18
+![maxabove](/images/functionmaxabove4.png)
