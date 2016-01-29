@@ -157,7 +157,7 @@ Hình 11
 ![ratio](/images/functionRatio1.png)
 
 Hình 12
-![ratio](/images/functionRatio1.png)
+![ratio](/images/functionRatio2.png)
 
 Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng dung lượng free luôn lớn hơn dung lượng used trong memory. 
 
