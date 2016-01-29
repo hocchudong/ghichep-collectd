@@ -18,3 +18,6 @@
 
 Hình 1
 ![sum](/images/functionSum1.png)
+
+Hình 2
+![sum](/images/functionSum2.png)
