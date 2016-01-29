@@ -103,11 +103,14 @@ Chú ý: Trong đó multiplySeries(collectdServer.load.load.shortterm,collectdSe
 Hình 7
 ![minvalue](/images/functionMinvalue1.png)
 
+Hình 8
+![minvalue](/images/functionMinvalue1.png)
+
 <a name="maxvalue"></a>
-####4. Max value function.
+####5. Max value function.
 
 <a name="motamaxvalue"></a>
-#####4.1 Mô tả.
+#####5.1 Mô tả.
 
 - Min value function giúp người dùng tìm ra chỉ thông số nào là cao nhất trong các thông số được chọn. Hệ thống sẽ so sánh các điểm để tìm ra thông số lớn nhất.
 
@@ -116,8 +119,12 @@ Hình 7
 
 - Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn load.shortterm và load.midterm. Sau đó chọn Apply Fuction-> Combine-> Max value.
 
-Hình 8
+Hình 9
 ![maxvalue](/images/functionMaxvalue1.png)
+
+Hình 10
+![maxvalue](/images/functionMaxvalue2.png)
+
 
 <a name="difference"></a>
 ####6. Difference function.
@@ -132,10 +139,10 @@ Hình 8
 
 - Chọn hai thông số người dùng muốn so sánh. Tôi chọn load.longterm và load.shortterm. Sau đó chọn Apply Function-> Calculate-> Difference.
 
-Hình 9
+Hình 11
 ![difference](/images/functionDifference1.png)
 
-Hình 10
+Hình 12
 ![difference](/images/functionDifference2.png)
 
 <a name="ratio"></a>
@@ -153,12 +160,14 @@ Hình 10
 
 Chọn hai thông số đó-> Apply Function-> Calculate-> Ratio.
 
-Hình 11
+Hình 13
 ![ratio](/images/functionRatio1.png)
 
-Hình 12
+Hình 14
 ![ratio](/images/functionRatio2.png)
 
-Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng dung lượng free luôn lớn hơn dung lượng used trong memory. 
+Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng dung lượng free luôn lớn hơn dung lượng used trong memory. Lấy free chia cho used kết quả luôn là lớn hơn 1.
+
+
 
 
