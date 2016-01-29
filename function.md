@@ -24,6 +24,10 @@
 - [6.1 Mô tả](#motadifference)
 - [6.2 Minh họa](#minhhoadifference)
 
+[7. Ratio function](#ratio)
+- [7.1 Mô tả](#motaratio)
+- [7.2 Minh họa](#minhhoaratio)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -76,10 +80,10 @@ Chú ý: Trong đó averageSeries(collectdServer.load.load.longterm,collectdServ
 - Người dùng chọn hai thông số. Ở đây tôi chọn load.shortterm và load.longterm. Sau đó chọn Apply Fuction-> Combine-> Product.
 
 Hình 5
-![average](/images/functionAverage1.png)
+![average](/images/functionProduct1.png)
 
 Hình 6
-![average](/images/functionAverage2.png)
+![average](/images/functionProduct2.png)
 
 Chú ý: Trong đó multiplySeries(collectdServer.load.load.shortterm,collectdServer.load.load.longterm)= 0.12 x 0.14 = 0.0168
 
@@ -133,3 +137,28 @@ Hình 9
 
 Hình 10
 ![difference](/images/functionDifference2.png)
+
+<a name="ratio"></a>
+####7. Ratio function.
+
+<a name="motaratio"></a>
+#####7.1 Mô tả.
+
+- Ratio function giúp người dùng có thể biết tỉ lệ giữa hai thông số được chọn.
+
+<a name="minhhoaratio"></a>
+#####7.2 Minh họa.
+
+- Chọn 2 function người dùng muốn so sánh. Tôi so sánh dung lượng của free và used trong memory.
+
+Chọn hai thông số đó-> Apply Function-> Calculate-> Ratio.
+
+Hình 11
+![ratio](/images/functionRatio1.png)
+
+Hình 12
+![ratio](/images/functionRatio1.png)
+
+Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng dung lượng free luôn lớn hơn dung lượng used trong memory. 
+
+
