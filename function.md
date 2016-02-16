@@ -331,6 +331,6 @@ Hình 30
 ![color](images/functioncolor4.png)
 
 
-### Link Tham khảo
+## Link Tham Khảo
 
 https://graphite.readthedocs.org/en/0.9.10/functions.html
