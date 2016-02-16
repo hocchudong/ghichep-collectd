@@ -44,6 +44,10 @@
 - [11.1 Mô tả](#motacolor)
 - [11.2 Minh họa](#minhhoacolor)
 
+[12. Average value below](#averagebelow)
+- [12.1 Mô tả](#motaaveragebelow)
+- [12.2 Minh họa](#minhhoaaveragebelow)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -237,6 +241,7 @@ Hình 19
 Ở đây, tôi điền vào giá trị là 0.2
 
 Hình 20
+
 ![maxbelow](/images/functionmaxbelow2.png)
 
 Biểu đồ ban đầu:
@@ -269,6 +274,7 @@ Sau đó, người dùng được yêu cầu điền vào một giá trị, giá
 Ở đây, tôi điền vào giá trị là 0.1
 
 Hình 24
+
 ![minabove](/images/functionminabove2.png)
 
 Biểu đồ ban đầu:
@@ -305,12 +311,28 @@ Hình 28
 
 Chú ý: Người dùng có thể điền màu hoặc mã của màu sắc đó.
 
-Biểu đồ ban đầu
+Biểu đồ ban đầu:
 
 Hình 29
 ![color](/images/functioncolor3.png)
 
-Biểu đồ sau khi áp dụng function color
+Biểu đồ sau khi áp dụng function color:
 
 Hình 30
 ![color](images/functioncolor4.png)
+
+<a name="averagebelow"></a>
+####12. Average value below.
+
+<a name="motaaveragebelow"></a>
+#####12.1 Mô tả.
+
+Function này giúp người dùng có thể thấy được giá trị trung bình của một dữ liệu cụ thể dưới một mức nhất định nào đó.
+
+<a name="minhhoaaveragebelow"></a>
+#####12.2 Minh họa.
+
+
+#### Link Tham khảo
+
+https://graphite.readthedocs.org/en/0.9.10/functions.html
