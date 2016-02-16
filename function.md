@@ -203,7 +203,7 @@ Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng d
 <a name="motamaxabove"></a>
 ##### 8.1 Mô tả.
 
-- Dùng người dùng lọc ra những thông số có giá trị lớn nhất trên một mức nào đó. 
+- Giúp người dùng lọc ra những thông số có giá trị lớn nhất trên một mức nào đó. 
 
 <a name="minhhoamaxabove"></a>
 #####8.2 Minh họa
@@ -331,6 +331,6 @@ Hình 30
 ![color](images/functioncolor4.png)
 
 
-#### Link Tham khảo
+### Link Tham khảo
 
 https://graphite.readthedocs.org/en/0.9.10/functions.html
