@@ -46,14 +46,10 @@
 - [11.1 Mô tả](#motacolor)
 - [11.2 Minh họa](#minhhoacolor)
 
-[12. Average value below](#averagebelow)
-- [12.1 Mô tả](#motaaveragebelow)
-- [12.2 Minh họa](#minhhoaaveragebelow)
-
 <a name="modau"></a>
 #### Mở đầu.
 
-Chức năng này được sử dụng để chuyển đổi, kết hợp và thực hiện các tính toán trên chuỗi dữ liệu. Chức năng này được áp dụng bằng cách sử dụng giao diện Composer hoặc bằng cách điều khiển các thông số mục tiêu trong Render API.
+Function được sử dụng để chuyển đổi, kết hợp và thực hiện các tính toán trên chuỗi dữ liệu. Chức năng này được áp dụng bằng cách sử dụng giao diện Composer hoặc bằng cách điều khiển các thông số mục tiêu trong Render API.
 
 <a name="sum"></a>
 #### 1. Sum function.
@@ -327,17 +323,6 @@ Biểu đồ sau khi áp dụng function color:
 
 Hình 30
 ![color](images/functioncolor4.png)
-
-<a name="averagebelow"></a>
-####12. Average value below.
-
-<a name="motaaveragebelow"></a>
-#####12.1 Mô tả.
-
-Function này giúp người dùng có thể thấy được giá trị trung bình của một dữ liệu cụ thể dưới một mức nhất định nào đó.
-
-<a name="minhhoaaveragebelow"></a>
-#####12.2 Minh họa.
 
 
 #### Link Tham khảo
