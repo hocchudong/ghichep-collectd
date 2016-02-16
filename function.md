@@ -1,5 +1,7 @@
 ###Mục lục
 
+[Mở đầu](#modau)
+
 [1. Sum function](#sum)
 - [1.1 Mô tả](#motasum)
 - [1.2 Minh họa](#minhhoasum)
@@ -40,6 +42,15 @@
 - [10.1 Mô tả](#motaminabove)
 - [10.2 Minh họa](#minhhoaminabove)
 
+[11. Color function](#color)
+- [11.1 Mô tả](#motacolor)
+- [11.2 Minh họa](#minhhoacolor)
+
+<a name="modau"></a>
+#### Mở đầu.
+
+Function được sử dụng để chuyển đổi, kết hợp và thực hiện các tính toán trên chuỗi dữ liệu. Chức năng này được áp dụng bằng cách sử dụng giao diện Composer hoặc bằng cách điều khiển các thông số mục tiêu trong Render API.
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -69,7 +80,7 @@ Chú ý: Trong đó sumSeries(collectdServer.memory.memory-buffered,collectdServ
 <a name="minhhoaaverage"></a>
 #####2.2 Minh họa.
 
-- Người dùng chọn các thông số muốn tính trung bình. Ở đây tôi chọn load.shortterm longterm và midterm. Sau đó chọn Apply Fuction-> Combine-> Average.
+- Người dùng chọn các thông số muốn tính trung bình. Ở đây tôi chọn packet nhận và chuyển đi trên card eth0. Sau đó chọn Apply Fuction-> Combine-> Average.
 
 Hình 3
 ![average](/images/functionAverage1.png)
@@ -77,7 +88,7 @@ Hình 3
 Hình 4
 ![average](/images/functionAverage2.png)
 
-Chú ý: Trong đó averageSeries(collectdServer.load.load.longterm,collectdServer.load.load.midterm,collectdServer.load.load.shortterm)=(0.00 + 0.01 + 0.05)/3 = 0.02
+Chú ý: Trong đó averageSeries(collectdServer.interface-eth0.if_packets.tx,collectdServer.interface-eth0.if_packets.rx)=(số packet nhận + số packet truyền ra ngoài)/2
 
 <a name="product"></a>
 ####3. Product function.
@@ -110,13 +121,15 @@ Chú ý: Trong đó multiplySeries(collectdServer.load.load.shortterm,collectdSe
 <a name="minhhoaminvalue"></a>
 #####4.2 Minh họa
 
-- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn load.shortterm và load.midterm. Sau đó chọn Apply Fuction-> Combine-> Min value.
+- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn memory: free, used, cached và buffered. Sau đó chọn Apply Fuction-> Combine-> Min value.
 
 Hình 7
 ![minvalue](/images/functionMinvalue1.png)
 
 Hình 8
-![minvalue](/images/functionMinvalue.png)
+![minvalue](/images/functionMinvalue2.png)
+
+Trong trường họp này Min value là buffered memory.
 
 <a name="maxvalue"></a>
 ####5. Max value function.
@@ -129,7 +142,7 @@ Hình 8
 <a name="minhhoamaxvalue"></a>
 #####5.2 Minh họa
 
-- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn load.shortterm và load.midterm. Sau đó chọn Apply Fuction-> Combine-> Max value.
+- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn memory: free, used, cached và buffered. Sau đó chọn Apply Fuction-> Combine-> Max value.
 
 Hình 9
 ![maxvalue](/images/functionMaxvalue1.png)
@@ -137,6 +150,7 @@ Hình 9
 Hình 10
 ![maxvalue](/images/functionMaxvalue2.png)
 
+Ở đây Max value là free memory.
 
 <a name="difference"></a>
 ####6. Difference function.
@@ -149,13 +163,16 @@ Hình 10
 <a name="minhhoadifference"></a>
 #####6.2 Minh họa.
 
-- Chọn hai thông số người dùng muốn so sánh. Tôi chọn load.longterm và load.shortterm. Sau đó chọn Apply Function-> Calculate-> Difference.
+- Chọn hai thông số người dùng muốn so sánh. Tôi chọn packet nhận và truyền đi của card eth0. Sau đó chọn Apply Function-> Calculate-> Difference.
 
 Hình 11
 ![difference](/images/functionDifference1.png)
 
 Hình 12
 ![difference](/images/functionDifference2.png)
+
+Có thể thấy rằng số lượng packet transform nhỏ hơn số lượng packet recieve
+
 
 <a name="ratio"></a>
 ####7. Ratio function.
@@ -186,7 +203,7 @@ Chú ý: Nhìn vào biểu đồ người dùng có thể nhận thấy rằng d
 <a name="motamaxabove"></a>
 ##### 8.1 Mô tả.
 
-- Dùng người dùng lọc ra những thông số có giá trị lớn nhất trên một mức nào đó. 
+- Giúp người dùng lọc ra những thông số có giá trị lớn nhất trên một mức nào đó. 
 
 <a name="minhhoamaxabove"></a>
 #####8.2 Minh họa
@@ -233,6 +250,7 @@ Hình 19
 Ở đây, tôi điền vào giá trị là 0.2
 
 Hình 20
+
 ![maxbelow](/images/functionmaxbelow2.png)
 
 Biểu đồ ban đầu:
@@ -265,6 +283,7 @@ Sau đó, người dùng được yêu cầu điền vào một giá trị, giá
 Ở đây, tôi điền vào giá trị là 0.1
 
 Hình 24
+
 ![minabove](/images/functionminabove2.png)
 
 Biểu đồ ban đầu:
@@ -276,3 +295,42 @@ Biểu đồ sau khi thực hiện function minium value above. Chỉ còn load.
 
 Hình 26
 ![minabove](/images/functionminabove4.png)
+
+<a name="color"></a>
+####11. Color function.
+
+<a name="motacolor"></a>
+##### 11.1 Mô tả
+
+Color function giúp người dùng có thể đánh dấu được thông số muốn theo dõi.
+
+<a name="minhhoacolor"></a>
+#####11.2 Minh họa
+
+Chọn một thông số cụ thể, ở đây tôi chọn memory free -> Apply Function -> Special -> Color
+
+Hình 27
+![color](/images/functioncolor1.png)
+
+Sau đó người dùng được yêu cầu nhập màu sắc mà họ muốn thông số được chọn hiện thị, ở đây tôi chọn màu đen.
+
+Hình 28
+
+![color](images/functioncolor2.png)
+
+Chú ý: Người dùng có thể điền màu hoặc mã của màu sắc đó.
+
+Biểu đồ ban đầu:
+
+Hình 29
+![color](/images/functioncolor3.png)
+
+Biểu đồ sau khi áp dụng function color:
+
+Hình 30
+![color](images/functioncolor4.png)
+
+
+## Link Tham Khảo
+
+https://graphite.readthedocs.org/en/0.9.10/functions.html
