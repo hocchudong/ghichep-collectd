@@ -163,13 +163,16 @@ Hình 10
 <a name="minhhoadifference"></a>
 #####6.2 Minh họa.
 
-- Chọn hai thông số người dùng muốn so sánh. Tôi chọn load.longterm và load.shortterm. Sau đó chọn Apply Function-> Calculate-> Difference.
+- Chọn hai thông số người dùng muốn so sánh. Tôi chọn packet nhận và truyền đi của card eth0. Sau đó chọn Apply Function-> Calculate-> Difference.
 
 Hình 11
 ![difference](/images/functionDifference1.png)
 
 Hình 12
 ![difference](/images/functionDifference2.png)
+
+Có thể thấy rằng số lượng packet transform nhỏ hơn số lượng packet recieve
+
 
 <a name="ratio"></a>
 ####7. Ratio function.
