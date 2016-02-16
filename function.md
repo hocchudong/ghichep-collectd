@@ -290,7 +290,7 @@ Hình 26
 Color function giúp người dùng có thể đánh dấu được thông số muốn theo dõi.
 
 <a name="minhhoacolor"></a>
-#####12.2 Minh họa
+#####11.2 Minh họa
 
 Chọn một thông số cụ thể, ở đây tôi chọn memory free -> Apply Function -> Special -> Color
 
@@ -300,6 +300,7 @@ Hình 27
 Sau đó người dùng được yêu cầu nhập màu sắc mà họ muốn thông số được chọn hiện thị, ở đây tôi chọn màu đen.
 
 Hình 28
+
 ![color](images/functioncolor2.png)
 
 Chú ý: Người dùng có thể điền màu hoặc mã của màu sắc đó.
