@@ -80,7 +80,7 @@ Chú ý: Trong đó sumSeries(collectdServer.memory.memory-buffered,collectdServ
 <a name="minhhoaaverage"></a>
 #####2.2 Minh họa.
 
-- Người dùng chọn các thông số muốn tính trung bình. Ở đây tôi chọn load.shortterm longterm và midterm. Sau đó chọn Apply Fuction-> Combine-> Average.
+- Người dùng chọn các thông số muốn tính trung bình. Ở đây tôi chọn packet nhận và chuyển đi trên card eth0. Sau đó chọn Apply Fuction-> Combine-> Average.
 
 Hình 3
 ![average](/images/functionAverage1.png)
@@ -88,7 +88,7 @@ Hình 3
 Hình 4
 ![average](/images/functionAverage2.png)
 
-Chú ý: Trong đó averageSeries(collectdServer.load.load.longterm,collectdServer.load.load.midterm,collectdServer.load.load.shortterm)=(0.00 + 0.01 + 0.05)/3 = 0.02
+Chú ý: Trong đó averageSeries(collectdServer.interface-eth0.if_packets.tx,collectdServer.interface-eth0.if_packets.rx)=(số packet nhận + số packet truyền ra ngoài)/2
 
 <a name="product"></a>
 ####3. Product function.
@@ -121,13 +121,15 @@ Chú ý: Trong đó multiplySeries(collectdServer.load.load.shortterm,collectdSe
 <a name="minhhoaminvalue"></a>
 #####4.2 Minh họa
 
-- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn load.shortterm và load.midterm. Sau đó chọn Apply Fuction-> Combine-> Min value.
+- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn memory: free, used, cached và buffered. Sau đó chọn Apply Fuction-> Combine-> Min value.
 
 Hình 7
 ![minvalue](/images/functionMinvalue1.png)
 
 Hình 8
-![minvalue](/images/functionMinvalue.png)
+![minvalue](/images/functionMinvalue2.png)
+
+Trong trường họp này Min value là buffered memory.
 
 <a name="maxvalue"></a>
 ####5. Max value function.
@@ -140,7 +142,7 @@ Hình 8
 <a name="minhhoamaxvalue"></a>
 #####5.2 Minh họa
 
-- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn load.shortterm và load.midterm. Sau đó chọn Apply Fuction-> Combine-> Max value.
+- Chọn các thông số người dùng muốn so sánh. Ở đây tôi chọn memory: free, used, cached và buffered. Sau đó chọn Apply Fuction-> Combine-> Max value.
 
 Hình 9
 ![maxvalue](/images/functionMaxvalue1.png)
@@ -148,6 +150,7 @@ Hình 9
 Hình 10
 ![maxvalue](/images/functionMaxvalue2.png)
 
+Ở đây Max value là free memory.
 
 <a name="difference"></a>
 ####6. Difference function.
