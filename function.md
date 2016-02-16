@@ -40,6 +40,10 @@
 - [10.1 Mô tả](#motaminabove)
 - [10.2 Minh họa](#minhhoaminabove)
 
+[11. Color function](#color)
+- [11.1 Mô tả](#motacolor)
+- [11.2 Minh họa](#minhhoacolor)
+
 <a name="sum"></a>
 #### 1. Sum function.
 
@@ -276,3 +280,36 @@ Biểu đồ sau khi thực hiện function minium value above. Chỉ còn load.
 
 Hình 26
 ![minabove](/images/functionminabove4.png)
+
+<a name="color"></a>
+####11. Color function.
+
+<a name="motacolor"></a>
+##### 11.1 Mô tả
+
+Color function giúp người dùng có thể đánh dấu được thông số muốn theo dõi.
+
+<a name="minhhoacolor"></a>
+#####12.2 Minh họa
+
+Chọn một thông số cụ thể, ở đây tôi chọn memory free -> Apply Function -> Special -> Color
+
+Hình 27
+![color](/images/functioncolor1.png)
+
+Sau đó người dùng được yêu cầu nhập màu sắc mà họ muốn thông số được chọn hiện thị, ở đây tôi chọn màu đen.
+
+Hình 28
+![color](images/functioncolor2.png)
+
+Chú ý: Người dùng có thể điền màu hoặc mã của màu sắc đó.
+
+Biểu đồ ban đầu
+
+Hình 29
+![color](/images/functioncolor3.png)
+
+Biểu đồ sau khi áp dụng function color
+
+Hình 30
+![color](images/functioncolor4.png)
