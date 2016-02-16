@@ -1,5 +1,7 @@
 ###Mục lục
 
+Mở đầu(#modau)
+
 [1. Sum function](#sum)
 - [1.1 Mô tả](#motasum)
 - [1.2 Minh họa](#minhhoasum)
@@ -47,6 +49,11 @@
 [12. Average value below](#averagebelow)
 - [12.1 Mô tả](#motaaveragebelow)
 - [12.2 Minh họa](#minhhoaaveragebelow)
+
+
+#### Mở đầu.
+
+Chức năng này được sử dụng để chuyển đổi, kết hợp và thực hiện các tính toán trên chuỗi dữ liệu. Chức năng này được áp dụng bằng cách sử dụng giao diện Composer hoặc bằng cách điều khiển các thông số mục tiêu trong Render API.
 
 <a name="sum"></a>
 #### 1. Sum function.
