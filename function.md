@@ -58,6 +58,10 @@
 - [14.1 Mô tả](#motasecondy)
 - [14.2 Minh họa](#minhhoasecondy)
 
+[15. Average Value Above](#averageabove)
+- [15.1 Mô tả](#motaaverageabove)
+- [15.2 Minh họa](#minhhoaaverageabove)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -455,7 +459,38 @@ Biểu đồ sau khi áp dụng function Draw in Sencond Y Axis:
 Hình 45
 ![sencondy](/images/functionsecondY3.png)
 
+<a name="averageabove"></a>
+####15. Average Value Above
 
+<a name="motaaverageabove"></a>
+#####15.1 Mô tả
+
+Average Value function giúp người dùng lọc ra những thông số có giá trị trung bình lớn hơn một giá trị nào đó.
+
+<a name="minhhoaaverageabove"></a>
+#####15.2 Minh họa
+
+Chọn thông số -> Apply Function -> Filter -> Average Value Above.
+
+Hình 46
+![averageabove](/images/functionAverageabove1.png)
+
+Hình 47
+![averageabove](/images/functionAverageabove2.png)
+
+Biểu đồ ban đầu:
+
+Hình 48
+![averageabove](/images/functionAverageabove3.png)
+
+Biểu đồ sau khi áp dụng Average Value Above function
+
+Hình49
+![averageabove](/images/functionAverageabove4.png)
+
+Chú ý: Số lượng packet receive và transfer trên card eth0 không xuất hiện trên biểu đồ vì trung bình của 2 thông số này nhỏ hơn 50.
+
+ 
 ## Link Tham Khảo
 
 https://graphite.readthedocs.org/en/0.9.10/functions.html
