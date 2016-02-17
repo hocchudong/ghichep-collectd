@@ -349,22 +349,22 @@ Ví dụ: nếu trung ta có các dữ liệu được thể hiện trong vài p
 Chọn thông số -> Apply Function -> Transform -> Summarize
 
 Hình 31
-![summarize](images/functionSummarize1.png")
+![summarize](/images/functionSummarize1.png)
 
 Người dùng được yêu cầu điền thời gian muốn chuyển đổi, ở đây tôi chọn 1h
 
 Hình 32
-![summarize](images/functionSummarize2.png")
+![summarize](/images/functionSummarize2.png)
 
 Biểu đồ ban đầu:
 
 Hình 33
-![summarize](images/functionSummarize4.png")
+![summarize](/images/functionSummarize4.png)
 
 Biểu đồ sau khi áp dụng function Summarize:
 
 Hình 34
-![summarize](images/functionSummarize3.png")
+![summarize](/images/functionSummarize3.png)
 
 Chú ý: Khi áp dụng function này, "sum" được dùng là hàm mặc định được áp dụng. Thay vì sử dụng "sum" người dùng cũng có thể dùng avg, min và max.
 
@@ -373,24 +373,24 @@ Chú ý: Khi áp dụng function này, "sum" được dùng là hàm mặc đị
 Cách 1: 
 
 Hình 35
-![summarize](images/functionSummarize5.png")
+![summarize](/images/functionSummarize5.png)
 
 Hình 36
-![summarize](images/functionSummarize6.png")
+![summarize](/images/functionSummarize6.png)
 
 Cách 2: Sau khi người dùng đã áp dụng function Summarize và muốn thay đổi hàm sum thành hàm avg:
 
 Hình 37
-![summarize](images/functionSummarize7.png")
+![summarize](/images/functionSummarize7.png)
 
 Hình 38
-![summarize](images/functionSummarize8.png")
+![summarize](/images/functionSummarize8.png)
 
 Hình 39
-![summarize](images/functionSummarize9.png")
+![summarize](/images/functionSummarize9.png)
 
 Hình 40
-![summarize](images/functionSummarize10.png")
+![summarize](/images/functionSummarize10.png)
 
 
 ## Link Tham Khảo
