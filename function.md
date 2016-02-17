@@ -332,7 +332,7 @@ Hình 29
 Biểu đồ sau khi áp dụng function color:
 
 Hình 30
-![color](images/functioncolor4.png)
+![color](/images/functioncolor4.png)
 
 <a name="summarize"></a>
 ####12. Summarize funtion
@@ -391,6 +391,7 @@ Hình 39
 
 Hình 40
 ![summarize](/images/functionSummarize10.png)
+
 
 
 ## Link Tham Khảo
