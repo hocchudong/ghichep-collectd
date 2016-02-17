@@ -480,6 +480,7 @@ Hình 46
 ![averageabove](/images/functionAverageabove1.png)
 
 Hình 47
+
 ![averageabove](/images/functionAverageabove2.png)
 
 Biểu đồ ban đầu:
@@ -498,12 +499,12 @@ Chú ý: Số lượng packet receive và transfer trên card eth0 không xuất
 ####16. Average Value Below
 
 <a name="motaaveragebelow"></a>
-#####15.1 Mô tả
+#####16.1 Mô tả
 
 Average Value Below function giúp người dùng lọc ra những thông số có giá trị trung bình nhỏ hơn một giá trị nào đó.
 
 <a name="minhhoaaveragebelow"></a>
-#####15.2 Minh họa
+#####16.2 Minh họa
 
 Chọn thông số -> Apply Function -> Filter -> Average Value Above.
 
@@ -511,6 +512,7 @@ Hình 50
 ![averagebelow](/images/functionAveragebelow1.png)
 
 Hình 51
+
 ![averagebelow](/images/functionAveragebelow2.png)
 
 Biểu đồ ban đầu:
