@@ -443,17 +443,17 @@ Function này giúp người dùng có thể hiện thị thêm một cột Y tr
 Chọn thông số -> Apply Function -> Special -> Draw in Second Y Axis
 
 Hình 43
-![sencondy](/images/functionSecondY1.png)
+![sencondy](/images/functionsecondY1.png)
 
 Biểu đồ ban đầu:
 
 Hình 44
-![sencondy](/images/functionSecondY2.png)
+![sencondy](/images/functionsecondY2.png)
 
 Biểu đồ sau khi áp dụng function Draw in Sencond Y Axis:
 
 Hình 45
-![sencondy](/images/functionSecondY3.png)
+![sencondy](/images/functionsecondY3.png)
 
 
 ## Link Tham Khảo
