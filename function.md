@@ -354,6 +354,7 @@ Hình 31
 Người dùng được yêu cầu điền thời gian muốn chuyển đổi, ở đây tôi chọn 1h
 
 Hình 32
+
 ![summarize](/images/functionSummarize2.png)
 
 Biểu đồ ban đầu:
@@ -373,6 +374,7 @@ Chú ý: Khi áp dụng function này, "sum" được dùng là hàm mặc đị
 Cách 1: 
 
 Hình 35
+
 ![summarize](/images/functionSummarize5.png)
 
 Hình 36
@@ -381,12 +383,15 @@ Hình 36
 Cách 2: Sau khi người dùng đã áp dụng function Summarize và muốn thay đổi hàm sum thành hàm avg:
 
 Hình 37
+
 ![summarize](/images/functionSummarize7.png)
 
 Hình 38
+
 ![summarize](/images/functionSummarize8.png)
 
 Hình 39
+
 ![summarize](/images/functionSummarize9.png)
 
 Hình 40
