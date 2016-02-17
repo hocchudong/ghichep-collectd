@@ -50,6 +50,10 @@
 - [12.1 Mô tả](#motasummarize)
 - [12.2 Minh họa](#minhoasummarize)
 
+[13. Highest Average Value Function](#highestaverage)
+- [13. 1 Mô tả](#motahighestaverage)
+- [13.2 Minh họa](#minhhoaaverage)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -397,6 +401,26 @@ Hình 39
 Hình 40
 ![summarize](/images/functionSummarize10.png)
 
+<a name="highestavergae"></a>
+####13. Highest Average Value function
+
+<a name="motahighestaverage"></a>
+#####13.1 Mô tả
+
+Trong những trường hợp người dùng có nhiều metric, người dùng chỉ muốn đồ thị hiển thị 5 hoặc 10 metric thích hợp, người dùng có thể sử dụng function highestAverage.
+Với chức năng này, graphite sẽ rút ra những số liệu có trung bình lớn nhất.
+
+<a name="minhhoaaverage"></a>
+#####13.2 Minh họa
+
+Chọn thông số -> Apply function -> Filter -> Highest Average Value
+
+Hình 41
+![highestaverage](/images/functionHighestaverage1.png)
+
+Hình 42
+
+![highestaverage](/images/functionHighestaverage2.png)
 
 
 ## Link Tham Khảo
