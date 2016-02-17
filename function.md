@@ -422,6 +422,8 @@ Hình 42
 
 ![highestaverage](/images/functionHighestaverage2.png)
 
+Chú ý: Các function tương tự: highestCurrent, highestMax, lowestAverage, lowestCurrent.
+
 
 ## Link Tham Khảo
 
