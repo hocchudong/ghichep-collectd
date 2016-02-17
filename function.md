@@ -518,12 +518,12 @@ Hình 51
 Biểu đồ ban đầu:
 
 Hình 52
-![averagebelow](/images/functionAveragebelow3.png)
+![averagebelow](/images/functionAveragebelow4.png)
 
 Biểu đồ sau khi áp dụng Average Value Below function
 
 Hình53
-![averagebelow](/images/functionAveragebelow4.png)
+![averagebelow](/images/functionAveragebelow3.png)
 
 Chú ý: Các thông số của memory không xuất hiện trên biểu đồ vì trung bình của những thông số này lớn hơn 10.
 
