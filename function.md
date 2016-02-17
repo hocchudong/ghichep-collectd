@@ -46,6 +46,26 @@
 - [11.1 Mô tả](#motacolor)
 - [11.2 Minh họa](#minhhoacolor)
 
+[12. Summarize function](#summarize)
+- [12.1 Mô tả](#motasummarize)
+- [12.2 Minh họa](#minhoasummarize)
+
+[13. Highest Average Value Function](#highestaverage)
+- [13. 1 Mô tả](#motahighestaverage)
+- [13.2 Minh họa](#minhhoaaverage)
+
+[14. Draw in Second Y Axis](#secondy)
+- [14.1 Mô tả](#motasecondy)
+- [14.2 Minh họa](#minhhoasecondy)
+
+[15. Average Value Above](#averageabove)
+- [15.1 Mô tả](#motaaverageabove)
+- [15.2 Minh họa](#minhhoaaverageabove)
+
+[16. Average Value Below](#averagebelow)
+- [16.1 Mô tả](#motaaveragebelow)
+- [16.2 Minh họa](#minhhoaaveragebelow)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -328,8 +348,184 @@ Hình 29
 Biểu đồ sau khi áp dụng function color:
 
 Hình 30
-![color](images/functioncolor4.png)
+![color](/images/functioncolor4.png)
 
+<a name="summarize"></a>
+####12. Summarize funtion
+
+<a name="motasummarize"></a>
+#####12.1 Mô tả 
+
+Summarize funtion giúp người dùng có thể chuyển đổi dữ liệu theo một quy mô nhỏ hơn theo thời gian. 
+Ví dụ: nếu trung ta có các dữ liệu được thể hiện trong vài phút, ta có thể nhóm dữ liệu theo giờ bằng summarize function
+
+<a name="minhhoasummarize"></a>
+#####12.2 Minh họa
+
+Chọn thông số -> Apply Function -> Transform -> Summarize
+
+Hình 31
+![summarize](/images/functionSummarize1.png)
+
+Người dùng được yêu cầu điền thời gian muốn chuyển đổi, ở đây tôi chọn 1h
+
+Hình 32
+
+![summarize](/images/functionSummarize2.png)
+
+Biểu đồ ban đầu:
+
+Hình 33
+![summarize](/images/functionSummarize4.png)
+
+Biểu đồ sau khi áp dụng function Summarize:
+
+Hình 34
+![summarize](/images/functionSummarize3.png)
+
+Chú ý: Khi áp dụng function này, "sum" được dùng là hàm mặc định được áp dụng. Thay vì sử dụng "sum" người dùng cũng có thể dùng avg, min và max.
+
+Để áp dụng avg, min, max người dùng có thể làm theo hai cách sau:
+
+Cách 1: 
+
+Hình 35
+
+![summarize](/images/functionSummarize5.png)
+
+Hình 36
+![summarize](/images/functionSummarize6.png)
+
+Cách 2: Sau khi người dùng đã áp dụng function Summarize và muốn thay đổi hàm sum thành hàm avg:
+
+Hình 37
+
+![summarize](/images/functionSummarize7.png)
+
+Hình 38
+
+![summarize](/images/functionSummarize8.png)
+
+Hình 39
+
+![summarize](/images/functionSummarize9.png)
+
+Hình 40
+![summarize](/images/functionSummarize10.png)
+
+<a name="highestavergae"></a>
+####13. Highest Average Value function
+
+<a name="motahighestaverage"></a>
+#####13.1 Mô tả
+
+Trong những trường hợp người dùng có nhiều metric, người dùng chỉ muốn đồ thị hiển thị 5 hoặc 10 metric thích hợp, người dùng có thể sử dụng function highestAverage.
+Với chức năng này, graphite sẽ rút ra những số liệu có trung bình lớn nhất.
+
+<a name="minhhoaaverage"></a>
+#####13.2 Minh họa
+
+Chọn thông số -> Apply function -> Filter -> Highest Average Value
+
+Hình 41
+![highestaverage](/images/functionHighestaverage1.png)
+
+Hình 42
+
+![highestaverage](/images/functionHighestaverage2.png)
+
+Chú ý: Các function tương tự: highestCurrent, highestMax, lowestAverage, lowestCurrent.
+
+
+<a name="secondy"></a>
+####14. Draw in Second Y Axis
+
+<a name="motasecondy"></a>
+#####14.1 Mô tả
+
+Function này giúp người dùng có thể hiện thị thêm một cột Y trên biểu đồ. Khi người dùng muốn quan sát hai thông số với 2 đơn vị khác nhau người dùng có thể dùng function này.
+
+<a name="minhhoasecondy"></a>
+#####14.2 Minh họa
+
+Chọn thông số -> Apply Function -> Special -> Draw in Second Y Axis
+
+Hình 43
+![sencondy](/images/functionsecondY1.png)
+
+Biểu đồ ban đầu:
+
+Hình 44
+![sencondy](/images/functionsecondY2.png)
+
+Biểu đồ sau khi áp dụng function Draw in Sencond Y Axis:
+
+Hình 45
+![sencondy](/images/functionsecondY3.png)
+
+<a name="averageabove"></a>
+####15. Average Value Above
+
+<a name="motaaverageabove"></a>
+#####15.1 Mô tả
+
+Average Value Above function giúp người dùng lọc ra những thông số có giá trị trung bình lớn hơn một giá trị nào đó.
+
+<a name="minhhoaaverageabove"></a>
+#####15.2 Minh họa
+
+Chọn thông số -> Apply Function -> Filter -> Average Value Above.
+
+Hình 46
+![averageabove](/images/functionAverageabove1.png)
+
+Hình 47
+
+![averageabove](/images/functionAverageabove2.png)
+
+Biểu đồ ban đầu:
+
+Hình 48
+![averageabove](/images/functionAverageabove3.png)
+
+Biểu đồ sau khi áp dụng Average Value Above function
+
+Hình49
+![averageabove](/images/functionAverageabove4.png)
+
+Chú ý: Số lượng packet receive và transfer trên card eth0 không xuất hiện trên biểu đồ vì trung bình của 2 thông số này nhỏ hơn 50.
+
+<a name="averagebelow"></a>
+####16. Average Value Below
+
+<a name="motaaveragebelow"></a>
+#####16.1 Mô tả
+
+Average Value Below function giúp người dùng lọc ra những thông số có giá trị trung bình nhỏ hơn một giá trị nào đó.
+
+<a name="minhhoaaveragebelow"></a>
+#####16.2 Minh họa
+
+Chọn thông số -> Apply Function -> Filter -> Average Value Above.
+
+Hình 50
+![averagebelow](/images/functionAveragebelow1.png)
+
+Hình 51
+
+![averagebelow](/images/functionAveragebelow2.png)
+
+Biểu đồ ban đầu:
+
+Hình 52
+![averagebelow](/images/functionAveragebelow4.png)
+
+Biểu đồ sau khi áp dụng Average Value Below function
+
+Hình53
+![averagebelow](/images/functionAveragebelow3.png)
+
+Chú ý: Các thông số của memory không xuất hiện trên biểu đồ vì trung bình của những thông số này lớn hơn 10.
 
 ## Link Tham Khảo
 
