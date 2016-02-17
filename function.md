@@ -62,6 +62,10 @@
 - [15.1 Mô tả](#motaaverageabove)
 - [15.2 Minh họa](#minhhoaaverageabove)
 
+[16. Average Value Below](#averagebelow)
+- [16.1 Mô tả](#motaaveragebelow)
+- [16.2 Minh họa](#minhhoaaveragebelow)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -465,7 +469,7 @@ Hình 45
 <a name="motaaverageabove"></a>
 #####15.1 Mô tả
 
-Average Value function giúp người dùng lọc ra những thông số có giá trị trung bình lớn hơn một giá trị nào đó.
+Average Value Above function giúp người dùng lọc ra những thông số có giá trị trung bình lớn hơn một giá trị nào đó.
 
 <a name="minhhoaaverageabove"></a>
 #####15.2 Minh họa
@@ -490,7 +494,37 @@ Hình49
 
 Chú ý: Số lượng packet receive và transfer trên card eth0 không xuất hiện trên biểu đồ vì trung bình của 2 thông số này nhỏ hơn 50.
 
- 
+<a name="averagebelow"></a>
+####16. Average Value Below
+
+<a name="motaaveragebelow"></a>
+#####15.1 Mô tả
+
+Average Value Below function giúp người dùng lọc ra những thông số có giá trị trung bình nhỏ hơn một giá trị nào đó.
+
+<a name="minhhoaaveragebelow"></a>
+#####15.2 Minh họa
+
+Chọn thông số -> Apply Function -> Filter -> Average Value Above.
+
+Hình 50
+![averagebelow](/images/functionAveragebelow1.png)
+
+Hình 51
+![averagebelow](/images/functionAveragebelow2.png)
+
+Biểu đồ ban đầu:
+
+Hình 52
+![averagebelow](/images/functionAveragebelow3.png)
+
+Biểu đồ sau khi áp dụng Average Value Below function
+
+Hình53
+![averagebelow](/images/functionAveragebelow4.png)
+
+Chú ý: Các thông số của memory không xuất hiện trên biểu đồ vì trung bình của những thông số này lớn hơn 10.
+
 ## Link Tham Khảo
 
 https://graphite.readthedocs.org/en/0.9.10/functions.html
