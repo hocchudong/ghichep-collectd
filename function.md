@@ -46,6 +46,10 @@
 - [11.1 Mô tả](#motacolor)
 - [11.2 Minh họa](#minhhoacolor)
 
+[12. Summarize function](#summarize)
+- [12.1 Mô tả](#motasummarize)
+- [12.2 Minh họa](#minhoasummarize)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -329,6 +333,64 @@ Biểu đồ sau khi áp dụng function color:
 
 Hình 30
 ![color](images/functioncolor4.png)
+
+<a name="summarize"></a>
+####12. Summarize funtion
+
+<a name="motasummarize"></a>
+#####12.1 Mô tả 
+
+Summarize funtion giúp người dùng có thể chuyển đổi dữ liệu theo một quy mô nhỏ hơn theo thời gian. 
+Ví dụ: nếu trung ta có các dữ liệu được thể hiện trong vài phút, ta có thể nhóm dữ liệu theo giờ bằng summarize function
+
+<a name="minhhoasummarize"></a>
+#####12.2 Minh họa
+
+Chọn thông số -> Apply Function -> Transform -> Summarize
+
+Hình 31
+![summarize](images/functionSummarize1.png")
+
+Người dùng được yêu cầu điền thời gian muốn chuyển đổi, ở đây tôi chọn 1h
+
+Hình 32
+![summarize](images/functionSummarize2.png")
+
+Biểu đồ ban đầu:
+
+Hình 33
+![summarize](images/functionSummarize4.png")
+
+Biểu đồ sau khi áp dụng function Summarize:
+
+Hình 34
+![summarize](images/functionSummarize3.png")
+
+Chú ý: Khi áp dụng function này, "sum" được dùng là hàm mặc định được áp dụng. Thay vì sử dụng "sum" người dùng cũng có thể dùng avg, min và max.
+
+Để áp dụng avg, min, max người dùng có thể làm theo hai cách sau:
+
+Cách 1: 
+
+Hình 35
+![summarize](images/functionSummarize5.png")
+
+Hình 36
+![summarize](images/functionSummarize6.png")
+
+Cách 2: Sau khi người dùng đã áp dụng function Summarize và muốn thay đổi hàm sum thành hàm avg:
+
+Hình 37
+![summarize](images/functionSummarize7.png")
+
+Hình 38
+![summarize](images/functionSummarize8.png")
+
+Hình 39
+![summarize](images/functionSummarize9.png")
+
+Hình 40
+![summarize](images/functionSummarize10.png")
 
 
 ## Link Tham Khảo
