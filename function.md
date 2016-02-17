@@ -54,6 +54,10 @@
 - [13. 1 Mô tả](#motahighestaverage)
 - [13.2 Minh họa](#minhhoaaverage)
 
+[14. Draw in Second Y Axis](#secondy)
+- [14.1 Mô tả](#motasecondy)
+- [14.2 Minh họa](#minhhoasecondy)
+
 <a name="modau"></a>
 #### Mở đầu.
 
@@ -423,6 +427,33 @@ Hình 42
 ![highestaverage](/images/functionHighestaverage2.png)
 
 Chú ý: Các function tương tự: highestCurrent, highestMax, lowestAverage, lowestCurrent.
+
+
+<a name="secondy"></a>
+####14. Draw in Second Y Axis
+
+<a name="motasecondy"></a>
+#####14.1 Mô tả
+
+Function này giúp người dùng có thể hiện thị thêm một cột Y trên biểu đồ. Khi người dùng muốn quan sát hai thông số với 2 đơn vị khác nhau người dùng có thể dùng function này.
+
+<a name="minhhoasecondy"></a>
+#####14.2 Minh họa
+
+Chọn thông số -> Apply Function -> Special -> Draw in Second Y Axis
+
+Hình 43
+![sencondy](/images/functionSecondY1.png)
+
+Biểu đồ ban đầu:
+
+Hình 44
+![sencondy](/images/functionSecondY2.png)
+
+Biểu đồ sau khi áp dụng function Draw in Sencond Y Axis:
+
+Hình 45
+![sencondy](/images/functionSecondY3.png)
 
 
 ## Link Tham Khảo
