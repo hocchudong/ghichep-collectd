@@ -10,7 +10,7 @@ Người tổng hợp : Manhdv
   
   - [4. Scripts] (https://github.com/manhdinh/ghichep-graphite-collectd/tree/master/scripts)
   
-      - [Giới thiệu mô ginhf triển khai Graphite-CollectD] (https://github.com/manhdinh/ghichep-graphite-collectd/blob/master/scripts/README.md)
+      - [Giới thiệu mô hình triển khai Graphite-CollectD] (https://github.com/manhdinh/ghichep-graphite-collectd/blob/master/scripts/README.md)
       - [Hướng dẫn sử dụng script](https://github.com/manhdinh/ghichep-graphite-collectd/blob/master/scripts/Huong_dan_dung_script.md)
 
 ### Link tham khảo
