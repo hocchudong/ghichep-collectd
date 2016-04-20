@@ -1,4 +1,4 @@
-#Nơi ghi chép các vấn đề nói chung về Grayphite-CollectD!
+#Nơi ghi chép các vấn đề nói chung về     Grayphite-CollectD!
 Người tổng hợp : Manhdv
 
 ##Mục lục
