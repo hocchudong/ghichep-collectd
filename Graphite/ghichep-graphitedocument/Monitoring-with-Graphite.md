@@ -198,4 +198,43 @@ Mặt khác, nó rất hiệu quả khi sử dụng lưu trữ tạm thời tron
 hiệu quả miễn là bạn có đủ bộ nhớ và bạn gia hạn các câu trả lời được lưu trữ tạm thời một cách thường xuyên, đủ để đảm bảo các kết quả chính xác cho người dùng.
 
 Graphite sử dụng cả hai kỹ thuật này để hỗ trợ việc thực hiện các thành phần time-series database : 
- -	Carbon : một network service có nhiệm vụ lắng nghe các trình báo về metric đầu vào
+ -	Carbon : một network service có nhiệm vụ lắng nghe các trình báo về metric đầu vào. Nó lưu trữ các dữ liệu một cách tạm thời trong bộ nhớ đệm trong một khoảng 
+thời gian ngắn trước khi thực hiện quá trình đẩy chúng tới disk theo định dạng của Whisper database format.
+ -	Whisper : Đặc điểm kỹ thuật của database file layout, bao gồm metadata và các lưu trữ `rollup`, cũng như là chương trình thư viện mà cả Carbon và Graphite 
+web application dùng để tuong tác với các database file tương ứng.
+
+Chúng ta sẽ dành thời gian để tìm hiểu về các thành phần này sâu hơn ở phía sau. Bây giờ chúng ta cần phải hiểu về các nhiẹm vụ tương ứng trong kiến trúc của Graphite.
+
+Khả năng lưu trữ và tiếp nhận time-series data nhanh chóng, và với dung tich lớn, là chìa khóa thành công của Graphite. Với việc không có khả năng mở rộng, thì 
+việc sử dụng Graphite cho các team lớn và các dự án lớn sẽ rất khó khăn. Nhưng mà nhờ thiết kế của Carbon và Whisper, chúng ta có thẻ xây dựng những những cluster 
+cần thiết, có khả năng thực hiện hàng triệu các điểm dữ liệu (datapoint) mỗi giây, khiến nó trở thành một công cụ trực quan phù hợp với hầu hết các ngữ cảnh mà 
+cần dùng đến việc phân tích time-series.
+##1.3 Lịch sử ra đời của Graphite
+Một khoảng thời gian về trước, thậm chí trước khi Nagios được phát minh, một người đàn ông Thụy Sĩ tên là Tobias Oetiker đã làm việc tại Đại học De Montfort ở
+ Leicester, Vương quốc Anh. Trong quá trình tìm kiếm một phương thức để theo vết hoạt động trên mạng trong mạng Internet local, Tobias đã phát triển một Perl 
+script nhỏ để thực hiện việc giám sát các tầng lưu lượng trong network router. Ông thực hiện truy vấn các số liệu SNMP interface mỗi 5 phút 1 lần, các số liệu này 
+được dùng để tạo một chuỗi các biểu đồ chi tiết gần đây và các network level trong lúc trước.
+
+Công cụ này được biết đến như là Mutil Router Traffic Grapher (MRTG). Một số năm sau, Chris Davis, một kỹ sư tai Orbitz, bắt đầy phát triển từng phần một trong 
+các thành phần được biết đến về sau là Graphite. Nó được thiết kế để được các RRD (Round-Robin Database) file và các render graph sử dụng một URL dựa trên API.
+
+Whisper, một thư viện database, là một nỗ lực tuyệt vọng để sửa một lỗi khẩn cấp với RRD trước ngày ra mắt quan trọng. Tại thời điểm đó, RRD không chấp nhận 
+các data bất thường, nếu metric A với mốc thời gian là 9:05:00 đến sau metric B với mốc thời gian 9:05:30, metric đến trước sẽ bị loại bỏ hoàn toàn bởi RRD ( 
+điều này sẽ được thiết kế lại về sau). Whisper giải quyết thiết kế thiếu sót này một cách đặc biệt, và tại cùng một thời điểm như nhau, đơn giản hóa cấu hình và 
+bố trí thời gian lưu trữ với mỗi database file.
+ Carbon service đã đánh dấu sự ra đời của network đơn giản giao diện trừu tượng trên đầu của Whisper, thứ mà được kích hoạt bất cứ ai với một máy tính để có thể 
+submit các metric một cách dễ dàng. Nó bao gồm việc thêm một bộ nhớ đệm bên trong và một điều khiển truy vấn, giải quyết cả hiệu suất và sự cần thiết cho kết quả truy vấn thời gian thực; `carbon-relay`,
+một tiến trình có khả năng cân bằng tải hoặc tái tạo metric thông qua một pool của các tiến trình `carbon-cache`; và `carbon-aggregator`, được xây dựng để tập 
+hợp các metric đơn lẻ thành một các cái mới, các metric tổng hợp.
+
+Năm 2008, Chris cho phép phát hành Graphite như là một OpenSource. Trước đó một thời gian dài nó được nhắc đến trong bài viết CNET, sau đó trong Slashdot, tại 
+đó thông qua việc phát hành. Những năm trước, một ngành công nghiệp thủ công được xây dựng xung quanh Graphite API và vô số công việc kinh doanh dựa vào nó như 
+là hệ thống đồ họa chính của họ cho các metric về hoạt động, kỹ thuật và kinh doanh.
+
+##1.4 Điều gì khiến Graphite trở nên độc nhất
+Trong khi Gaphite tiếp tục phát triển và thme các tính năng mới một cách đều đặn, rất nhiều thành công xuất phát từ việc trung thành với giao diện và format đơn
+ giản, các người dùng mới có thể dễ dàng tiếp cận. Các metric dẽ dàng đẩy tới Graphite, từ các script, các ứng dụng hoặc thậm chí là các command-line terminal. 
+Các graph được tạo từ URL-dựa vào API, cho phép chúng dễ dàng những vào trong các website hoặc các dashboard. Các giao diện web làm cho người dùng có khả năng sử 
+dụng các graph nguyên mẫu nhanh chóng và ngay lập lúc, và hầu như không cần phải training hay có hướng dẫn. Tính năng rendering luôn được đóng góp ngược lại dự án.
+
+###1.4.1 Cấu trúc metric đơn giản
