@@ -238,3 +238,43 @@ Các graph được tạo từ URL-dựa vào API, cho phép chúng dễ dàng n
 dụng các graph nguyên mẫu nhanh chóng và ngay lập lúc, và hầu như không cần phải training hay có hướng dẫn. Tính năng rendering luôn được đóng góp ngược lại dự án.
 
 ###1.4.1 Cấu trúc metric đơn giản
+Cấu trúc metric khiến cho cho việc submit data tới Carbon listener trở nên đơn giản, là một trong những thuộc tính được coi là quan trọng nhất của Graphite. Tất cả
+ chỉ cần một dấu chấm ngăn cách ở metric name (ví dụ `foo.bar`), một giá trị số và một `epoch timestamp`. Việc cung cấp công cụ cho ứng dụng của bạn để gửi telemetry 
+có thể thực hiện với chỉ một vài dòng code, hoặc có thể sử dụng các câu lệnh UNIX cơ bản.
+
+VD : Gửi một giá trị metric từ command-line
+`echo "foo.bar 41 `date +%s`" | nc graphite-server.example.com 2003
+
+Trong ví dụ này, câu lệnh `echo` được dùng để in chuỗi metric "foo.bar" với một số nguyên và một `epoch timestamp` được tạo bởi `date` command .Output được đẩy 
+luồng tới `netcat` (nc), lợi ích của mạng nhỏ là kết nối tới service "Carbon" tại "graphite-server.example.com" TCP port 2003, và gửi chuỗi data. Các dòng ký 
+tự được cung cấp bởi câu lệnh `echo` khai báo tới `Carbon server` và kết nối được đóng lại.
+###1.4.2 Graphing API
+Không giống như các công cụ giám sát trước và rất nhiều công cụ hiện nay, Graphite không dựa vao các cấu hình tĩnh hoặc theo batch job để tạo các graph mới. Tất
+ cả các dữ liệu được biểu diễn theo dạng PNG chart trên giao diện Web, và được xuất ra dưới dạng JSON output được dùng bởi các thư viện phía client để tạo nên 
+ các dashboard và các đồ họa biểu diễn thông tin, được cấu trúc theo dạng "on-the-fly" được sử dụng với API tổng hợp.
+Mọi tính năng đồ họa tới người dùng Graphite đều được thể hiện thông qua API này, WEB UI tổng hợp lại trong cùng một interface. Tất nhiên, điều này khiến việc 
+chia sẻ các graph với bất cứ ai cũng dễ dàng như việc chia sẻ URL, cái mà đã cấu trúc nó. Thậm chí tốt hơn, URL giống nhau có thể được nhúng trong các dashboard 
+company hoặc thâm chí là một web site. Việc người dùng tải graph có truy cập mạng càng lâu ( và trong trường hợp có password bảo vệ, các thông tin cần thiết) tới 
+webserver đang chạy ứng dụng Graphite, họ có thể nhìn thấy dữ liệu mà bạn đang nhìn.
+
+Nhờ sự phổ biến và ổn định của Graphite API, một hệ sinh thái lớn của các công cụ và dịch vụ của bên thứ 3 đã phát triển xung quanh nó. Thực tế, không chỉ một 
+lượng lớn đa dnajg các ứng dụng có dùng Graphite API, mà còn một số project thậm chí còn phát biển các "backend service adapter" để cho phép Graphite giao tiếp 
+với hệ thống lưu trữ của họ.
+
+###1.4.3 Quá trình thử nghiệm nhanh chóng
+Không giống như những người tiền nhiệm và các công cụ đương thời, Graphite không dựa vào các cấu hình tĩnh hoặc các "batch job" để tạo các graph mới. Tất cả các 
+data được tạo, từ các biểu đồ PNG truyền thống trên giao diện web, tới output JSON được dùng bởi các thư viện client-side để tạo nên các dashboard và đồ họa biểu 
+diễn thông tin, được cấu trúc "on-the-fly" bằng việc sử dụng API tổng hợp.
+
+Mọi tính năng tạo đồ họa sẵn có tới người dùng Graphite được phơi qua API. Tất nhiên, điều này khiến việc chia sẻ các graph với bất cứ ai cũng dễ dàng như việc 
+chia sẻ URL mà cấu trúc nên nó. Thậm chí, URL giống nhau có thể được nhúng trong các company dashboard hoặc thậm chí một webiste. Miễn là người tải graph có kết 
+nối mạng (và trong trường hợp các mật khẩu bảo vệ, các thông xác thực cần thiết) tới webserver đang chạy ứng dụng, thì họ vẫn có thể nhìn thấy dữ liệu như bạn 
+đang nhìn.
+
+Nhờ vào sự phổ biến và ổn định của Graphite API, một hệ sinh thái lớn của các công cụ và dịch vụ của bên thứ 3 đã phát triển quanh chúng. Thực tế, không những 
+một lượng lớn đa dạng các ứng dụng dùng Graphite API, mà còn một số project thậm chí đã pháp triển "backend service adapter" để cho phép Graphite giao tiếp với 
+hệ thống lưu trữ bên trong của họ.
+
+###1.4.2 Rapid Prototping
+Phần lớn người dùng đầu tiên tiếp xúc với Graphite lần đầu tiên thông qua giao diện Web, cụ thể hơn đó là Composer. Graphite thực hiện các công việc cụ thể như : 
+thông qua các metric và lưu các graph, thêm và loại bỏ các metric từ graph, thực hiện các số liệu biến đổi, và thể hiện toàn bộ bề ngang của việc biểu diễn API.
