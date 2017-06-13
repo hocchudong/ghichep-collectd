@@ -1,5 +1,5 @@
 # Ghi chép về Carbon
-Carbon là mọt thành phần của Graphite, nhận các metric, cache các metric này vào bộ nhớ memory (RAM), trước khi đẩy xuống storage backend để lưu trữ, Graphite web cũng có thể query dữ liệu trực tiếp trên lớp cache này.
+Carbon là một thành phần của Graphite, nhận các metric, cache các metric này vào bộ nhớ memory (RAM), trước khi đẩy xuống storage backend để lưu trữ, Graphite web cũng có thể query dữ liệu trực tiếp trên lớp cache này.
 ![Mo hinh](../images/carbon/overview.png)
 
 Carbon bao gồm các daemon sau:
@@ -40,3 +40,5 @@ Tham khảo:
 [2] - https://www.franklinangulo.com/blog/2014/6/6/graphite-series-6-carbon-aggregators
 
 [3] - http://syntaxi.net/2014/03/01/graphite-relay/
+
+[4] - https://www.franklinangulo.com/blog/2014/5/17/step-by-step-carbon-whisper
