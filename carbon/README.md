@@ -43,6 +43,7 @@ Cấu hình:
  VD: 
 
  `<env>.host.all.<app_metric>.m1_rate (60) = sum <env>.host.*.<<app_metric>>.m1_rate`
+ 
  Nếu các metric nhận được là:
  ```
  prod.applications.apache.www01.requests
@@ -50,7 +51,7 @@ Cấu hình:
  prod.applications.apache.www03.requests
  ```
  Các metric này sẽ được lưu vào buffer và sau 60 giây aggregate metric sẽ có dạng sau:
- 
+
  `prod.applications.apache.all.requests`
 
  - `rewrite-rules.conf`: cho phép định nghĩa các regex pattern, khi metric khớp với pattern đó sẽ được viết lại dựa trên đoạn text được định nghĩa trước. File này có dạng như sau:
