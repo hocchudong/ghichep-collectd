@@ -16,22 +16,38 @@ Cấu hình:
 
 ## 2. Carbon-relay
 carbon-relay đảm nhiệm 2 vai trò: nhân bản và phân tán.
-- Với cơ chế `RELAY_METHOD = rules`, carbon-relay sẽ chuyển tiếp các metric đến các backend carbon-cache trên nhiều host.
-- Với cơ chế `RELAY_METHOD = consistent-hashing`, carbon-relay sẽ chuyển tiếp các metric tới các carbon-cache backend thông qua các quy tắc được định trong trường `DESTINATIONS`
+- Với cơ chế `RELAY_METHOD = rules`, carbon-relay sẽ chuyển tiếp các metric đến các backend carbon-cache trên nhiều host dựa trên pattern định nghĩa trong file `relay-rules.conf`.
+- Với cơ chế `RELAY_METHOD = consistent-hashing`, carbon-relay sẽ phân tán(sharding) các metric tới các carbon-cache backend trên các host được khai báo trong trường `DESTINATIONS`
 
 Cấu hình:
 
  - `carbon.conf`: định nghĩa host và port nhận metric.
- - `relay-rules.conf`: định nghĩa ra các metric match với mẫu regex nào thì sẽ được đẩy về host carbon-cache tương ứng
+ - `relay-rules.conf`: định nghĩa ra các regex pattern, metric match với mẫu regex nào thì sẽ được đẩy về host carbon-cache tương ứng.
+
+ VD:
+ ```
+ [example]
+ pattern = ^mydata\.foo\..+
+ servers = 10.1.2.3, 10.1.2.4:2004, myserver.mydomain.com
+ ```
 
 ## 3. Carbon-aggregator
-daemon này đặt ở trước carbon-cache để buffer các metric trước khi đẩy vào whisper. Nó giúp làm giảm I/O load và kích thước file trên whisper bằng cách định nghĩa các khoảng thời gian và các hàm để tập hợp metric(sum hoặc average) đối với các metric khớp với mẫu cho trước. Sau 1 khoảng thời gian, các metric sau khi được aggregate sẽ được đẩy xuống carbon-cache.
+daemon này đặt ở trước carbon-cache để buffer các metric trước khi đẩy vào whisper. Nó giúp làm giảm I/O load và kích thước file trên whisper bằng cách định nghĩa các khoảng thời gian và các hàm để aggregate các metric (sum hoặc average) khớp với regex pattern cho trước. Sau 1 khoảng thời gian, các metric sau khi được aggregate sẽ được đẩy xuống carbon-cache.
 
 Cấu hình:
 
  - `carbon.conf`: định nghĩa host và port nhận metric.
  - `aggregation-rules.conf`: định nghĩa khoảng thời gian và hàm để thực hiện aggregate cho các metric khớp với các regex pattern.
+
+ VD: 
+
+ `output_template (frequency) = method input_pattern`
+
  - `rewrite-rules.conf`: cho phép định nghĩa các regex pattern, khi metric khớp với pattern đó sẽ được viết lại dựa trên đoạn text được định nghĩa trước.
+
+ VD: 
+
+ `^collectd\.([a-z0-9]+)\. = \1.system.`
 
 Tham khảo:
 
