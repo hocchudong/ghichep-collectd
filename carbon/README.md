@@ -37,13 +37,24 @@ daemon này đặt ở trước carbon-cache để buffer các metric trước k
 Cấu hình:
 
  - `carbon.conf`: định nghĩa host và port nhận metric.
- - `aggregation-rules.conf`: định nghĩa khoảng thời gian và hàm để thực hiện aggregate cho các metric khớp với các regex pattern.
+ - `aggregation-rules.conf`: định nghĩa khoảng thời gian và hàm để thực hiện aggregate cho các metric khớp với các regex pattern. file này có dạng như sau:
+ `output_template (frequency) = method input_pattern`
 
  VD: 
 
- `output_template (frequency) = method input_pattern`
+ `<env>.host.all.<app_metric>.m1_rate (60) = sum <env>.host.*.<<app_metric>>.m1_rate`
+ Nếu các metric nhận được là:
+ ```
+ prod.applications.apache.www01.requests
+ prod.applications.apache.www02.requests
+ prod.applications.apache.www03.requests
+ ```
+ Các metric này sẽ được lưu vào buffer và sau 60 giây aggregate metric sẽ có dạng sau:
+ 
+ `prod.applications.apache.all.requests`
 
- - `rewrite-rules.conf`: cho phép định nghĩa các regex pattern, khi metric khớp với pattern đó sẽ được viết lại dựa trên đoạn text được định nghĩa trước.
+ - `rewrite-rules.conf`: cho phép định nghĩa các regex pattern, khi metric khớp với pattern đó sẽ được viết lại dựa trên đoạn text được định nghĩa trước. File này có dạng như sau:
+ `regex-pattern = replacement-text`
 
  VD: 
 
@@ -58,3 +69,5 @@ Tham khảo:
 [3] - http://syntaxi.net/2014/03/01/graphite-relay/
 
 [4] - https://www.franklinangulo.com/blog/2014/5/17/step-by-step-carbon-whisper
+
+[5] - http://graphite.readthedocs.io/en/latest/config-carbon.html
