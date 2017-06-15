@@ -1,4 +1,4 @@
-# Tổng quan về Graphite.
+# I. Tổng quan về Graphite.
 
 -  Graphite giúp chúng ta thực hiện 2 công việc . Thứ nhất là thu thập dữ liệu theo kiểu time-series data, thứ 2 là render đồ thị 
 của dữ liệu này theo yêu cầu.
@@ -6,7 +6,7 @@ của dữ liệu này theo yêu cầu.
 - Graphite không thực hiện thu thập dữ liệu cho bạn , tuy nhiên có một số công cụ bên ngoài biết làm cách nào để gửi được dữ liệu 
 đến cho Graphite.
 
-# Kiến trúc Graphite.
+# II. Kiến trúc Graphite.
 
 - Graphite bao gồm 3 thành phần như sau :
  <ul>
@@ -19,7 +19,7 @@ của dữ liệu này theo yêu cầu.
 
 ![Graphite-architect](/images/graphite-architecture.png)
 
-# II. Các thành phần bên trong Graphite.
+# III. Các thành phần bên trong Graphite.
 
 ## 1. Carbon.
 
