@@ -1,4 +1,4 @@
-###Mục lục
+### Mục lục
 
 [Mở đầu](#modau)
 
@@ -317,7 +317,7 @@ LoadPlugin network
 
 <a name="minhhoainterface"></a>
 
-#####4.3 Minh họa.
+##### 4.3 Minh họa.
 
 Hình 10
 <img src="http://i.imgur.com/Afu9AUE.png"></a>
@@ -416,12 +416,12 @@ Hình 13
 #### 6. Load Plugin.
 
 <a name="motaload"></a>
-#####6.1 Mô tả.
+##### 6.1 Mô tả.
 
 Load plugin thu thập dữ liệu về tải hệ thống. Những con số này đưa ra một cái nhìn tổng quán về việc sử dụng máy. 
 
 <a name="cauhinhload"></a>
-#####6.2 Cách cấu hình.
+##### 6.2 Cách cấu hình.
 
 ```sh 
 	vi /etc/collectd/collectd.conf
@@ -438,7 +438,7 @@ LoadPlugin load
 ```
 
 <a name="minhhoaload"></a>
-#####6.3 Minh họa.
+##### 6.3 Minh họa.
 
 Hình 14 
 
@@ -458,7 +458,7 @@ Hình 15
 ![load](/images/pluginload2.png)
 
 <a name="morongload"></a>
-#####6.4 Mở rộng
+##### 6.4 Mở rộng
  
 Khi người dùng cấu hình "ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
 ```sh
@@ -496,7 +496,7 @@ LoadPlugin tcpconns
 ```
 
 <a name="minhhoatcpcon"></a>
-#####7.3 Minh họa.
+##### 7.3 Minh họa.
 
 Hình 17
 
@@ -530,7 +530,7 @@ Hình 18
 
 
 <a name="morongtcpcon.png"></a>
-#####7.4 Mở rộng.
+##### 7.4 Mở rộng.
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
@@ -546,15 +546,15 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 ```
 
 <a name="users"></a>
-####8. Users plugin.
+#### 8. Users plugin.
 
 <a name="motausers"></a>
-#####8.1 Mô tả.
+##### 8.1 Mô tả.
 
 Users plugin thống kê tổng số người dùng đăng nhập vào hệ thống.
 
 <a name="cauhinhusers"></a>
-#####8.2. Cách cấu hình.
+##### 8.2. Cách cấu hình.
 
 ```sh
 # Khai bao su dung plugin users trong file config cua collectd tren client
@@ -562,7 +562,7 @@ LoadPlugin users
 ```
 
 <a name="minhhoausers"></a>
-#####8.3 Minh họa.
+##### 8.3 Minh họa.
 
 Hình 19
 
@@ -580,12 +580,12 @@ Hình 20
 ####9. Uptime plugin.
 
 <a name="motauptime"></a>
-#####9.1 Mô tả.
+##### 9.1 Mô tả.
  
 Uptime plugin theo dõi thời gian hoạt động của hệ thống.
 
 <a name="cauhinhuptime"></a>
-#####9.2 Cách cấu hình.
+##### 9.2 Cách cấu hình.
 
 ```sh
 # Khai bao su dung plugin uptime trong file config cua collectd tren client
@@ -593,7 +593,7 @@ LoadPlugin uptime
 ```
 
 <a name="minhhoauptime"></a>
-#####9.3 Minh họa.
+##### 9.3 Minh họa.
 
 Người dùng có thể dùng *uptime* để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
 
@@ -608,7 +608,7 @@ Hình 21
 #### 10. OpenVPN
 
 <a name="motaopenvpn"></a>
-#####10.1 Mô tả.
+##### 10.1 Mô tả.
 
 Plugin OpenVPN đọc trạng thái file được duy trì bởi OpenVPN và thu thập thống kê kết nối với client.
 
@@ -643,7 +643,7 @@ log         openvpn.log
 ```
 
 <a name="minhhoaopenvpn"></a>
-#####10.3 Minh họa.
+##### 10.3 Minh họa.
 
 <img src="http://i.imgur.com/7hnmaw5.png">
 
@@ -651,3 +651,136 @@ log         openvpn.log
 ```sh
 1. Số người dùng kết nối OpenVPN.
 ```
+
+#### 11. libvirt
+
+<a name="motalibvirt"></a>
+##### 11.1 Mô tả.
+
+Plugin libvirt cho phép thu thập trạng thái của CPU, disk và network của máy ảo mà không cần cài agent lên trên các máy ảo đó - chỉ cần collectd trên máy chủ host. Các metric được thu thập thông qua libvirt API.
+
+<a name="cauhinhlibivrt"></a>
+##### 11.2 Cách cấu hình.
+
+```sh
+<Plugin "libivrt">
+RefreshInterval 120
+Connection "qemu:///system"
+Domain "longlq_vm"
+BlockDevice "/:hdb/"
+InterfaceDevice "/:eth0/"
+IgnoreSelected "true"
+BlockDeviceFormat "target"
+HostnameFormat "uuid"
+InterfaceFormat "address"
+PluginInstanceFormat name
+</Plugin>
+```
+
+**Các tùy chọn khi cấu hình:**
+
+ `Connection "qemu:///system"` 
+  Kết nối tới hypervisor thông qua uri, trong VD là kết nối tới hypervisor nằm chính trên host
+ 
+ `RefreshInterval 120`
+  Khoảng thời gian để lấy dữ liệu của domain và device (được tính bằng giây). Nếu set là 0 thì sẽ disable tùy chọn này.
+ 
+ `Domain "longlq_vm"`
+  Đưa máy ảo longlq_vm vào danh sách
+
+ `BlockDevice "/:hdb/"`
+  Đưa thiết bị hdb trên tất cả các máy ảo vào danh sách các block device (các ổ cứng, CD-ROM)
+
+ `InterfaceDevice "/:eth0/"
+  Đưa thiết bị eth0 trên tất cả các máy ảo danh sách các interface device (các card mạng)
+
+ `IgnoreSelected "true"`
+  Nếu chọn `false`, hệ thống sẽ chỉ lấy thông số của các máy ảo, block device và interface device trong danh sách và bỏ qua tất cả các máy ảo và thông số khác. Nếu chọn `true`, hệ thống sẽ lấy thông số của tất cả các máy ảo và device ngoài danh sách.
+
+ `BlockDeviceFormat "target"`
+  Khai báo mặc định là `target`, tên của thiết bị block device trên máy ảo sẽ được lấy theo name được nhìn trong máy ảo, VD: sda. Nếu chuyển thành `source`, tên block device sẽ được lấy dựa trên đường dẫn file block device đó trên host, VD: var_lib_libvirt_images_image1.qcow2
+
+ `HostnameFormat "uuid"`
+  - Khai báo mặc định là `name`: tên máy ảo trên collectd sẽ lấy tên máy ảo trên hypervisor
+  - Khai báo là `uuid`: tên máy ảo trên collectd sẽ lấy uuid của máy ảo trên hypervisor
+  - Khai báo là `hostname`: tên máy ảo trên collectd sẽ lấy hostname của host chứa máy ảo
+
+ `InterfaceFormat "address"`
+  - Khai báo mặc định là `name`: tên của interface trên collectd sẽ lấy theo tên interface trong máy ảo
+  - Khai báo là `address`: tên của interface trên collectd sẽ lấy theo MAC của interface trong máy ảo
+
+  
+ `PluginInstanceFormat name|uuid|none`
+  - Plugin virt sẽ thu thập các metric và đặt plugin_instance của metric theo giá trị được gán.
+  - `name`: sử dụng tên của máy ảo.
+  - `uuid`: sử dụng uuid của máy ảo
+  - Mặc định sẽ không gán giá trị cho plugin_instance
+  - Có thể sử dụng cả 2 giá trị `name uuid`, khi đó plugin_instance sẽ được gán them name và uuid của máy ảo, cách nhau bởi ":"
+
+ ##### 11.2 Các metric của máy ảo
+
+ - Disk Octet
+ Thể hiện số Bytes/s được đọc hoặc ghi vào ổ cứng
+ ![disk_octets](../images/virt_plugin/disk_octets.png)
+
+ - Disk Ops
+ Thể hiện sô IOPS đọc hoặc ghi vào ổ cứng
+ ![disk_ops](../images/virt_plugin/disk_ops.png)
+ 
+  Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
+  ```
+  #virsh domblkstat instance-00000015 vda
+  ```
+  Với `instance-00000015 vda` là tên máy ảo trên host compute
+  Kết quả: 
+
+  ```
+  vda rd_req 17940
+  vda rd_bytes 349932544
+  vda wr_req 4903
+  vda wr_bytes 633525248
+  vda flush_operations 548
+  vda rd_total_times 21134039630
+  vda wr_total_times 109031753668
+  vda flush_total_times 1650339171
+  ```
+
+  Hoặc sử dụng lệnh:
+  ```
+  #virsh domblkstat instance-00000015 vda --human
+  ```
+
+  Kết quả:
+
+  ```
+  Device: vda
+  number of read operations:      17940
+  number of bytes read:           349932544
+  number of write operations:     4903
+  number of bytes written:        633525248
+  number of flush operations:     548
+  total duration of reads (ns):   21134039630
+  total duration of writes (ns):  109031753668
+  total duration of flushes (ns): 1650339171
+  ```
+
+
+
+
+ virsh domifstat instance-00000015 tapbc55e0b5-1e
+ Kết quả:
+ tapbc55e0b5-1e rx_bytes 15556653
+tapbc55e0b5-1e rx_packets 35757
+tapbc55e0b5-1e rx_errs 0
+tapbc55e0b5-1e rx_drop 0
+tapbc55e0b5-1e tx_bytes 15429686
+tapbc55e0b5-1e tx_packets 39541
+tapbc55e0b5-1e tx_errs 0
+tapbc55e0b5-1e tx_drop 0
+
+
+
+
+
+ 
+
