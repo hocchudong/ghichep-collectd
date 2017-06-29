@@ -25,28 +25,36 @@ PluginInstanceFormat name
 
 **Các tùy chọn khi cấu hình:**
 
- `Connection "qemu:///system"` 
+ `Connection "qemu:///system"`:
+
   Kết nối tới hypervisor thông qua uri, trong VD là kết nối tới hypervisor nằm chính trên host
  
- `RefreshInterval 120`
+ `RefreshInterval 120`:
+
   Khoảng thời gian để lấy dữ liệu của domain và device (được tính bằng giây). Nếu set là 0 thì sẽ disable tùy chọn này.
  
- `Domain "longlq_vm"`
+ `Domain "longlq_vm"`:
+
   Đưa máy ảo longlq_vm vào danh sách
 
- `BlockDevice "/:hdb/"`
+ `BlockDevice "/:hdb/"`:
+
   Đưa thiết bị hdb trên tất cả các máy ảo vào danh sách các block device (các ổ cứng, CD-ROM)
 
- `InterfaceDevice "/:eth0/"
+ `InterfaceDevice "/:eth0/":
+
   Đưa thiết bị eth0 trên tất cả các máy ảo danh sách các interface device (các card mạng)
 
- `IgnoreSelected "true"`
+ `IgnoreSelected "true"`:
+
   Nếu chọn `false`, hệ thống sẽ chỉ lấy thông số của các máy ảo, block device và interface device trong danh sách và bỏ qua tất cả các máy ảo và thông số khác. Nếu chọn `true`, hệ thống sẽ lấy thông số của tất cả các máy ảo và device ngoài danh sách.
 
- `BlockDeviceFormat "target"`
+ `BlockDeviceFormat "target"`:
+
   Khai báo mặc định là `target`, tên của thiết bị block device trên máy ảo sẽ được lấy theo name được nhìn trong máy ảo, VD: sda. Nếu chuyển thành `source`, tên block device sẽ được lấy dựa trên đường dẫn file block device đó trên host, VD: var_lib_libvirt_images_image1.qcow2
 
- `HostnameFormat "uuid"`
+ `HostnameFormat "uuid"`:
+
   - Khai báo mặc định là `name`: tên máy ảo trên collectd sẽ lấy tên máy ảo trên hypervisor
   - Khai báo là `uuid`: tên máy ảo trên collectd sẽ lấy uuid của máy ảo trên hypervisor
   - Khai báo là `hostname`: tên máy ảo trên collectd sẽ lấy hostname của host chứa máy ảo
@@ -55,8 +63,7 @@ PluginInstanceFormat name
   - Khai báo mặc định là `name`: tên của interface trên collectd sẽ lấy theo tên interface trong máy ảo
   - Khai báo là `address`: tên của interface trên collectd sẽ lấy theo MAC của interface trong máy ảo
 
-  
- `PluginInstanceFormat name|uuid|none`
+   `PluginInstanceFormat name|uuid|none`
   - Plugin virt sẽ thu thập các metric và đặt plugin_instance của metric theo giá trị được gán.
   - `name`: sử dụng tên của máy ảo.
   - `uuid`: sử dụng uuid của máy ảo
@@ -66,12 +73,10 @@ PluginInstanceFormat name
 ## 3. Các metric của máy ảo
 
 ### 3.1.Thông số về disk
- - Disk Octet
- Thể hiện số Bytes/s được đọc hoặc ghi vào ổ cứng
+ - `Disk Octet`: Thể hiện số Bytes/s được đọc hoặc ghi vào ổ cứng
  ![disk_octets](../images/virt_plugin/disk_octets.png)
 
- - Disk Ops
- Thể hiện sô IOPS đọc hoặc ghi vào ổ cứng
+ - `Disk Ops`: Thể hiện sô IOPS đọc hoặc ghi vào ổ cứng
  ![disk_ops](../images/virt_plugin/disk_ops.png)
  
   Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
@@ -113,12 +118,10 @@ PluginInstanceFormat name
   ```
 
 ### 3.2. Thông số của network
- - Interface octets
- Thể hiện số Bytes/s đi vào hoặc ra card mạng
+ - `Interface octets`: Thể hiện số Bytes/s đi vào hoặc ra card mạng
  ![interface_octets](../images/virt_plugin/if_octets_tx.png)
 
- - Interface packets
- Thể hiện số packets/s đi vào hoặc ra card mạng
+ - `Interface packets`:Thể hiện số packets/s đi vào hoặc ra card mạng
  ![interface_octets](../images/virt_plugin/if_packets_tx.png)
 
  Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
@@ -140,3 +143,47 @@ PluginInstanceFormat name
  tapbc55e0b5-1e tx_drop 0
  ```
 ### 3.3. Thông số của cpu
+
+### 3.4. Thông số của RAM
+ - `Memory available`: Thể hiện lượng RAM được cấp phát lý thuyết cho máy ảo
+ ![interface_octets](../images/virt_plugin/memory_actualbaloon&available.png)
+
+ - `Memory actual balloon`: Thể hiện lượng RAM được câps phát thực tế cho máy ảo
+ ![interface_octets](../images/virt_plugin/memory_actualbaloon&available.png)
+
+ - `Memory unused`: Thể hiện lượng RAM chưa sử dụng tới
+ ![interface_octets](../images/virt_plugin/memory_unused.png)
+
+- `Memory rss`: Thể hiện lượng RAM phân bỏ cho process VM
+![interface_octets](../images/virt_plugin/memory_rss.png)
+
+Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
+
+```
+#virsh dommemstat instance-00000015
+```
+
+Kết quả:
+
+```
+actual 2097152
+swap_in 0
+swap_out 0
+major_fault 1449
+minor_fault 36510659
+unused 1531360
+available 2049980
+rss 2253348
+```
+
+```
+#virsh domstats --balloon instance-00000015
+```
+
+Kết quả:
+
+```
+Domain: 'instance-00000015'
+balloon.current=2097152
+balloon.maximum=2097152
+```
