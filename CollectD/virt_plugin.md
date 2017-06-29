@@ -154,8 +154,14 @@ PluginInstanceFormat name
  - `Memory unused`: Thể hiện lượng RAM chưa sử dụng tới
  ![interface_octets](../images/virt_plugin/memory_unused.png)
 
-- `Memory rss`: Thể hiện lượng RAM phân bỏ cho process VM
+- `Memory rss`: Thể hiện lượng RAM phân bổ cho process VM
 ![interface_octets](../images/virt_plugin/memory_rss.png)
+
+- `Memory major fault`: Thể hiện số page fault được gọi từ disk
+![interface_octets](../images/virt_plugin/memory_major_fault.png)
+
+- `Memory minor fault`: Thể hiện số page fault được gọi từ buffer cache
+![interface_octets](../images/virt_plugin/memory_minor_fault.png)
 
 Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
 
@@ -187,3 +193,9 @@ Domain: 'instance-00000015'
 balloon.current=2097152
 balloon.maximum=2097152
 ```
+
+Tham khảo:
+
+[1] - https://www.mankier.com/1/virsh
+
+[2] - https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_virt
