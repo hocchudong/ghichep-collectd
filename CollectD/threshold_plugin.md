@@ -48,7 +48,6 @@ LoadPlugin "threshold"
         Hysteresis 3
      </Type>
    </Host>
- </Plugin>
 </Plugin>
 ```
 
@@ -108,7 +107,12 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
   Khai báo số lần vượt ngưỡng liên tiếp cần đạt tới trước khi gửi cảnh báo
 
  `Hysteresis Value`
-  Khai báo thời gian trễ cho threshold, trạng thái cảnh báo vẫn được duy trì cho tới khi giá trị nằm trong khoảng an toàn một khoảng thời gian bằng thời gian trễ được set.
+ 
+  Khai báo khoảng dao động cho threshold, tránh trường hợp giá trị dao động liên tục quanh nguõng cảnh báo.
+  VD:
+    WarningMax 100.0
+    Hysteresis 1.0
+  Cảnh báo chi gửi đi khi giá trị vượt quá 101 và trở về OK khi giá trị dưới 99.
 
  `Interesting true|false`
 
@@ -119,4 +123,8 @@ Tham khảo:
 [1] - https://collectd.org/documentation/manpages/collectd-threshold.5.shtml
 
 [2] - https://www.netways.de/fileadmin/images/Events_Trainings/Events/OSMC/2015/Slides_2015/collectd_Thresholds_Plugin_and_Icinga_-_Florian_Forster.pdf
+
+[3] - https://collectd.org/documentation/manpages/collectd.conf.5.shtml#threshold_configuration
+
+[4] - https://collectd.org/wiki/index.php/Notifications_and_thresholds
 
