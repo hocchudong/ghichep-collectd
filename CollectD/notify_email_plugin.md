@@ -53,6 +53,9 @@ LoadPlugin notify_email
     Subject email nhận được sẽ là [collectd] Warning on Host1!
 
 
+Để có thể gửi cảnh báo qua email, cần đảm bảo `threshold` plugin đã được cấu hình ngưỡng cảnh báo và đã xuất được cảnh báo khi metric tới ngưỡng, đê kiểm tra việc xuất cảnh báo, sử dụng `exec` plugin để ghi vào syslog mỗi khi xuất hiện cảnh báo.
+
+
 
 Tham khảo:
 

@@ -64,7 +64,7 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
  - `c0f671e9-9353-49dd-954a-e7f783f5660f`: host là id máy ảo
  - `virt`: tên plugin
  - `instance-00000015`: plugin instance là tên máy ảo
- - `disk_octets`: loại metric
+ - `disk_octets`: metric type
  - `vda`: type instance là tên ổ đĩa được lấy metric
 
 ## 3. Các tùy chọn khi cấu hình
