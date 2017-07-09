@@ -18,6 +18,7 @@ LoadPlugin threshold
 LoadPlugin libvirt
 LoadPlugin notify_email
 
+# Khai báo địa chỉ email nhận cảnh báo
 <Plugin "notify_email">
  From "notify_email@email.com"
  Recipient "receiver@email.com"
@@ -28,21 +29,8 @@ LoadPlugin notify_email
  SMTPPassword "notify_email_password"
 </Plugin>
 
-<Plugin exec>
- NotificationExec "nobody:nogroup" "/usr/lib/collectd/notify.sh"
-</Plugin>
-
+# Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM
 <Plugin "threshold">
-<Host "compute1">
- <Plugin "memory">
-       <Type "memory">
-         Instance "used"
-         WarningMin 100000000
-         WarningMax 1200000000
-       </Type>
- </Plugin>
-</Host>
-
 <Plugin "virt">
         <Type "if_octets">
          DataSource "tx"
@@ -53,6 +41,7 @@ LoadPlugin notify_email
 
 </Plugin>
 
+# Khai báo plugin virt
 <Plugin libvirt>
     RefreshInterval 120
     Connection "qemu:///system"
@@ -67,8 +56,3 @@ LoadPlugin notify_email
 ## 2.3. Đẩy tải trên VM và kiểm tra email thông báo
 ![notify_email](../images/notify_email/notify_email_1.png)
 
-
-
-Tham khảo:
-
-[1] - https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_notify_email

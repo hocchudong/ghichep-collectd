@@ -19,6 +19,16 @@ LoadPlugin unixsock
 
 ## 3. Các lệnh sử dụng
 
+`collectdctl getval Identifier`
+
+`collectdctl listval`
+
+`collectd putval Identifier [OptionList] Valuelist`
+
+`collectdctl putnotif [OptionList] message=Message`
+
+`collectdctl flush [timeout=Timeout] [plugin=Plugin [...]] [identifier=Ident [...]]`
+
 
 
 Tham khảo:
