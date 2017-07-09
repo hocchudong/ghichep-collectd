@@ -65,7 +65,7 @@ LoadPlugin notify_email
 `service collectd restart`
 
 ## 2.3. Đẩy tải trên VM và kiểm tra email thông báo
-![notify_email](../images/notifi_email/notify_email_1.png)
+![notify_email](../images/notify_email/notify_email_1.png)
 
 
 
