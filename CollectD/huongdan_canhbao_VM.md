@@ -7,11 +7,11 @@
 - Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2 Cách cấu hình
-Sử dụng 3 plugin có sẵn của collectd:
- - [virt](plugins/virt_plugin.md)
- - [threshold](plugins/threshold_plugin.md)
- - [notify_email](plugins/notify_email_plugin.md)
- - [exec](plugins/exec_plugin.md)
+Sử dụng 4 plugin có sẵn của collectd:
+ - [virt](plugins/virt_plugin.md): thu thập metric VM
+ - [threshold](plugins/threshold_plugin.md): Đặt ngưỡng cảnh báo
+ - [notify_email](plugins/notify_email_plugin.md): gửi cảnh báo qua email
+ - [syslog](plugins/syslog_plugin.md): ghi log khi có cảnh báo
 
 ## 2.1. Trên host Compute, sửa file `/etc/collectd/collectd.conf`
 
@@ -20,6 +20,7 @@ FQDNLookup true
 LoadPlugin threshold
 LoadPlugin virt
 LoadPlugin notify_email
+LoadPlugin syslog
 LoadPlugin network
 
 # Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM, đơn vị là bits
@@ -47,8 +48,10 @@ LoadPlugin network
 
 
 # Khai báo thực thi script ghi log khi nhận được cảnh báo
-<Plugin exec>
- NotificationExec "nobody:nogroup" "/usr/lib/collectd/notify.sh"
+LoadPlugin syslog
+<Plugin syslog>
+LogLevel warning
+NotifyLevel WARNING
 </Plugin>
 
 
