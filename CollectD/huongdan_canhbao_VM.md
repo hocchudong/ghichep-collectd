@@ -3,14 +3,15 @@
 ## 1. Mô tả
 
 - Hướng dẫn sử dụng collectd để gửi cảnh báo qua email cho admin khi metric của VM đạt ngưỡng đặt trước.
-- Phiên bản OS sử dụng là Ubuntu 14.04
-- Phiên bản collectd sử dụng là collectd 5.5.3.1
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2 Cách cấu hình
 Sử dụng 3 plugin có sẵn của collectd:
  - [virt](virt_plugin.md)
  - [threshold](threshold_plugin.md)
  - [notify_email](notify_email_plugin.md)
+ - [exec](exec_plugin.md)
 
 ## 2.1. Trên host Compute, sửa file `/etc/collectd/collectd.conf`
 
@@ -20,6 +21,18 @@ LoadPlugin threshold
 LoadPlugin virt
 LoadPlugin notify_email
 LoadPlugin network
+
+# Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM, đơn vị là bits
+<Plugin "threshold">
+<Plugin "virt">
+        <Type "if_octets">
+         DataSource "tx"
+         WarningMin 100
+         WarningMax 1200
+       </Type>
+</Plugin>
+
+</Plugin>
 
 # Khai báo địa chỉ email nhận cảnh báo
 <Plugin "notify_email">
@@ -32,17 +45,12 @@ LoadPlugin network
  SMTPPassword "notify_email_password"
 </Plugin>
 
-# Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM
-<Plugin "threshold">
-<Plugin "virt">
-        <Type "if_octets">
-         DataSource "tx"
-         WarningMin 100
-         WarningMax 1200
-       </Type>
+
+# Khai báo thực thi script ghi log khi nhận được cảnh báo
+<Plugin exec>
+ NotificationExec "nobody:nogroup" "/usr/lib/collectd/notify.sh"
 </Plugin>
 
-</Plugin>
 
 # Khai báo plugin virt
 <Plugin virt>
@@ -61,6 +69,17 @@ LoadPlugin network
 ## 2.2. Khởi động lại collectd
 `service collectd restart`
 
-## 2.3. Đẩy tải trên VM và kiểm tra email thông báo
+## 2.3. Đẩy tải trên VM 
+`root@u1:~# ping 8.8.8.8 -s 500`
+
+## 2.4. Trên host compute, kiểm tra cảnh báo
+- Kiểm tra trong /var/log/syslog
+```
+4,1,Jul  9 21:56:35,compute1,warning:, Host compute1, plugin memory type memory (instance used): Data source "value" is currently 1327288320.000000. That is above the warning threshold of 1200000000.000000.
+
+6,3,Jul  9 21:56:35,compute1,collectd[29195]:, notify_email: notify sent to receiver@email.com: 250 Ok
+```
+
+- Kiểm tra email cảnh báo
 ![notify_email](../images/notify_email/notify_email_1.png)
 
