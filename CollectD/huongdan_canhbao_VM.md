@@ -23,7 +23,7 @@ LoadPlugin notify_email
 LoadPlugin syslog
 LoadPlugin network
 
-# Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM, đơn vị là bits
+# Khai báo ngưỡng cảnh báo cho metric if_octets_tx (băng thông ra của interface) của VM, đơn vị là bytes
 <Plugin "threshold">
 <Plugin "virt">
         <Type "if_octets">
