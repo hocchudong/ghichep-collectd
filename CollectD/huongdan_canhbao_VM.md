@@ -8,10 +8,10 @@
 
 ## 2 Cách cấu hình
 Sử dụng 3 plugin có sẵn của collectd:
- - [virt](virt_plugin.md)
- - [threshold](threshold_plugin.md)
- - [notify_email](notify_email_plugin.md)
- - [exec](exec_plugin.md)
+ - [virt](plugins/virt_plugin.md)
+ - [threshold](plugins/threshold_plugin.md)
+ - [notify_email](plugins/notify_email_plugin.md)
+ - [exec](plugins/exec_plugin.md)
 
 ## 2.1. Trên host Compute, sửa file `/etc/collectd/collectd.conf`
 

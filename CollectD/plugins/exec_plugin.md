@@ -11,6 +11,8 @@ Exec plugin để thực thi một script được viết sẵn. Có 2 cách đ�
  - Loại 2: `NotificationExec`
 
  	Plugin sẽ thực thi script mỗi khi nhận được một cảnh báo từ collectd daemon. Cảnh báo được nhận vào như `STDIN`. Không giống như `Exec`, việc thực thi script sẽ không diễn ra tuần tự, nên có thể thực thi script đồng thời nếu nhận được nhiều thông báo một lúc.
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2. Cách cấu hình
 
