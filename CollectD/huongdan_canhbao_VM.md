@@ -80,7 +80,7 @@ NotifyLevel WARNING
 ```
 4,3,Jul 10 03:15:30,compute1,collectd[5952]:, Notification: severity = WARNING, host = c0f671e9-9353-49dd-954a-e7f783f5660f, plugin = virt, plugin_instance = instance-00000015, type = if_octets, type_instance = fa:16:3e:7f:3a:3c, message = Host c0f671e9-9353-49dd-954a-e7f783f5660f, plugin virt (instance instance-00000015) type if_octets (instance fa:16:3e:7f:3a:3c): Data source "tx" is currently 1374.393586. That is above the warning threshold of 1200.000000.
 
-6,3,Jul  9 21:56:35,compute1,collectd[29195]:, notify_email: notify sent to receiver@email.com: 250 Ok
+6,3,Jul 10 03:15:30,compute1,collectd[5952]:, notify_email: notify sent to zabbix.vdcit@gmail.com: 250 Ok
 ```
 
 - Kiểm tra email cảnh báo
