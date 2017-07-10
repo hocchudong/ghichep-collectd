@@ -3,8 +3,10 @@
 
 ## 1. Mô tả
 
-Plugin threshold cho phép tạo và gửi đi cảnh báo khi có vấn đề được ghi nhận trong quá trình giám sát của collectd. Các plugin khác có thể cấu hình để nhận cảnh báo và thực hiện các hành động tiếp theo. 
+- Plugin threshold cho phép tạo và gửi đi cảnh báo khi có vấn đề được ghi nhận trong quá trình giám sát của collectd. Các plugin khác có thể cấu hình để nhận cảnh báo và thực hiện các hành động tiếp theo. 
 Mỗi khi giá trị vượt ngưỡng, cảnh báo được gửi đi, khi giá trị trở lại ngưỡng thì cảnh báo "OK" được gửi đi.
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2 Cách cấu hình
 

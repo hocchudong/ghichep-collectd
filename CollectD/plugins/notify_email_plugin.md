@@ -2,8 +2,9 @@
 
 ## 1. Mô tả
 
-Plugin notiy_email sử dụng thư viện ESMTP để gửi các cảnh báo tới địa chỉ email
-
+- Plugin notiy_email sử dụng thư viện ESMTP để gửi các cảnh báo tới địa chỉ email
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2 Cách cấu hình
 

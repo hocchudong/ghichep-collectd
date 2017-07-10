@@ -3,7 +3,9 @@
 
 ## 1. Mô tả
 
-RRDtool plugin sử dụng để ghi giá trị metric vào RRD file sử dụng librrd
+- RRDtool plugin sử dụng để ghi giá trị metric vào RRD file sử dụng librrd
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 ## 2 Cách cấu hình
 

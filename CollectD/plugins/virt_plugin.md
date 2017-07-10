@@ -3,13 +3,17 @@
 
 ## 1. Mô tả
 
-Plugin libvirt cho phép thu thập trạng thái của CPU, disk và network của máy ảo mà không cần cài agent lên trên các máy ảo đó - chỉ cần collectd trên máy chủ host. Các metric được thu thập thông qua libvirt API.
+- Plugin libvirt cho phép thu thập trạng thái của CPU, disk và network của máy ảo mà không cần cài agent lên trên các máy ảo đó - chỉ cần collectd trên máy chủ host. Các metric được thu thập thông qua libvirt API.
+- Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
+- Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
 
 ## 2 Cách cấu hình
 
 ```sh
-<Plugin "libivrt">
+LoadPlugin virt
+
+<Plugin "vrt">
 RefreshInterval 120
 Connection "qemu:///system"
 Domain "longlq_vm"
@@ -74,10 +78,10 @@ PluginInstanceFormat name
 
 ### 3.1.Thông số về disk
  - `Disk Octet`: Thể hiện số Bytes/s được đọc hoặc ghi vào ổ cứng
- ![disk_octets](../images/virt_plugin/disk_octets.png)
+ ![disk_octets](../../images/virt_plugin/disk_octets.png)
 
  - `Disk Ops`: Thể hiện sô IOPS đọc hoặc ghi vào ổ cứng
- ![disk_ops](../images/virt_plugin/disk_ops.png)
+ ![disk_ops](../../images/virt_plugin/disk_ops.png)
  
   Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
   ```
@@ -119,10 +123,10 @@ PluginInstanceFormat name
 
 ### 3.2. Thông số của network
  - `Interface octets`: Thể hiện số Bytes/s đi vào hoặc ra card mạng
- ![interface_octets](../images/virt_plugin/if_octets_tx.png)
+ ![interface_octets](../../images/virt_plugin/if_octets_tx.png)
 
  - `Interface packets`:Thể hiện số packets/s đi vào hoặc ra card mạng
- ![interface_octets](../images/virt_plugin/if_packets_tx.png)
+ ![interface_octets](../../images/virt_plugin/if_packets_tx.png)
 
  Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
 
@@ -146,22 +150,22 @@ PluginInstanceFormat name
 
 ### 3.4. Thông số của RAM
  - `Memory available`: Thể hiện lượng RAM được cấp phát lý thuyết cho máy ảo
- ![interface_octets](../images/virt_plugin/memory_actualbaloon&available.png)
+ ![interface_octets](../../images/virt_plugin/memory_actualbaloon&available.png)
 
  - `Memory actual balloon`: Thể hiện lượng RAM được câps phát thực tế cho máy ảo
- ![interface_octets](../images/virt_plugin/memory_actualbaloon&available.png)
+ ![interface_octets](../../images/virt_plugin/memory_actualbaloon&available.png)
 
  - `Memory unused`: Thể hiện lượng RAM chưa sử dụng tới
- ![interface_octets](../images/virt_plugin/memory_unused.png)
+ ![interface_octets](../../images/virt_plugin/memory_unused.png)
 
 - `Memory rss`: Thể hiện lượng RAM phân bổ cho process VM
-![interface_octets](../images/virt_plugin/memory_rss.png)
+![interface_octets](../../images/virt_plugin/memory_rss.png)
 
 - `Memory major fault`: Thể hiện số page fault được gọi từ disk
-![interface_octets](../images/virt_plugin/memory_major_fault.png)
+![interface_octets](../../images/virt_plugin/memory_major_fault.png)
 
 - `Memory minor fault`: Thể hiện số page fault được gọi từ buffer cache
-![interface_octets](../images/virt_plugin/memory_minor_fault.png)
+![interface_octets](../../images/virt_plugin/memory_minor_fault.png)
 
 Các thông số trên có thể liệt kê bằng lệnh: (thực hiện trên host compute chứa máy ảo)
 
