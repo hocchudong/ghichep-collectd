@@ -2,7 +2,9 @@
 
 ## 1. Mô tả
 
-Hướng dẫn sử dụng collectd để gửi cảnh báo qua email cho admin khi metric của VM đạt ngưỡng đặt trước.
+- Hướng dẫn sử dụng collectd để gửi cảnh báo qua email cho admin khi metric của VM đạt ngưỡng đặt trước.
+- Phiên bản OS sử dụng là Ubuntu 14.04
+- Phiên bản collectd sử dụng là collectd 5.5.3.1
 
 ## 2 Cách cấu hình
 Sử dụng 3 plugin có sẵn của collectd:
@@ -10,13 +12,14 @@ Sử dụng 3 plugin có sẵn của collectd:
  - [threshold](threshold_plugin.md)
  - [notify_email](notify_email_plugin.md)
 
-## 2.1. Sửa file `/etc/collectd/collectd.conf`
+## 2.1. Trên host Compute, sửa file `/etc/collectd/collectd.conf`
 
 ```sh
 FQDNLookup true
 LoadPlugin threshold
-LoadPlugin libvirt
+LoadPlugin virt
 LoadPlugin notify_email
+LoadPlugin network
 
 # Khai báo địa chỉ email nhận cảnh báo
 <Plugin "notify_email">
@@ -42,15 +45,20 @@ LoadPlugin notify_email
 </Plugin>
 
 # Khai báo plugin virt
-<Plugin libvirt>
+<Plugin virt>
     RefreshInterval 120
     Connection "qemu:///system"
     HostnameFormat "uuid"
     InterfaceFormat "address"
 </Plugin>
+
+<Plugin network>
+    Server "Graphite_IP" "2003"
+</Plugin>
+
 ```
 
-## 2.2. Khởi động lại collect
+## 2.2. Khởi động lại collectd
 `service collectd restart`
 
 ## 2.3. Đẩy tải trên VM và kiểm tra email thông báo
