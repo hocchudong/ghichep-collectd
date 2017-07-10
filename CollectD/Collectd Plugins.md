@@ -1,4 +1,4 @@
-###Mục lục
+### Mục lục
 
 [Mở đầu](#modau)
 
@@ -317,7 +317,7 @@ LoadPlugin network
 
 <a name="minhhoainterface"></a>
 
-#####4.3 Minh họa.
+##### 4.3 Minh họa.
 
 Hình 10
 <img src="http://i.imgur.com/Afu9AUE.png"></a>
@@ -416,12 +416,12 @@ Hình 13
 #### 6. Load Plugin.
 
 <a name="motaload"></a>
-#####6.1 Mô tả.
+##### 6.1 Mô tả.
 
 Load plugin thu thập dữ liệu về tải hệ thống. Những con số này đưa ra một cái nhìn tổng quán về việc sử dụng máy. 
 
 <a name="cauhinhload"></a>
-#####6.2 Cách cấu hình.
+##### 6.2 Cách cấu hình.
 
 ```sh 
 	vi /etc/collectd/collectd.conf
@@ -438,7 +438,7 @@ LoadPlugin load
 ```
 
 <a name="minhhoaload"></a>
-#####6.3 Minh họa.
+##### 6.3 Minh họa.
 
 Hình 14 
 
@@ -458,7 +458,7 @@ Hình 15
 ![load](/images/pluginload2.png)
 
 <a name="morongload"></a>
-#####6.4 Mở rộng
+##### 6.4 Mở rộng
  
 Khi người dùng cấu hình "ReportRelative true" dữ liệu trên biểu đồ là tải hệ thống chia cho số CPU core
 ```sh
@@ -496,7 +496,7 @@ LoadPlugin tcpconns
 ```
 
 <a name="minhhoatcpcon"></a>
-#####7.3 Minh họa.
+##### 7.3 Minh họa.
 
 Hình 17
 
@@ -530,7 +530,7 @@ Hình 18
 
 
 <a name="morongtcpcon.png"></a>
-#####7.4 Mở rộng.
+##### 7.4 Mở rộng.
 
 Thay vì thu thập số lượng các kết nối TCP trên tất cả các cổng người dùng có thể cấu hình để collectd có thể thu thập các kết nối TCP từ một port.
 
@@ -546,15 +546,15 @@ Thay vì thu thập số lượng các kết nối TCP trên tất cả các c�
 ```
 
 <a name="users"></a>
-####8. Users plugin.
+#### 8. Users plugin.
 
 <a name="motausers"></a>
-#####8.1 Mô tả.
+##### 8.1 Mô tả.
 
 Users plugin thống kê tổng số người dùng đăng nhập vào hệ thống.
 
 <a name="cauhinhusers"></a>
-#####8.2. Cách cấu hình.
+##### 8.2. Cách cấu hình.
 
 ```sh
 # Khai bao su dung plugin users trong file config cua collectd tren client
@@ -562,7 +562,7 @@ LoadPlugin users
 ```
 
 <a name="minhhoausers"></a>
-#####8.3 Minh họa.
+##### 8.3 Minh họa.
 
 Hình 19
 
@@ -580,12 +580,12 @@ Hình 20
 ####9. Uptime plugin.
 
 <a name="motauptime"></a>
-#####9.1 Mô tả.
+##### 9.1 Mô tả.
  
 Uptime plugin theo dõi thời gian hoạt động của hệ thống.
 
 <a name="cauhinhuptime"></a>
-#####9.2 Cách cấu hình.
+##### 9.2 Cách cấu hình.
 
 ```sh
 # Khai bao su dung plugin uptime trong file config cua collectd tren client
@@ -593,7 +593,7 @@ LoadPlugin uptime
 ```
 
 <a name="minhhoauptime"></a>
-#####9.3 Minh họa.
+##### 9.3 Minh họa.
 
 Người dùng có thể dùng *uptime* để kiểm tra xem máy đã hoạt động được bao lâu từ lúc bật máy.
 
@@ -608,7 +608,7 @@ Hình 21
 #### 10. OpenVPN
 
 <a name="motaopenvpn"></a>
-#####10.1 Mô tả.
+##### 10.1 Mô tả.
 
 Plugin OpenVPN đọc trạng thái file được duy trì bởi OpenVPN và thu thập thống kê kết nối với client.
 
@@ -643,7 +643,7 @@ log         openvpn.log
 ```
 
 <a name="minhhoaopenvpn"></a>
-#####10.3 Minh họa.
+##### 10.3 Minh họa.
 
 <img src="http://i.imgur.com/7hnmaw5.png">
 
@@ -651,3 +651,10 @@ log         openvpn.log
 ```sh
 1. Số người dùng kết nối OpenVPN.
 ```
+
+
+
+
+
+ 
+
