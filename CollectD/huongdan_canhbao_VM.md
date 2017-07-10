@@ -47,7 +47,7 @@ LoadPlugin network
 </Plugin>
 
 
-# Khai báo thực thi script ghi log khi nhận được cảnh báo
+# Khai báo syslog plugin
 LoadPlugin syslog
 <Plugin syslog>
 LogLevel warning
@@ -78,7 +78,7 @@ NotifyLevel WARNING
 ## 2.4. Trên host compute, kiểm tra cảnh báo
 - Kiểm tra trong /var/log/syslog
 ```
-4,1,Jul  9 21:56:35,compute1,warning:, Host compute1, plugin memory type memory (instance used): Data source "value" is currently 1327288320.000000. That is above the warning threshold of 1200000000.000000.
+4,3,Jul 10 03:15:30,compute1,collectd[5952]:, Notification: severity = WARNING, host = c0f671e9-9353-49dd-954a-e7f783f5660f, plugin = virt, plugin_instance = instance-00000015, type = if_octets, type_instance = fa:16:3e:7f:3a:3c, message = Host c0f671e9-9353-49dd-954a-e7f783f5660f, plugin virt (instance instance-00000015) type if_octets (instance fa:16:3e:7f:3a:3c): Data source "tx" is currently 1374.393586. That is above the warning threshold of 1200.000000.
 
 6,3,Jul  9 21:56:35,compute1,collectd[29195]:, notify_email: notify sent to receiver@email.com: 250 Ok
 ```
