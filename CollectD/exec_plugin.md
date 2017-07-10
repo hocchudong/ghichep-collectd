@@ -4,13 +4,15 @@
 ## 1. Mô tả
 
 Exec plugin để thực thi một script được viết sẵn. Có 2 cách để thực thi script sủ dụng plugin này:
- - `Exec`
+ - Loại 1: `Exec`
+
     Plugin sẽ thực thi sript tuần tự theo từng lần một, và thực hiện lại khi kết thúc script.
 
- - `NotificationExec`
+ - Loại 2: `NotificationExec`
+
  	Plugin sẽ thực thi script mỗi khi nhận được một cảnh báo từ collectd daemon. Cảnh báo được nhận vào như `STDIN`. Không giống như `Exec`, việc thực thi script sẽ không diễn ra tuần tự, nên có thể thực thi script đồng thời nếu nhận được nhiều thông báo một lúc.
 
-## 2 Cách cấu hình
+## 2. Cách cấu hình
 
 Cấu hình theo `NotificationExec`
 
