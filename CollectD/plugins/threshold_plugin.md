@@ -36,6 +36,8 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
  </Plugin>
 ```
  VD: Để đặt ngưỡng cho băng thông ra của card mạng
+
+```
   <Plugin "threshold">
    <Plugin "interface">
      Instance "eth0"
@@ -45,9 +47,10 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
      </Type>
    </Plugin>
   </Plugin>
+```
 
-- Type chính là metric cần cảnh báo
-- Ta đặt Type trong các block `Host`, `Plugin`. Việc này giúp việc gửi xác định Type cảnh báo chính xác hơn (Type nằm trên host nào, thuộc plugin nào)
+- `Type` chính là metric cần cảnh báo
+- Ta đặt `Type` trong các block `Host`, `Plugin`. Việc này giúp việc xác định `Type` cảnh báo chính xác hơn (`Typ`e nằm trên host nào, thuộc plugin nào)
 
 ```
 <Host>
