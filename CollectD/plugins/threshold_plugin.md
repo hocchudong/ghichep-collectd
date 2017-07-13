@@ -8,52 +8,7 @@ Mỗi khi giá trị vượt ngưỡng, cảnh báo được gửi đi, khi giá
 - Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
 - Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
-## 2 Cách cấu hình
-
-```sh
-LoadPlugin "threshold"
- <Plugin "threshold">
-   <Type "foo">
-     WarningMin    0.00
-     WarningMax 1000.00
-     FailureMin    0.00
-     FailureMax 1200.00
-     Invert false
-     Instance "bar"
-   </Type>
-   
-   <Plugin "interface">
-     Instance "eth0"
-     <Type "if_octets">
-       FailureMax 10000000
-       DataSource "rx"
-     </Type>
-   </Plugin>
-   
-   <Host "hostname">
-     <Type "cpu">
-       Instance "idle"
-       FailureMin 10
-     </Type>
-   
-     <Plugin "memory">
-       <Type "memory">
-         Instance "cached"
-         WarningMin 100000000
-       </Type>
-     </Plugin>
-   
-     <Type "load">
-        DataSource "midterm"
-        FailureMax 4
-        Hits 3
-        Hysteresis 3
-     </Type>
-   </Host>
-</Plugin>
-```
-
-Để xác định giá trị được gửi cảnh báo, ta dùng các block `Host`, `Plugin`, `Type`.
+## 2. Cách cấu hình
 Một value được xác định bởi một `name`, hay còn gọi là `identifier`, một identifier có 5 phần, gồm:
  - host
  - plugin
@@ -68,6 +23,53 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
  - `instance-00000015`: plugin instance là tên máy ảo
  - `disk_octets`: metric type
  - `vda`: type instance là tên ổ đĩa được lấy metric
+
+### 2.1. Sửa file /etc/collectd/collectd.conf
+
+- Khai báo để load plugin
+`LoadPlugin "threshold"`
+
+- Khai báo các ngưỡng gửi cảnh báo, các ngưỡng này phải nằm trong block
+```
+ <Plugin "threshold"> 
+ ...
+ </Plugin>
+```
+ VD: Để đặt ngưỡng cho băng thông ra của card mạng
+  <Plugin "threshold">
+   <Plugin "interface">
+     Instance "eth0"
+     <Type "if_octets">
+       FailureMax 10000000
+       DataSource "rx"
+     </Type>
+   </Plugin>
+  </Plugin>
+
+- Type chính là metric cần cảnh báo
+- Ta đặt Type trong các block `Host`, `Plugin`. Việc này giúp việc gửi xác định Type cảnh báo chính xác hơn (Type nằm trên host nào, thuộc plugin nào)
+```
+<Host>
+  <Plugin>
+    <Type>
+    </Type>
+  </Plugin>
+</Host>
+
+
+VD: 
+```
+   <Host "hostname">
+     <Plugin "memory">
+       <Type "memory">
+         Instance "cached"
+         WarningMin 100000000
+       </Type>
+     </Plugin>
+   </Host>
+```
+
+Một metric khi được đặt 
 
 ## 3. Các tùy chọn khi cấu hình
 

@@ -3,11 +3,11 @@
 
 ## 1. Mô tả
 
-- Unixsock plugin mở một UNIX-socket để user có thể tương tác với collectd daemon. Việc tương tác với collectd daemon này giúp sử dụng các metric của collectd cho các ứng dụng khác, hoặc đưa thêm các giá trị khác vào collectd. 
+- Unixsock plugin mở một UNIX-socket để user có thể tương tác với collectd daemon. Việc này giúp sử dụng các metric của collectd cho các ứng dụng khác, hoặc đưa thêm các giá trị khác vào collectd. 
 - Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
 - Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
-## 2 Cách cấu hình
+## 2. Cách cấu hình
 
 ```sh
 LoadPlugin unixsock
