@@ -11,7 +11,7 @@
 
 ## 2 Cách cấu hình
 Sử dụng 4 plugin có sẵn của collectd:
- - memor: thu thập thông số RAM của host vật lý
+ - memory: thu thập thông số RAM của host vật lý
  - [threshold](plugins/threshold_plugin.md): Đặt ngưỡng cảnh báo
  - [notify_email](plugins/notify_email_plugin.md): gửi cảnh báo qua email
  - [syslog](plugins/syslog_plugin.md): ghi log khi có cảnh báo

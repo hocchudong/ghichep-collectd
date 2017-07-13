@@ -48,6 +48,7 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
 
 - Type chính là metric cần cảnh báo
 - Ta đặt Type trong các block `Host`, `Plugin`. Việc này giúp việc gửi xác định Type cảnh báo chính xác hơn (Type nằm trên host nào, thuộc plugin nào)
+
 ```
 <Host>
   <Plugin>
@@ -55,7 +56,7 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
     </Type>
   </Plugin>
 </Host>
-
+```
 
 VD: 
 ```
