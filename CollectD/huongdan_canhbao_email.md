@@ -6,6 +6,9 @@
 - Phiên bản OS sử dụng là Ubuntu 14.04.5, kernel 4.4.0-79-generic.
 - Phiên bản collectd sử dụng là collectd 5.5.3.1.
 
+**Lưu ý: Hiện collectd chỉ gửi mail được với các SMTP Server sử dụng port 25, không sử dụng được với Gmail SMTP Server**
+
+
 ## 2 Cách cấu hình
 Sử dụng 4 plugin có sẵn của collectd:
  - memor: thu thập thông số RAM của host vật lý

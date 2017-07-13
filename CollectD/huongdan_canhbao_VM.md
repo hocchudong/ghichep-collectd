@@ -37,13 +37,13 @@ LoadPlugin network
 
 # Khai báo địa chỉ email nhận cảnh báo
 <Plugin "notify_email">
- From "notify_email@email.com"
- Recipient "receiver@email.com"
- SMTPServer "smtp.notification.com"
- SMTPUser "notify_email"
+ From "mycloudvnn@vdc.com.vn"
+ Recipient "zabbix.vdcit@gmail.com"
+ SMTPServer "smtp1.vdc.com.vn"
+ SMTPUser "mycloudvnn"
  SMTPPort "25"
  Subject "[collectd] %s on %s!"
- SMTPPassword "notify_email_password"
+ SMTPPassword "abcxyz"
 </Plugin>
 
 
