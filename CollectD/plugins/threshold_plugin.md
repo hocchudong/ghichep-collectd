@@ -63,17 +63,16 @@ Một value được xác định bởi một `name`, hay còn gọi là `identi
 
 VD: 
 ```
-   <Host "hostname">
-     <Plugin "memory">
-       <Type "memory">
-         Instance "cached"
-         WarningMin 100000000
-       </Type>
-     </Plugin>
-   </Host>
+ <Host "hostname">
+   <Plugin "memory">
+     <Type "memory">
+       Instance "cached"
+       WarningMin 100000000
+     </Type>
+   </Plugin>
+ </Host>
 ```
 
-Một metric khi được đặt 
 
 ## 3. Các tùy chọn khi cấu hình
 
