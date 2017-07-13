@@ -1,4 +1,4 @@
-# Hướng dẫn thiết lập cảnh báo
+# Hướng dẫn thiết lập cảnh báo qua email
 
 ## 1. Mô tả
 
